@@ -1057,6 +1057,8 @@ public class Modificar_constancia extends javax.swing.JFrame {
         ESTABLESCO LOS PANELES CONFORME A EL NÚMERO DE PANEL QUE RECIBO
         Y LO PINTO EN EL PANEL PRINCIPAL
         */
+        
+        //este es un ejemplo de comentario
         if(pan==1){
             Pane_principal.removeAll();
             //jPane1.setOpaque(true);
