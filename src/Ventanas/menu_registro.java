@@ -117,7 +117,7 @@ public class menu_registro extends javax.swing.JFrame {
 
     private void bt_constanciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_constanciaActionPerformed
         // TODO add your handling code here:
-        nueva_constancia obj = new nueva_constancia();
+        Nueva_constancia obj = new Nueva_constancia();
         obj.setVisible(true);
         dispose();
     }//GEN-LAST:event_bt_constanciaActionPerformed
