@@ -33,20 +33,15 @@ public class inicio_sesion extends javax.swing.JFrame {
         tb_usuario = new javax.swing.JTextField();
         bt_salir = new javax.swing.JButton();
         tb_contraseña = new javax.swing.JPasswordField();
-        texto1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         bt_reg_usu = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("COMISARIA EJIDAL");
         setAutoRequestFocus(false);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setMaximumSize(new java.awt.Dimension(1366, 725));
         setMinimumSize(new java.awt.Dimension(1366, 725));
-        setPreferredSize(new java.awt.Dimension(1366, 725));
         getContentPane().setLayout(null);
 
         icono_1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/us.png"))); // NOI18N
@@ -93,17 +88,6 @@ public class inicio_sesion extends javax.swing.JFrame {
         getContentPane().add(tb_contraseña);
         tb_contraseña.setBounds(610, 420, 177, 30);
 
-        texto1.setFont(new java.awt.Font("Cambria", 3, 36)); // NOI18N
-        texto1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        texto1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/nombre2.png"))); // NOI18N
-        getContentPane().add(texto1);
-        texto1.setBounds(310, -10, 690, 129);
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/linea22.png"))); // NOI18N
-        jLabel3.setText("jLabel3");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(-540, 0, 1930, 118);
-
         bt_reg_usu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/addusss.png"))); // NOI18N
         bt_reg_usu.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bt_reg_usu.addActionListener(new java.awt.event.ActionListener() {
@@ -123,18 +107,10 @@ public class inicio_sesion extends javax.swing.JFrame {
         getContentPane().add(jButton1);
         jButton1.setBounds(70, 510, 73, 23);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/linea211.png"))); // NOI18N
-        jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(-380, -10, 1930, 118);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo.jpg"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        jLabel1.setMaximumSize(new java.awt.Dimension(1366, 725));
-        jLabel1.setMinimumSize(new java.awt.Dimension(1366, 725));
-        jLabel1.setPreferredSize(new java.awt.Dimension(1366, 725));
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(-10, -10, 1366, 725);
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondocm2.111.jpg"))); // NOI18N
+        jLabel4.setText("jLabel4");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(0, 0, 1360, 1080);
 
         pack();
         setLocationRelativeTo(null);
@@ -244,11 +220,8 @@ public class inicio_sesion extends javax.swing.JFrame {
     private javax.swing.JLabel icono_1;
     private javax.swing.JLabel icono_2;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPasswordField tb_contraseña;
     private javax.swing.JTextField tb_usuario;
-    private javax.swing.JLabel texto1;
     // End of variables declaration//GEN-END:variables
 }

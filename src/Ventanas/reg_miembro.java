@@ -43,9 +43,6 @@ public class reg_miembro extends javax.swing.JFrame {
         bt_registrar = new javax.swing.JButton();
         bt_limpiar = new javax.swing.JButton();
         lista_elementos = new javax.swing.JComboBox<>();
-        texto1 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -133,27 +130,11 @@ public class reg_miembro extends javax.swing.JFrame {
         getContentPane().add(lista_elementos);
         lista_elementos.setBounds(620, 500, 200, 50);
 
-        texto1.setFont(new java.awt.Font("Cambria", 3, 36)); // NOI18N
-        texto1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        texto1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/NM.png"))); // NOI18N
-        getContentPane().add(texto1);
-        texto1.setBounds(320, 10, 690, 129);
-
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/linea22.png"))); // NOI18N
-        jLabel6.setText("jLabel3");
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(-550, 10, 1930, 118);
-
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/linea211.png"))); // NOI18N
-        jLabel7.setText("jLabel2");
-        getContentPane().add(jLabel7);
-        jLabel7.setBounds(-390, 0, 1930, 118);
-
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo.jpg"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/NM.jpg"))); // NOI18N
         jLabel5.setText("jLabel5");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(0, 0, 1370, 770);
+        jLabel5.setBounds(0, -10, 1370, 1100);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -299,8 +280,6 @@ public class reg_miembro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel label1;
     private javax.swing.JLabel lb_curp;
     private javax.swing.JComboBox<String> lista_elementos;
@@ -308,6 +287,5 @@ public class reg_miembro extends javax.swing.JFrame {
     private javax.swing.JTextField tb_ap_mat;
     private javax.swing.JTextField tb_ap_pat;
     private javax.swing.JTextField tb_nombre;
-    private javax.swing.JLabel texto1;
     // End of variables declaration//GEN-END:variables
 }

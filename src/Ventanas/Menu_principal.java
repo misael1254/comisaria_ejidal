@@ -12,15 +12,12 @@ public class Menu_principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        texto1 = new javax.swing.JLabel();
         REGRESAR = new javax.swing.JButton();
         bt_nuevo_registro = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         bt_consultas = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("COMISARIA EJIDAL");
@@ -33,12 +30,6 @@ public class Menu_principal extends javax.swing.JFrame {
             }
         });
         getContentPane().setLayout(null);
-
-        texto1.setFont(new java.awt.Font("Cambria", 3, 36)); // NOI18N
-        texto1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        texto1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/nombre2.png"))); // NOI18N
-        getContentPane().add(texto1);
-        texto1.setBounds(320, 10, 690, 129);
 
         REGRESAR.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         REGRESAR.setText("CERRAR");
@@ -77,21 +68,10 @@ public class Menu_principal extends javax.swing.JFrame {
         getContentPane().add(bt_consultas);
         bt_consultas.setBounds(1030, 240, 140, 80);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/linea22.png"))); // NOI18N
-        jLabel3.setText("jLabel3");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(-550, 10, 1930, 118);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/linea211.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondocm2.111.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(-390, 0, 1930, 118);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo.jpg"))); // NOI18N
-        jLabel1.setText("j");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 1400, 768);
-        jLabel1.getAccessibleContext().setAccessibleDescription("");
+        jLabel2.setBounds(0, 0, 2450, 1080);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -165,9 +145,6 @@ public class Menu_principal extends javax.swing.JFrame {
     private javax.swing.JButton bt_nuevo_registro;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel texto1;
     // End of variables declaration//GEN-END:variables
 }

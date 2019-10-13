@@ -35,13 +35,9 @@ public class registro_usuario extends javax.swing.JFrame {
         lb_cont = new javax.swing.JLabel();
         lb_confirmar = new javax.swing.JLabel();
         tb_con_contra = new javax.swing.JTextField();
-        texto1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1366, 768));
         setMinimumSize(new java.awt.Dimension(1366, 768));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -97,26 +93,10 @@ public class registro_usuario extends javax.swing.JFrame {
         getContentPane().add(tb_con_contra);
         tb_con_contra.setBounds(680, 430, 120, 30);
 
-        texto1.setFont(new java.awt.Font("Cambria", 3, 36)); // NOI18N
-        texto1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        texto1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/NUSS.png"))); // NOI18N
-        getContentPane().add(texto1);
-        texto1.setBounds(320, 10, 690, 129);
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/linea22.png"))); // NOI18N
-        jLabel3.setText("jLabel3");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(-500, 10, 1930, 118);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/linea211.png"))); // NOI18N
-        jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(-390, 0, 1930, 118);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo.jpg"))); // NOI18N
-        jLabel1.setText("j");
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/NU.jpg"))); // NOI18N
+        jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 1400, 768);
+        jLabel1.setBounds(0, 0, 1370, 1080);
 
         pack();
         setLocationRelativeTo(null);
@@ -255,8 +235,6 @@ public class registro_usuario extends javax.swing.JFrame {
     private javax.swing.JButton bt_registrar;
     private javax.swing.JButton bt_regresar;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel lb_confirmar;
     private javax.swing.JLabel lb_cont;
     private javax.swing.JLabel lb_mensaje;
@@ -264,6 +242,5 @@ public class registro_usuario extends javax.swing.JFrame {
     private javax.swing.JTextField tb_con_contra;
     private javax.swing.JTextField tb_contraseña;
     private javax.swing.JTextField tb_usuario;
-    private javax.swing.JLabel texto1;
     // End of variables declaration//GEN-END:variables
 }

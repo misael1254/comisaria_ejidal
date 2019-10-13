@@ -34,7 +34,6 @@ public class Consulta_constancia_especifica extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel2 = new javax.swing.JPanel();
-        lb_titulo = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
@@ -108,26 +107,23 @@ public class Consulta_constancia_especifica extends javax.swing.JFrame {
         jLabel27 = new javax.swing.JLabel();
         lb_pre_ce = new javax.swing.JLabel();
         lb_sec_ce = new javax.swing.JLabel();
-        lb_tit_ce_pre = new javax.swing.JLabel();
-        lb_tit_ce_sec = new javax.swing.JLabel();
-        lb_tit_ce_tes = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
-        lb_tit_cv_pre = new javax.swing.JLabel();
-        lb_tit_cv_ps = new javax.swing.JLabel();
-        lb_tit_cv_ss = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
         lb_pre_cv = new javax.swing.JLabel();
         lb_sec1_cv = new javax.swing.JLabel();
         lb_sec2_cv = new javax.swing.JLabel();
         jSeparator20 = new javax.swing.JSeparator();
         lb_nota = new javax.swing.JLabel();
         jSeparator21 = new javax.swing.JSeparator();
-        jLabel36 = new javax.swing.JLabel();
-        jLabel37 = new javax.swing.JLabel();
         jSeparator23 = new javax.swing.JSeparator();
         jSeparator22 = new javax.swing.JSeparator();
         jSeparator24 = new javax.swing.JSeparator();
-        lb_croquis = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
         bt_aceptar = new javax.swing.JButton();
 
@@ -148,16 +144,12 @@ public class Consulta_constancia_especifica extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setAlwaysOnTop(true);
-        setLocation(new java.awt.Point(400, 30));
+        setLocation(new java.awt.Point(400, 60));
 
         jPanel2.setMaximumSize(new java.awt.Dimension(520, 2372));
         jPanel2.setMinimumSize(new java.awt.Dimension(520, 2372));
         jPanel2.setPreferredSize(new java.awt.Dimension(520, 2372));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        lb_titulo.setFont(new java.awt.Font("Dialog", 1, 30)); // NOI18N
-        lb_titulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/dtconstancia.png"))); // NOI18N
-        jPanel2.add(lb_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 370, 100));
         jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 488, 10));
         jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 153, 488, 10));
 
@@ -208,7 +200,7 @@ public class Consulta_constancia_especifica extends javax.swing.JFrame {
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
         jLabel8.setText("<html> <head> </head> <body> <div align=\"center\"><p>CONSEJO DE</p><p>VIGILANCIA</p></div> </body> </html>  ");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 1510, -1, -1));
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 1530, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel9.setText("Nombre:");
@@ -411,32 +403,23 @@ public class Consulta_constancia_especifica extends javax.swing.JFrame {
 
         lb_pre_ce.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lb_pre_ce.setText("#");
-        jPanel2.add(lb_pre_ce, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 1450, -1, -1));
+        jPanel2.add(lb_pre_ce, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1450, -1, -1));
 
         lb_sec_ce.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lb_sec_ce.setText("#");
-        jPanel2.add(lb_sec_ce, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 1450, -1, -1));
+        jPanel2.add(lb_sec_ce, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 1450, -1, -1));
 
-        lb_tit_ce_pre.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lb_tit_ce_pre.setText("PRESIDENTE");
-        lb_tit_ce_pre.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        lb_tit_ce_pre.setMaximumSize(new java.awt.Dimension(130, 50));
-        lb_tit_ce_pre.setPreferredSize(new java.awt.Dimension(130, 22));
-        jPanel2.add(lb_tit_ce_pre, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1390, 130, 50));
+        jLabel30.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel30.setText("Presidente");
+        jPanel2.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1410, -1, -1));
 
-        lb_tit_ce_sec.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lb_tit_ce_sec.setText("Secretario");
-        lb_tit_ce_sec.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        lb_tit_ce_sec.setMaximumSize(new java.awt.Dimension(97, 50));
-        lb_tit_ce_sec.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jPanel2.add(lb_tit_ce_sec, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 1390, 130, 50));
+        jLabel31.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel31.setText("Secretario");
+        jPanel2.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 1410, -1, -1));
 
-        lb_tit_ce_tes.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lb_tit_ce_tes.setText("Tesorero");
-        lb_tit_ce_tes.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        lb_tit_ce_tes.setMaximumSize(new java.awt.Dimension(97, 50));
-        lb_tit_ce_tes.setMinimumSize(new java.awt.Dimension(97, 22));
-        jPanel2.add(lb_tit_ce_tes, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 1390, 130, 50));
+        jLabel28.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel28.setText("Tesorero");
+        jPanel2.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 1410, -1, -1));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel14.setText("<html> <head> </head> <body> <div align=\"center\"><p>RESPONSABLES</p></div> </body> </html>  ");
@@ -444,31 +427,23 @@ public class Consulta_constancia_especifica extends javax.swing.JFrame {
 
         jLabel29.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
         jLabel29.setText("COMITÉ EJIDAL");
-        jPanel2.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 1340, -1, -1));
+        jPanel2.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 1360, -1, -1));
 
-        lb_tit_cv_pre.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lb_tit_cv_pre.setText("PRESIDENTE");
-        lb_tit_cv_pre.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        lb_tit_cv_pre.setMaximumSize(new java.awt.Dimension(97, 50));
-        jPanel2.add(lb_tit_cv_pre, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 1580, 130, 50));
+        jLabel32.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel32.setText("Presidente");
+        jPanel2.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1600, -1, -1));
 
-        lb_tit_cv_ps.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lb_tit_cv_ps.setText("1ER SECRETARIO");
-        lb_tit_cv_ps.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel2.add(lb_tit_cv_ps, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 1580, -1, 50));
+        jLabel33.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel33.setText("Secretario 1");
+        jPanel2.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 1600, -1, -1));
 
-        lb_tit_cv_ss.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lb_tit_cv_ss.setText("2DO SECRETARIO");
-        lb_tit_cv_ss.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        lb_tit_cv_ss.setMaximumSize(new java.awt.Dimension(170, 50));
-        lb_tit_cv_ss.setMinimumSize(new java.awt.Dimension(97, 22));
-        lb_tit_cv_ss.setName(""); // NOI18N
-        lb_tit_cv_ss.setPreferredSize(new java.awt.Dimension(170, 50));
-        jPanel2.add(lb_tit_cv_ss, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 1580, 170, 50));
+        jLabel34.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel34.setText("Secretario 2");
+        jPanel2.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 1600, -1, -1));
 
         lb_pre_cv.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lb_pre_cv.setText("#");
-        jPanel2.add(lb_pre_cv, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1630, -1, -1));
+        jPanel2.add(lb_pre_cv, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1630, -1, -1));
 
         lb_sec1_cv.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lb_sec1_cv.setText("#");
@@ -480,30 +455,17 @@ public class Consulta_constancia_especifica extends javax.swing.JFrame {
         jPanel2.add(jSeparator20, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 1280, 510, 10));
 
         lb_nota.setText("#");
-        lb_nota.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         lb_nota.setMaximumSize(new java.awt.Dimension(440, 150));
         lb_nota.setMinimumSize(new java.awt.Dimension(440, 150));
-        lb_nota.setPreferredSize(new java.awt.Dimension(440, 150));
-        jPanel2.add(lb_nota, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1720, 490, 210));
+        jPanel2.add(lb_nota, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 1730, 60, 20));
         jPanel2.add(jSeparator21, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 1700, 530, 10));
-
-        jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/linea22.png"))); // NOI18N
-        jLabel36.setText("jLabel36");
-        jPanel2.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(-740, 10, -1, -1));
-
-        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/linea211.png"))); // NOI18N
-        jLabel37.setText("jLabel37");
-        jPanel2.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(-600, -10, -1, -1));
         jPanel2.add(jSeparator23, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 820, 500, -1));
         jPanel2.add(jSeparator22, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 860, 500, 10));
         jPanel2.add(jSeparator24, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 1100, 500, 10));
 
-        lb_croquis.setText("IMAGEN");
-        jPanel2.add(lb_croquis, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1970, -1, -1));
-
-        jLabel35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo1.jpg"))); // NOI18N
+        jLabel35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/DC.jpg"))); // NOI18N
         jLabel35.setText("jLabel35");
-        jPanel2.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, -1));
+        jPanel2.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jScrollPane1.setViewportView(jPanel2);
 
@@ -519,11 +481,11 @@ public class Consulta_constancia_especifica extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 566, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGap(218, 218, 218)
                 .addComponent(bt_aceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(255, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -578,7 +540,7 @@ public class Consulta_constancia_especifica extends javax.swing.JFrame {
         });
     }
     public void Rellenar_campos(){
-            ArrayList<String[]> Lista_constancias;
+        ArrayList<String[]> Lista_constancias;
             ArrayList<String[]> Lista_testigos;
             ArrayList<String[]> Lista_con_vig;
             ArrayList<String[]> Lista_com_eji;
@@ -623,94 +585,34 @@ public class Consulta_constancia_especifica extends javax.swing.JFrame {
                  if(croquis != null){
                      byte[] data = croquis.getBytes(1,(int)croquis.length());
                      Image imga=javax.imageio.ImageIO.read(croquis.getBinaryStream());
-                     ImageIcon img = new ImageIcon(imga.getScaledInstance(490, 370, 0)); //corregir el renderizado
-                     lb_croquis.setIcon(img);
-                     lb_croquis.setText("");
-                 }
-                 else{
-                    lb_croquis.setText("SIN IMAGEN");
+                     ImageIcon img = new ImageIcon(imga.getScaledInstance(60, 60, 0)); //corregir el renderizado
+                     
                  }
                  
                 }catch(Exception ex){
-                    lb_croquis.setText("SIN IMAGEN");
-                    JOptionPane.showMessageDialog(null,"Error al cargar la imagen "+ex);
+                    
+                    JOptionPane.showMessageDialog(null, ex);
                 }
-            String aux = "<html> <head> </head> <body> <div align=\"center\"><p>"+Lista_testigos.get(0)[1]+"</p><p>"+Lista_testigos.get(0)[2]+" "+Lista_testigos.get(0)[3]+"</p></div> </body> </html>";
+            String aux = "<html> <head> </head> <body> <div align=\"center\"><p>"+Lista_testigos.get(0)[1]+"</p>"+Lista_testigos.get(0)[2]+" "+Lista_testigos.get(0)[3]+"<p></p></div> </body> </html>";
             lb_tes1.setText(aux);
-            aux = "<html> <head> </head> <body> <div align=\"center\"><p>"+Lista_testigos.get(1)[1]+"</p><p>"+Lista_testigos.get(1)[2]+" "+Lista_testigos.get(1)[3]+"</p></div> </body> </html>";
+            aux = "<html> <head> </head> <body> <div align=\"center\"><p>"+Lista_testigos.get(1)[1]+"</p>"+Lista_testigos.get(1)[2]+" "+Lista_testigos.get(1)[3]+"<p></p></div> </body> </html>";
             lb_tes2.setText(aux);
             
-            if(Lista_com_eji.get(0)[4].equals("SUPLENTE PRESIDENTE")){
-                 aux = "<html> <head> </head> <body> <div align=\"center\"><p>PRESIDENTE</p><p>(SUPLENTE)</p></div> </body> </html>";
-                 lb_tit_ce_pre.setText(aux);
-                 lb_tit_ce_pre.setVerticalAlignment(0);
-            }else{
-                aux = "<html> <head> </head> <body> <div align=\"center\"><p>PRESIDENTE</p></div> </body> </html>";
-                lb_tit_ce_pre.setText(aux);
-            }
-           if(Lista_com_eji.get(1)[4].equals("SUPLENTE SECRETARIO")){
-                 aux = "<html> <head> </head> <body> <div align=\"center\"><p>SECRETARIO</p><p>(SUPLENTE)</p></div> </body> </html>";
-                 lb_tit_ce_sec.setText(aux);
-                 lb_tit_ce_sec.setVerticalAlignment(0);
-            }else{
-                aux = "<html> <head> </head> <body> <div align=\"center\"><p>SECRETARIO</p></div> </body> </html>";
-                lb_tit_ce_sec.setText(aux);
-            }
-            if(Lista_com_eji.get(2)[4].equals("SUPLENTE TESORERO")){
-                 aux = "<html> <head> </head> <body> <div align=\"center\"><p>TESORERO</p><p>(SUPLENTE)</p></div> </body> </html>";
-                 lb_tit_ce_tes.setText(aux);
-                 lb_tit_ce_tes.setVerticalAlignment(0);
-            }else{
-                aux = "<html> <head> </head> <body> <div align=\"center\"><p>TESORERO</p></div> </body> </html>";
-                lb_tit_ce_tes.setText(aux);
-            }
-            
-            //EL PRESIDENTE DEL CONSEJO DE VIGILANCIA NO TIENE SUPLENTE
-            /*if(Lista_con_vig.get(0)[1].equals("SUPLENTE PRESIDENTE")){ 
-                 aux = "<html> <head> </head> <body> <div align=\"center\"><p>PRESIDENTE</p><p>(SUPLENTE)</p></div> </body> </html>";
-                 lb_tit_ce_tes.setText(aux);
-                 lb_tit_ce_tes.setVerticalAlignment(0);
-            }else{
-                aux = "<html> <head> </head> <body> <div align=\"center\"><p>PRESIDENTE</p></div> </body> </html>";
-                lb_tit_ce_tes.setText(aux);
-            }*/
-            if(Lista_con_vig.get(1)[4].equals("SUPLENTE PRIMER SECRETARIO")){ 
-                 aux = "<html> <head> </head> <body> <div align=\"center\"><p>1ER SECRETARIO</p><p>(SUPLENTE)</p></div> </body> </html>";
-                 lb_tit_cv_ps.setText(aux);
-                 lb_tit_cv_ps.setVerticalAlignment(0);
-            }else{
-                aux = "<html> <head> </head> <body> <div align=\"center\"><p>1ER SECRETARIO</p></div> </body> </html>";
-                lb_tit_cv_ps.setText(aux);
-            }
-            if(Lista_con_vig.get(2)[4].equals("SUPLENTE SEGUNDO SECRETARIO")){ 
-                 aux = "<html> <head> </head> <body> <div align=\"center\"><p>2DO SECRETARIO</p><p>(SUPLENTE)</p></div> </body> </html>";
-                 lb_tit_cv_ss.setText(aux);
-                 lb_tit_cv_ss.setVerticalAlignment(0);
-            }else{
-                aux = "<html> <head> </head> <body> <div align=\"center\"><p>2DO SECRETARIO</p></div> </body> </html>";
-                lb_tit_cv_ss.setText(aux);
-            }
-            
-            
-            
-           
-            aux = "<html> <head> </head> <body> <div align=\"center\"><p>"+Lista_com_eji.get(0)[1]+"</p><p>"+Lista_com_eji.get(0)[2]+" "+Lista_com_eji.get(0)[3]+"</p></div> </body> </html>";
+            aux = "<html> <head> </head> <body> <div align=\"center\"><p>"+Lista_com_eji.get(0)[1]+"</p>"+Lista_com_eji.get(0)[2]+" "+Lista_com_eji.get(0)[3]+"<p></p></div> </body> </html>";
             lb_pre_ce.setText(aux);
-            aux = "<html> <head> </head> <body> <div align=\"center\"><p>"+Lista_com_eji.get(1)[1]+"</p><p>"+Lista_com_eji.get(1)[2]+" "+Lista_com_eji.get(1)[3]+"</p></div> </body> </html>";
+            aux = "<html> <head> </head> <body> <div align=\"center\"><p>"+Lista_com_eji.get(1)[1]+"</p>"+Lista_com_eji.get(1)[2]+" "+Lista_com_eji.get(1)[3]+"<p></p></div> </body> </html>";
             lb_sec_ce.setText(aux);
-            aux = "<html> <head> </head> <body> <div align=\"center\"><p>"+Lista_com_eji.get(2)[1]+"</p><p>"+Lista_com_eji.get(2)[2]+" "+Lista_com_eji.get(2)[3]+"</p></div> </body> </html>";
+            aux = "<html> <head> </head> <body> <div align=\"center\"><p>"+Lista_com_eji.get(2)[1]+"</p>"+Lista_com_eji.get(2)[2]+" "+Lista_com_eji.get(2)[3]+"<p></p></div> </body> </html>";
             lb_tes_ce.setText(aux);
             
-            aux = "<html> <head> </head> <body> <div align=\"center\"><p>"+Lista_con_vig.get(0)[1]+"</p><p>"+Lista_con_vig.get(0)[2]+" "+Lista_con_vig.get(0)[3]+"</p></div> </body> </html>";
+            aux = "<html> <head> </head> <body> <div align=\"center\"><p>"+Lista_con_vig.get(0)[1]+"</p>"+Lista_con_vig.get(0)[2]+" "+Lista_con_vig.get(0)[3]+"<p></p></div> </body> </html>";
             lb_pre_cv.setText(aux);
-            aux = "<html> <head> </head> <body> <div align=\"center\"><p>"+Lista_con_vig.get(1)[1]+"</p><p>"+Lista_con_vig.get(1)[2]+" "+Lista_con_vig.get(1)[3]+"</p></div> </body> </html>";
+            aux = "<html> <head> </head> <body> <div align=\"center\"><p>"+Lista_con_vig.get(1)[1]+"</p>"+Lista_con_vig.get(1)[2]+" "+Lista_con_vig.get(1)[3]+"<p></p></div> </body> </html>";
             lb_sec1_cv.setText(aux);
-            aux = "<html> <head> </head> <body> <div align=\"center\"><p>"+Lista_con_vig.get(2)[1]+"</p><p>"+Lista_con_vig.get(2)[2]+" "+Lista_con_vig.get(2)[3]+"</p></div> </body> </html>";
+            aux = "<html> <head> </head> <body> <div align=\"center\"><p>"+Lista_con_vig.get(2)[1]+"</p>"+Lista_con_vig.get(2)[2]+" "+Lista_con_vig.get(2)[3]+"<p></p></div> </body> </html>";
             lb_sec2_cv.setText(aux);
             
-            
-            aux = "<html> <head> </head> <body> <div align=\"justify\"><p>"+Lista_constancias.get(0)[29]+"</p></body> </html>";
-            lb_nota.setText(aux);
+            lb_nota.setText(Lista_constancias.get(0)[29]);
     
     }
 
@@ -737,11 +639,15 @@ public class Consulta_constancia_especifica extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -776,7 +682,6 @@ public class Consulta_constancia_especifica extends javax.swing.JFrame {
     private javax.swing.JLabel lb_apmat_prop;
     private javax.swing.JLabel lb_appat_ced;
     private javax.swing.JLabel lb_appat_prop;
-    private javax.swing.JLabel lb_croquis;
     private javax.swing.JLabel lb_e_ter;
     private javax.swing.JLabel lb_ecol_ter;
     private javax.swing.JLabel lb_fecha_exp;
@@ -807,13 +712,6 @@ public class Consulta_constancia_especifica extends javax.swing.JFrame {
     private javax.swing.JLabel lb_tes2;
     private javax.swing.JLabel lb_tes_ce;
     private javax.swing.JLabel lb_tipo_ter;
-    private javax.swing.JLabel lb_tit_ce_pre;
-    private javax.swing.JLabel lb_tit_ce_sec;
-    private javax.swing.JLabel lb_tit_ce_tes;
-    private javax.swing.JLabel lb_tit_cv_pre;
-    private javax.swing.JLabel lb_tit_cv_ps;
-    private javax.swing.JLabel lb_tit_cv_ss;
-    private javax.swing.JLabel lb_titulo;
     private javax.swing.JLabel lb_ubicacion_ter;
     // End of variables declaration//GEN-END:variables
 }

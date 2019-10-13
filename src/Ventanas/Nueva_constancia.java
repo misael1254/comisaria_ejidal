@@ -6,6 +6,7 @@
 package Ventanas;
 import Tablas.*;
 import java.awt.Color;
+import java.awt.event.KeyEvent;
 import java.io.FileInputStream;
 import java.io.InputStream;
 
@@ -15,16 +16,17 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  *
  * @author MISAEL
  */
-public class Nueva_constancia extends javax.swing.JFrame {
+public class nueva_constancia extends javax.swing.JFrame {
     int num_panel;
     private String ruta=null;
-    public Nueva_constancia() {
+    public nueva_constancia() {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
         rellenar_combos();
@@ -138,6 +140,12 @@ public class Nueva_constancia extends javax.swing.JFrame {
         bt_buscar_propietario = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel29 = new javax.swing.JLabel();
+        et_error = new javax.swing.JLabel();
+        et_error1 = new javax.swing.JLabel();
+        et_error2 = new javax.swing.JLabel();
+        et_error3 = new javax.swing.JLabel();
+        et_error4 = new javax.swing.JLabel();
+        et_error5 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         ta_nota = new javax.swing.JTextArea();
@@ -146,10 +154,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
         btn_subir_img = new javax.swing.JButton();
         jLabel49 = new javax.swing.JLabel();
         cb_tipo_terreno = new javax.swing.JComboBox<>();
-        texto1 = new javax.swing.JLabel();
         fecha_label = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         label_imagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -165,7 +170,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
             }
         });
         getContentPane().add(bt_cancelar);
-        bt_cancelar.setBounds(960, 640, 100, 30);
+        bt_cancelar.setBounds(960, 640, 100, 23);
 
         bt_generar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         bt_generar.setText("GENERAR");
@@ -175,7 +180,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
             }
         });
         getContentPane().add(bt_generar);
-        bt_generar.setBounds(1070, 640, 100, 30);
+        bt_generar.setBounds(1070, 640, 100, 23);
 
         Pane_principal.setBackground(new java.awt.Color(255, 255, 255));
         Pane_principal.setForeground(new java.awt.Color(255, 153, 153));
@@ -183,7 +188,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
         getContentPane().add(Pane_principal);
         Pane_principal.setBounds(190, 120, 980, 520);
         getContentPane().add(tb_folio);
-        tb_folio.setBounds(70, 160, 73, 24);
+        tb_folio.setBounds(70, 160, 73, 20);
 
         label_folio.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         label_folio.setText("FOLIO");
@@ -203,67 +208,145 @@ public class Nueva_constancia extends javax.swing.JFrame {
         jPane2.setBackground(new java.awt.Color(255, 255, 255));
         jPane2.setLayout(null);
 
-        tb_med_so.setText("0");
+        tb_med_so.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tb_med_soKeyTyped(evt);
+            }
+        });
         jPane2.add(tb_med_so);
         tb_med_so.setBounds(290, 420, 50, 30);
 
-        tb_med_o.setText("0");
+        tb_med_o.setText("90.2");
+        tb_med_o.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tb_med_oKeyTyped(evt);
+            }
+        });
         jPane2.add(tb_med_o);
         tb_med_o.setBounds(290, 260, 50, 30);
 
-        tb_med_e.setText("0");
+        tb_med_e.setText("30.2");
+        tb_med_e.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tb_med_eKeyTyped(evt);
+            }
+        });
         jPane2.add(tb_med_e);
         tb_med_e.setBounds(290, 220, 50, 30);
 
-        tb_med_s.setText("0");
+        tb_med_s.setText("32.3");
+        tb_med_s.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tb_med_sKeyTyped(evt);
+            }
+        });
         jPane2.add(tb_med_s);
         tb_med_s.setBounds(290, 180, 50, 30);
 
-        tb_med_n.setText("0");
+        tb_med_n.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tb_med_nKeyTyped(evt);
+            }
+        });
         jPane2.add(tb_med_n);
         tb_med_n.setBounds(290, 140, 50, 30);
 
         tb_med_ne.setText("0");
+        tb_med_ne.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tb_med_neKeyTyped(evt);
+            }
+        });
         jPane2.add(tb_med_ne);
         tb_med_ne.setBounds(290, 300, 50, 30);
 
         tb_med_no.setText("0");
+        tb_med_no.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tb_med_noKeyTyped(evt);
+            }
+        });
         jPane2.add(tb_med_no);
         tb_med_no.setBounds(290, 340, 50, 30);
 
         tb_med_se.setText("0");
+        tb_med_se.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tb_med_seKeyTyped(evt);
+            }
+        });
         jPane2.add(tb_med_se);
         tb_med_se.setBounds(290, 380, 50, 30);
 
         tb_col_so.setText("-");
+        tb_col_so.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tb_col_soKeyTyped(evt);
+            }
+        });
         jPane2.add(tb_col_so);
         tb_col_so.setBounds(520, 420, 250, 30);
 
-        tb_col_n.setText("-");
+        tb_col_n.setText("Alberto perez garcia");
+        tb_col_n.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tb_col_nKeyTyped(evt);
+            }
+        });
         jPane2.add(tb_col_n);
         tb_col_n.setBounds(520, 140, 250, 30);
 
-        tb_col_s.setText("-");
+        tb_col_s.setText("Juan de la cruz costa");
+        tb_col_s.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tb_col_sKeyTyped(evt);
+            }
+        });
         jPane2.add(tb_col_s);
         tb_col_s.setBounds(520, 180, 250, 30);
 
-        tb_col_e.setText("-");
+        tb_col_e.setText("Carlos garcia cruz");
+        tb_col_e.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tb_col_eKeyTyped(evt);
+            }
+        });
         jPane2.add(tb_col_e);
         tb_col_e.setBounds(520, 220, 250, 30);
 
-        tb_col_o.setText("-");
+        tb_col_o.setText("Jared Rojas Bravo");
+        tb_col_o.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tb_col_oKeyTyped(evt);
+            }
+        });
         jPane2.add(tb_col_o);
         tb_col_o.setBounds(520, 260, 250, 30);
 
         tb_col_ne.setText("-");
+        tb_col_ne.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tb_col_neKeyTyped(evt);
+            }
+        });
         jPane2.add(tb_col_ne);
         tb_col_ne.setBounds(520, 300, 250, 30);
 
         tb_col_no.setText("-");
+        tb_col_no.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tb_col_noKeyTyped(evt);
+            }
+        });
         jPane2.add(tb_col_no);
         tb_col_no.setBounds(520, 340, 250, 30);
 
         tb_col_se.setText("-");
+        tb_col_se.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tb_col_seKeyTyped(evt);
+            }
+        });
         jPane2.add(tb_col_se);
         tb_col_se.setBounds(520, 380, 250, 30);
 
@@ -322,7 +405,12 @@ public class Nueva_constancia extends javax.swing.JFrame {
         jPane2.add(jLabel6);
         jLabel6.setBounds(610, 110, 110, 10);
 
-        tb_ubicacion_terreno.setText("-");
+        tb_ubicacion_terreno.setText("el aguacate");
+        tb_ubicacion_terreno.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tb_ubicacion_terrenoKeyTyped(evt);
+            }
+        });
         jPane2.add(tb_ubicacion_terreno);
         tb_ubicacion_terreno.setBounds(270, 60, 510, 30);
 
@@ -373,7 +461,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
 
         jLabel47.setText("jLabel47");
         jPane2.add(jLabel47);
-        jLabel47.setBounds(20, 10, 48, 16);
+        jLabel47.setBounds(20, 10, 40, 14);
 
         getContentPane().add(jPane2);
         jPane2.setBounds(20, 460, 90, 40);
@@ -451,38 +539,83 @@ public class Nueva_constancia extends javax.swing.JFrame {
         jLabel38.setBounds(270, 100, 110, 20);
 
         tb_testigo_tres_appat.setText("c");
+        tb_testigo_tres_appat.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tb_testigo_tres_appatKeyTyped(evt);
+            }
+        });
         jPanel3.add(tb_testigo_tres_appat);
         tb_testigo_tres_appat.setBounds(630, 330, 210, 30);
 
         tb_testigo_tres_apmat.setText("c");
+        tb_testigo_tres_apmat.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tb_testigo_tres_apmatKeyTyped(evt);
+            }
+        });
         jPanel3.add(tb_testigo_tres_apmat);
         tb_testigo_tres_apmat.setBounds(630, 380, 210, 30);
 
-        tb_testigo_dos_apmat.setText("-");
+        tb_testigo_dos_apmat.setText("Arellano");
+        tb_testigo_dos_apmat.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tb_testigo_dos_apmatKeyTyped(evt);
+            }
+        });
         jPanel3.add(tb_testigo_dos_apmat);
         tb_testigo_dos_apmat.setBounds(390, 380, 200, 30);
 
-        tb_testigo_uno_apmat.setText("-");
+        tb_testigo_uno_apmat.setText("Cruz");
+        tb_testigo_uno_apmat.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tb_testigo_uno_apmatKeyTyped(evt);
+            }
+        });
         jPanel3.add(tb_testigo_uno_apmat);
         tb_testigo_uno_apmat.setBounds(160, 380, 200, 30);
 
-        tb_testigo_uno_appat.setText("-");
+        tb_testigo_uno_appat.setText("Cruz");
+        tb_testigo_uno_appat.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tb_testigo_uno_appatKeyTyped(evt);
+            }
+        });
         jPanel3.add(tb_testigo_uno_appat);
         tb_testigo_uno_appat.setBounds(160, 330, 200, 30);
 
-        tb_testigo_uno_nombre.setText("-");
+        tb_testigo_uno_nombre.setText("Alfonso");
+        tb_testigo_uno_nombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tb_testigo_uno_nombreKeyTyped(evt);
+            }
+        });
         jPanel3.add(tb_testigo_uno_nombre);
         tb_testigo_uno_nombre.setBounds(160, 280, 200, 30);
 
-        tb_testigo_dos_nombre.setText("-");
+        tb_testigo_dos_nombre.setText("Vicrtor");
+        tb_testigo_dos_nombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tb_testigo_dos_nombreKeyTyped(evt);
+            }
+        });
         jPanel3.add(tb_testigo_dos_nombre);
         tb_testigo_dos_nombre.setBounds(390, 280, 200, 30);
 
-        tb_testigo_dos_appat.setText("-");
+        tb_testigo_dos_appat.setText("Resendiz");
+        tb_testigo_dos_appat.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tb_testigo_dos_appatKeyTyped(evt);
+            }
+        });
         jPanel3.add(tb_testigo_dos_appat);
         tb_testigo_dos_appat.setBounds(390, 330, 200, 30);
 
         tb_testigo_tres_nombre.setText("c");
+        tb_testigo_tres_nombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tb_testigo_tres_nombreKeyTyped(evt);
+            }
+        });
         jPanel3.add(tb_testigo_tres_nombre);
         tb_testigo_tres_nombre.setBounds(630, 280, 210, 30);
 
@@ -518,7 +651,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
 
         jLabel48.setText("jLabel48");
         jPanel3.add(jLabel48);
-        jLabel48.setBounds(20, 10, 48, 16);
+        jLabel48.setBounds(20, 10, 40, 14);
 
         getContentPane().add(jPanel3);
         jPanel3.setBounds(20, 520, 90, 40);
@@ -531,7 +664,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
             }
         });
         getContentPane().add(bt_siguiente);
-        bt_siguiente.setBounds(650, 640, 100, 30);
+        bt_siguiente.setBounds(650, 640, 100, 23);
 
         bt_anterior.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         bt_anterior.setText("ANTERIOR");
@@ -541,24 +674,44 @@ public class Nueva_constancia extends javax.swing.JFrame {
             }
         });
         getContentPane().add(bt_anterior);
-        bt_anterior.setBounds(490, 640, 100, 30);
+        bt_anterior.setBounds(490, 640, 100, 23);
 
         jPane1.setBackground(new java.awt.Color(255, 255, 255));
         jPane1.setLayout(null);
 
-        tb_propietario_nombre.setText("-");
+        tb_propietario_nombre.setText("Misael");
+        tb_propietario_nombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tb_propietario_nombreKeyTyped(evt);
+            }
+        });
         jPane1.add(tb_propietario_nombre);
         tb_propietario_nombre.setBounds(300, 50, 320, 40);
 
-        tb_propietario_appat.setText("-");
+        tb_propietario_appat.setText("urzua");
+        tb_propietario_appat.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tb_propietario_appatKeyTyped(evt);
+            }
+        });
         jPane1.add(tb_propietario_appat);
         tb_propietario_appat.setBounds(300, 100, 320, 40);
 
-        tb_propietario_apmat.setText("-");
+        tb_propietario_apmat.setText("ramos");
+        tb_propietario_apmat.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tb_propietario_apmatKeyTyped(evt);
+            }
+        });
         jPane1.add(tb_propietario_apmat);
         tb_propietario_apmat.setBounds(300, 150, 320, 40);
 
-        tb_cedente_nombre.setText("-");
+        tb_cedente_nombre.setText("larry edsel");
+        tb_cedente_nombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tb_cedente_nombreKeyTyped(evt);
+            }
+        });
         jPane1.add(tb_cedente_nombre);
         tb_cedente_nombre.setBounds(310, 280, 320, 40);
 
@@ -572,7 +725,12 @@ public class Nueva_constancia extends javax.swing.JFrame {
         jPane1.add(jLabel7);
         jLabel7.setBounds(220, 330, 60, 30);
 
-        tb_cedente_appat.setText("-");
+        tb_cedente_appat.setText("urzua");
+        tb_cedente_appat.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tb_cedente_appatKeyTyped(evt);
+            }
+        });
         jPane1.add(tb_cedente_appat);
         tb_cedente_appat.setBounds(310, 330, 320, 40);
 
@@ -581,7 +739,12 @@ public class Nueva_constancia extends javax.swing.JFrame {
         jPane1.add(jLabel9);
         jLabel9.setBounds(220, 380, 54, 28);
 
-        tb_cedente_apmat.setText("-");
+        tb_cedente_apmat.setText("ramos");
+        tb_cedente_apmat.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tb_cedente_apmatKeyTyped(evt);
+            }
+        });
         jPane1.add(tb_cedente_apmat);
         tb_cedente_apmat.setBounds(310, 380, 320, 40);
 
@@ -619,7 +782,31 @@ public class Nueva_constancia extends javax.swing.JFrame {
 
         jLabel29.setText("jLabel29");
         jPane1.add(jLabel29);
-        jLabel29.setBounds(20, 10, 48, 16);
+        jLabel29.setBounds(20, 10, 40, 14);
+
+        et_error.setForeground(new java.awt.Color(204, 0, 0));
+        jPane1.add(et_error);
+        et_error.setBounds(650, 390, 130, 20);
+
+        et_error1.setForeground(new java.awt.Color(204, 0, 0));
+        jPane1.add(et_error1);
+        et_error1.setBounds(640, 60, 130, 20);
+
+        et_error2.setForeground(new java.awt.Color(204, 0, 0));
+        jPane1.add(et_error2);
+        et_error2.setBounds(640, 110, 130, 20);
+
+        et_error3.setForeground(new java.awt.Color(204, 0, 0));
+        jPane1.add(et_error3);
+        et_error3.setBounds(640, 160, 130, 20);
+
+        et_error4.setForeground(new java.awt.Color(204, 0, 0));
+        jPane1.add(et_error4);
+        et_error4.setBounds(650, 290, 130, 20);
+
+        et_error5.setForeground(new java.awt.Color(204, 0, 0));
+        jPane1.add(et_error5);
+        et_error5.setBounds(650, 340, 130, 20);
 
         getContentPane().add(jPane1);
         jPane1.setBounds(20, 400, 90, 40);
@@ -660,32 +847,16 @@ public class Nueva_constancia extends javax.swing.JFrame {
         cb_tipo_terreno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "LOTE", "LOTE CON CASA HAB.", "PARCELA", "FRACCIÓN DE PARC." }));
         cb_tipo_terreno.setOpaque(false);
         getContentPane().add(cb_tipo_terreno);
-        cb_tipo_terreno.setBounds(20, 280, 150, 26);
-
-        texto1.setFont(new java.awt.Font("Cambria", 3, 36)); // NOI18N
-        texto1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        texto1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/nc.png"))); // NOI18N
-        getContentPane().add(texto1);
-        texto1.setBounds(300, 10, 690, 129);
+        cb_tipo_terreno.setBounds(20, 280, 150, 20);
 
         fecha_label.setText("jLabel4");
         getContentPane().add(fecha_label);
         fecha_label.setBounds(80, 206, 110, 20);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/linea22.png"))); // NOI18N
-        jLabel4.setText("jLabel3");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(-550, 10, 1930, 118);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/linea211.png"))); // NOI18N
-        jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(-390, 0, 1930, 118);
-
-        label_imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo.jpg"))); // NOI18N
+        label_imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/NC.jpg"))); // NOI18N
         label_imagen.setText("j");
         getContentPane().add(label_imagen);
-        label_imagen.setBounds(0, 0, 1373, 725);
+        label_imagen.setBounds(0, 0, 1373, 1090);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -767,8 +938,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
             System.out.println("CEDENTE");
        
        Constancia constancia = new Constancia();
-       //int id_constancia = constancia.ultimoID()+1;
-       int id_constancia = Integer.parseInt(tb_folio.getText().toString());
+       int id_constancia = constancia.ultimoID()+1;
        constancia.setFolio(id_constancia);
        constancia.setFecha_exp(fecha_label.getText());
        constancia.setId_terreno(id_terreno);
@@ -857,9 +1027,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
             System.out.println("SECRETARIO2 CV");
        
        JOptionPane.showMessageDialog(null,"REGISTRADO CON ÉXITO");
-       menu_registro obj = new menu_registro();
-       obj.setVisible(true);
-       dispose();
+       
        
     }//GEN-LAST:event_bt_generarActionPerformed
 
@@ -881,6 +1049,240 @@ public class Nueva_constancia extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btn_subir_imgActionPerformed
 
+    private void tb_propietario_nombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tb_propietario_nombreKeyTyped
+        // TODO add your handling code here:
+        ValidarLetras(evt);
+    }//GEN-LAST:event_tb_propietario_nombreKeyTyped
+
+    private void tb_propietario_appatKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tb_propietario_appatKeyTyped
+        // TODO add your handling code here:
+        ValidarLetras(evt);
+    }//GEN-LAST:event_tb_propietario_appatKeyTyped
+
+    private void tb_propietario_apmatKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tb_propietario_apmatKeyTyped
+        // TODO add your handling code here:
+        ValidarLetras(evt);
+    }//GEN-LAST:event_tb_propietario_apmatKeyTyped
+
+    private void tb_cedente_nombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tb_cedente_nombreKeyTyped
+        // TODO add your handling code here:
+        ValidarLetras(evt);
+    }//GEN-LAST:event_tb_cedente_nombreKeyTyped
+
+    private void tb_cedente_appatKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tb_cedente_appatKeyTyped
+        // TODO add your handling code here:
+        ValidarLetras(evt);
+    }//GEN-LAST:event_tb_cedente_appatKeyTyped
+
+    private void tb_cedente_apmatKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tb_cedente_apmatKeyTyped
+        // TODO add your handling code here:
+        ValidarLetras(evt);
+    }//GEN-LAST:event_tb_cedente_apmatKeyTyped
+
+    //SEGUNDA VENTANA
+    private void tb_ubicacion_terrenoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tb_ubicacion_terrenoKeyTyped
+        // TODO add your handling code here:
+        ValidarLetras(evt);
+    }//GEN-LAST:event_tb_ubicacion_terrenoKeyTyped
+
+    private void tb_med_nKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tb_med_nKeyTyped
+        // TODO add your handling code here:
+          char n = evt.getKeyChar();
+       
+       if(!Character.isDigit(n) && n!='.')
+       {
+           evt.consume();
+       }
+       else if(tb_med_n.getText().contains(".") && n == '.')
+       {
+           evt.consume();
+       }
+    }//GEN-LAST:event_tb_med_nKeyTyped
+
+    private void tb_col_nKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tb_col_nKeyTyped
+        // TODO add your handling code here:
+        ValidarLetras(evt);
+    }//GEN-LAST:event_tb_col_nKeyTyped
+
+    private void tb_col_sKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tb_col_sKeyTyped
+        // TODO add your handling code here:
+        ValidarLetras(evt);
+    }//GEN-LAST:event_tb_col_sKeyTyped
+
+    private void tb_col_eKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tb_col_eKeyTyped
+        // TODO add your handling code here:
+        ValidarLetras(evt);
+    }//GEN-LAST:event_tb_col_eKeyTyped
+
+    private void tb_col_oKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tb_col_oKeyTyped
+        // TODO add your handling code here:
+        ValidarLetras(evt);
+    }//GEN-LAST:event_tb_col_oKeyTyped
+
+    private void tb_col_neKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tb_col_neKeyTyped
+        // TODO add your handling code here:
+        ValidarLetras(evt);
+    }//GEN-LAST:event_tb_col_neKeyTyped
+
+    private void tb_col_noKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tb_col_noKeyTyped
+        // TODO add your handling code here:
+        ValidarLetras(evt);
+    }//GEN-LAST:event_tb_col_noKeyTyped
+
+    private void tb_col_seKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tb_col_seKeyTyped
+        // TODO add your handling code here:
+        ValidarLetras(evt);
+    }//GEN-LAST:event_tb_col_seKeyTyped
+
+    private void tb_col_soKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tb_col_soKeyTyped
+        // TODO add your handling code here:
+        ValidarLetras(evt);
+    }//GEN-LAST:event_tb_col_soKeyTyped
+
+    private void tb_med_sKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tb_med_sKeyTyped
+        // TODO add your handling code here:
+          char n = evt.getKeyChar();
+       
+       if(!Character.isDigit(n) && n!='.')
+       {
+           evt.consume();
+       }
+       else if(tb_med_s.getText().contains(".") && n == '.')
+       {
+           evt.consume();
+       }
+    }//GEN-LAST:event_tb_med_sKeyTyped
+
+    private void tb_med_eKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tb_med_eKeyTyped
+        // TODO add your handling code here:
+          char n = evt.getKeyChar();
+       
+       if(!Character.isDigit(n) && n!='.')
+       {
+           evt.consume();
+       }
+       else if(tb_med_e.getText().contains(".") && n == '.')
+       {
+           evt.consume();
+       }
+    }//GEN-LAST:event_tb_med_eKeyTyped
+
+    private void tb_med_oKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tb_med_oKeyTyped
+        // TODO add your handling code here:
+          char n = evt.getKeyChar();
+       
+       if(!Character.isDigit(n) && n!='.')
+       {
+           evt.consume();
+       }
+       else if(tb_med_o.getText().contains(".") && n == '.')
+       {
+           evt.consume();
+       }
+    }//GEN-LAST:event_tb_med_oKeyTyped
+
+    private void tb_med_neKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tb_med_neKeyTyped
+        // TODO add your handling code here:
+          char n = evt.getKeyChar();
+       
+       if(!Character.isDigit(n) && n!='.')
+       {
+           evt.consume();
+       }
+       else if(tb_med_ne.getText().contains(".") && n == '.')
+       {
+           evt.consume();
+       }
+    }//GEN-LAST:event_tb_med_neKeyTyped
+
+    private void tb_med_noKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tb_med_noKeyTyped
+        // TODO add your handling code here:
+          char n = evt.getKeyChar();
+       
+       if(!Character.isDigit(n) && n!='.')
+       {
+           evt.consume();
+       }
+       else if(tb_med_no.getText().contains(".") && n == '.')
+       {
+           evt.consume();
+       }
+    }//GEN-LAST:event_tb_med_noKeyTyped
+
+    private void tb_med_seKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tb_med_seKeyTyped
+        // TODO add your handling code here:
+          char n = evt.getKeyChar();
+       
+       if(!Character.isDigit(n) && n!='.')
+       {
+           evt.consume();
+       }
+       else if(tb_med_se.getText().contains(".") && n == '.')
+       {
+           evt.consume();
+       }
+    }//GEN-LAST:event_tb_med_seKeyTyped
+
+    private void tb_med_soKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tb_med_soKeyTyped
+        // TODO add your handling code here:
+         char n = evt.getKeyChar();
+       
+       if(!Character.isDigit(n) && n!='.')
+       {
+           evt.consume();
+       }
+       else if(tb_med_so.getText().contains(".") && n == '.')
+       {
+           evt.consume();
+       }
+    }//GEN-LAST:event_tb_med_soKeyTyped
+
+    private void tb_testigo_uno_nombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tb_testigo_uno_nombreKeyTyped
+        // TODO add your handling code here:
+        ValidarLetras(evt);
+    }//GEN-LAST:event_tb_testigo_uno_nombreKeyTyped
+
+    private void tb_testigo_uno_appatKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tb_testigo_uno_appatKeyTyped
+        // TODO add your handling code here:
+        ValidarLetras(evt);
+    }//GEN-LAST:event_tb_testigo_uno_appatKeyTyped
+
+    private void tb_testigo_uno_apmatKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tb_testigo_uno_apmatKeyTyped
+        // TODO add your handling code here:
+        ValidarLetras(evt);
+    }//GEN-LAST:event_tb_testigo_uno_apmatKeyTyped
+
+    private void tb_testigo_dos_nombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tb_testigo_dos_nombreKeyTyped
+        // TODO add your handling code here:
+        ValidarLetras(evt);
+    }//GEN-LAST:event_tb_testigo_dos_nombreKeyTyped
+
+    private void tb_testigo_dos_appatKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tb_testigo_dos_appatKeyTyped
+        // TODO add your handling code here:
+        ValidarLetras(evt);
+    }//GEN-LAST:event_tb_testigo_dos_appatKeyTyped
+
+    private void tb_testigo_dos_apmatKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tb_testigo_dos_apmatKeyTyped
+        // TODO add your handling code here:
+        ValidarLetras(evt);
+    }//GEN-LAST:event_tb_testigo_dos_apmatKeyTyped
+
+    private void tb_testigo_tres_nombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tb_testigo_tres_nombreKeyTyped
+        // TODO add your handling code here:
+        ValidarLetras(evt);
+    }//GEN-LAST:event_tb_testigo_tres_nombreKeyTyped
+
+    private void tb_testigo_tres_appatKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tb_testigo_tres_appatKeyTyped
+        // TODO add your handling code here:
+        ValidarLetras(evt);
+    }//GEN-LAST:event_tb_testigo_tres_appatKeyTyped
+
+    private void tb_testigo_tres_apmatKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tb_testigo_tres_apmatKeyTyped
+        // TODO add your handling code here:
+        ValidarLetras(evt);
+    }//GEN-LAST:event_tb_testigo_tres_apmatKeyTyped
+
+       
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -895,21 +1297,20 @@ public class Nueva_constancia extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Nueva_constancia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(nueva_constancia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Nueva_constancia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(nueva_constancia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Nueva_constancia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(nueva_constancia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Nueva_constancia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(nueva_constancia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Nueva_constancia().setVisible(true);
+                new nueva_constancia().setVisible(true);
                 
             }
         });
@@ -918,9 +1319,6 @@ public class Nueva_constancia extends javax.swing.JFrame {
         /*
         RECIBO UNA LISTA EXTRAÍDA DE LA BASE DE DATOS PARA RELLENAR LOS COMBOBOX
         */
-        Constancia constancia = new Constancia();
-        int id_constancia = constancia.ultimoID()+1;
-        tb_folio.setText(Integer.toString(id_constancia));
         ResultSet rs;
         Miembro_comisariado_ejidal mce = new Miembro_comisariado_ejidal();
         Miembro_consejo_vigilancia mcv = new Miembro_consejo_vigilancia();
@@ -947,12 +1345,9 @@ public class Nueva_constancia extends javax.swing.JFrame {
             while(rs.next()){
                 cb_cv_presidente.addItem(rs.getString(1)+","+rs.getString(2)+" "+rs.getString(3)+" "+rs.getString(4));
             }
-            rs = mcv.Buscar_por_cargo("PRIMER SECRETARIO");
+            rs = mcv.Buscar_por_cargo("SECRETARIO");
             while(rs.next()){
                 cb_cv_secretario.addItem(rs.getString(1)+","+rs.getString(2)+" "+rs.getString(3)+" "+rs.getString(4));
-            }
-            rs = mcv.Buscar_por_cargo("SEGUNDO SECRETARIO");
-            while(rs.next()){
                 cb_cv_secretario_dos.addItem(rs.getString(1)+","+rs.getString(2)+" "+rs.getString(3)+" "+rs.getString(4));
             }
         } catch (SQLException e) {
@@ -1007,6 +1402,28 @@ public class Nueva_constancia extends javax.swing.JFrame {
             
         }
     }
+    
+    public void ValidarLetras(KeyEvent evt){
+        char l=evt.getKeyChar();
+        if(!Character.isLetter(l) && l !=KeyEvent.VK_SPACE)
+            {
+                evt.consume();
+            }
+    }
+    
+     /*public void ValidarNum(KeyEvent evt){
+        
+        char n=evt.getKeyChar();
+        if(!Character.isDigit(n) && n !='.')
+        {
+            evt.consume();
+        }  
+     }*/
+    
+    
+                    
+ 
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Pane_principal;
@@ -1024,6 +1441,12 @@ public class Nueva_constancia extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_cv_secretario;
     private javax.swing.JComboBox<String> cb_cv_secretario_dos;
     private javax.swing.JComboBox<String> cb_tipo_terreno;
+    private javax.swing.JLabel et_error;
+    private javax.swing.JLabel et_error1;
+    private javax.swing.JLabel et_error2;
+    private javax.swing.JLabel et_error3;
+    private javax.swing.JLabel et_error4;
+    private javax.swing.JLabel et_error5;
     private javax.swing.JLabel fecha_label;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1036,7 +1459,6 @@ public class Nueva_constancia extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
@@ -1058,7 +1480,6 @@ public class Nueva_constancia extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
@@ -1118,6 +1539,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
     private javax.swing.JTextField tb_testigo_uno_appat;
     private javax.swing.JTextField tb_testigo_uno_nombre;
     private javax.swing.JTextField tb_ubicacion_terreno;
-    private javax.swing.JLabel texto1;
     // End of variables declaration//GEN-END:variables
+
+   
 }
