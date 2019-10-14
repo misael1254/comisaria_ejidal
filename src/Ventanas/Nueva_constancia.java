@@ -170,7 +170,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
             }
         });
         getContentPane().add(bt_cancelar);
-        bt_cancelar.setBounds(960, 640, 100, 23);
+        bt_cancelar.setBounds(960, 640, 100, 30);
 
         bt_generar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         bt_generar.setText("GENERAR");
@@ -180,7 +180,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
             }
         });
         getContentPane().add(bt_generar);
-        bt_generar.setBounds(1070, 640, 100, 23);
+        bt_generar.setBounds(1070, 640, 100, 30);
 
         Pane_principal.setBackground(new java.awt.Color(255, 255, 255));
         Pane_principal.setForeground(new java.awt.Color(255, 153, 153));
@@ -188,7 +188,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
         getContentPane().add(Pane_principal);
         Pane_principal.setBounds(190, 120, 980, 520);
         getContentPane().add(tb_folio);
-        tb_folio.setBounds(70, 160, 73, 20);
+        tb_folio.setBounds(70, 160, 73, 30);
 
         label_folio.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         label_folio.setText("FOLIO");
@@ -208,6 +208,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
         jPane2.setBackground(new java.awt.Color(255, 255, 255));
         jPane2.setLayout(null);
 
+        tb_med_so.setText("0");
         tb_med_so.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 tb_med_soKeyTyped(evt);
@@ -243,6 +244,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
         jPane2.add(tb_med_s);
         tb_med_s.setBounds(290, 180, 50, 30);
 
+        tb_med_n.setText("0");
         tb_med_n.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 tb_med_nKeyTyped(evt);
@@ -461,7 +463,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
 
         jLabel47.setText("jLabel47");
         jPane2.add(jLabel47);
-        jLabel47.setBounds(20, 10, 40, 14);
+        jLabel47.setBounds(20, 10, 48, 16);
 
         getContentPane().add(jPane2);
         jPane2.setBounds(20, 460, 90, 40);
@@ -651,7 +653,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
 
         jLabel48.setText("jLabel48");
         jPanel3.add(jLabel48);
-        jLabel48.setBounds(20, 10, 40, 14);
+        jLabel48.setBounds(20, 10, 48, 16);
 
         getContentPane().add(jPanel3);
         jPanel3.setBounds(20, 520, 90, 40);
@@ -664,7 +666,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
             }
         });
         getContentPane().add(bt_siguiente);
-        bt_siguiente.setBounds(650, 640, 100, 23);
+        bt_siguiente.setBounds(650, 640, 100, 30);
 
         bt_anterior.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         bt_anterior.setText("ANTERIOR");
@@ -674,7 +676,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
             }
         });
         getContentPane().add(bt_anterior);
-        bt_anterior.setBounds(490, 640, 100, 23);
+        bt_anterior.setBounds(490, 640, 100, 30);
 
         jPane1.setBackground(new java.awt.Color(255, 255, 255));
         jPane1.setLayout(null);
@@ -782,7 +784,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
 
         jLabel29.setText("jLabel29");
         jPane1.add(jLabel29);
-        jLabel29.setBounds(20, 10, 40, 14);
+        jLabel29.setBounds(20, 10, 48, 16);
 
         et_error.setForeground(new java.awt.Color(204, 0, 0));
         jPane1.add(et_error);
@@ -847,7 +849,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
         cb_tipo_terreno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "LOTE", "LOTE CON CASA HAB.", "PARCELA", "FRACCIÓN DE PARC." }));
         cb_tipo_terreno.setOpaque(false);
         getContentPane().add(cb_tipo_terreno);
-        cb_tipo_terreno.setBounds(20, 280, 150, 20);
+        cb_tipo_terreno.setBounds(20, 280, 150, 26);
 
         fecha_label.setText("jLabel4");
         getContentPane().add(fecha_label);
@@ -938,7 +940,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
             System.out.println("CEDENTE");
        
        Constancia constancia = new Constancia();
-       int id_constancia = constancia.ultimoID()+1;
+       int id_constancia = Integer.parseInt(tb_folio.getText().toString());
        constancia.setFolio(id_constancia);
        constancia.setFecha_exp(fecha_label.getText());
        constancia.setId_terreno(id_terreno);
@@ -1319,6 +1321,9 @@ public class Nueva_constancia extends javax.swing.JFrame {
         /*
         RECIBO UNA LISTA EXTRAÍDA DE LA BASE DE DATOS PARA RELLENAR LOS COMBOBOX
         */
+        Constancia constancia = new Constancia();
+        int id_constancia = constancia.ultimoID()+1;
+        tb_folio.setText(String.valueOf(id_constancia));
         ResultSet rs;
         Miembro_comisariado_ejidal mce = new Miembro_comisariado_ejidal();
         Miembro_consejo_vigilancia mcv = new Miembro_consejo_vigilancia();
@@ -1345,9 +1350,12 @@ public class Nueva_constancia extends javax.swing.JFrame {
             while(rs.next()){
                 cb_cv_presidente.addItem(rs.getString(1)+","+rs.getString(2)+" "+rs.getString(3)+" "+rs.getString(4));
             }
-            rs = mcv.Buscar_por_cargo("SECRETARIO");
+            rs = mcv.Buscar_por_cargo("PRIMER SECRETARIO");
             while(rs.next()){
                 cb_cv_secretario.addItem(rs.getString(1)+","+rs.getString(2)+" "+rs.getString(3)+" "+rs.getString(4));
+            }
+            rs = mcv.Buscar_por_cargo("SEGUNDO SECRETARIO");
+            while(rs.next()){
                 cb_cv_secretario_dos.addItem(rs.getString(1)+","+rs.getString(2)+" "+rs.getString(3)+" "+rs.getString(4));
             }
         } catch (SQLException e) {

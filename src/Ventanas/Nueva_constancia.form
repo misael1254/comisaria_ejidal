@@ -83,7 +83,7 @@
     <Component class="javax.swing.JTextField" name="tb_folio">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="70" y="160" width="73" height="-1"/>
+          <AbsoluteConstraints x="70" y="160" width="73" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -143,6 +143,9 @@
       </Layout>
       <SubComponents>
         <Component class="javax.swing.JTextField" name="tb_med_so">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="0"/>
+          </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tb_med_soKeyTyped"/>
           </Events>
@@ -192,6 +195,9 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JTextField" name="tb_med_n">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="0"/>
+          </Properties>
           <Events>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tb_med_nKeyTyped"/>
           </Events>
