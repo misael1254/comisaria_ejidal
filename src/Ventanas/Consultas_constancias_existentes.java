@@ -31,6 +31,7 @@ public class Consultas_constancias_existentes extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         bt_consulta_constancias = new javax.swing.JButton();
+        bt_modificar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -69,7 +70,7 @@ public class Consultas_constancias_existentes extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 660, -1, 37));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 660, -1, 37));
 
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton2.setText("<html> <head> </head> <body> <div align=\"center\"><p>CONSULTAR</p><p> INFORMACIÓN</p></div> </body> </html>  ");
@@ -78,7 +79,7 @@ public class Consultas_constancias_existentes extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 660, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 660, -1, -1));
 
         bt_consulta_constancias.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         bt_consulta_constancias.setText("<html> <head> </head> <body> <div align=\"center\"><p>MOSTRAR</p><p>CONSTANCIAS</p></div> </body> </html>  ");
@@ -87,7 +88,15 @@ public class Consultas_constancias_existentes extends javax.swing.JFrame {
                 bt_consulta_constanciasActionPerformed(evt);
             }
         });
-        getContentPane().add(bt_consulta_constancias, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 660, 110, -1));
+        getContentPane().add(bt_consulta_constancias, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 660, 110, -1));
+
+        bt_modificar.setText("MODIFICAR");
+        bt_modificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_modificarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bt_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 660, 120, 40));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/C.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
@@ -226,6 +235,22 @@ public class Consultas_constancias_existentes extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_formWindowClosing
 
+    private void bt_modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_modificarActionPerformed
+        // TODO add your handling code here:
+        if(Tabla_prueba.getSelectedRow()==-1){
+              JOptionPane.showMessageDialog(null,"NO SE HA SELECCIONADO NINGUN ELEMENTO");
+          }else{
+              DefaultTableModel tabconsul;
+              tabconsul = (DefaultTableModel)Tabla_prueba.getModel();
+              String aux = (String) tabconsul.getValueAt(Tabla_prueba.getSelectedRow(), 0);
+              int no_constancia = Integer.parseInt(aux);
+              Modificar_constancia modificar_constancia = new Modificar_constancia();
+              modificar_constancia.setNo_constancia(no_constancia);
+              modificar_constancia.Establecer_info();
+              modificar_constancia.setVisible(true);
+          }
+    }//GEN-LAST:event_bt_modificarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -266,6 +291,7 @@ public class Consultas_constancias_existentes extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private rojerusan.RSTableMetro Tabla_prueba;
     private javax.swing.JButton bt_consulta_constancias;
+    private javax.swing.JButton bt_modificar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel2;
