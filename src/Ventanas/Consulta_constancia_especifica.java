@@ -146,6 +146,7 @@ public class Consulta_constancia_especifica extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setAlwaysOnTop(true);
         setLocation(new java.awt.Point(400, 25));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setMaximumSize(new java.awt.Dimension(520, 2372));
         jPanel2.setMinimumSize(new java.awt.Dimension(520, 2372));
@@ -478,6 +479,8 @@ public class Consulta_constancia_especifica extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(jPanel2);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 566, 634));
+
         bt_aceptar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         bt_aceptar.setText("ACEPTAR");
         bt_aceptar.addActionListener(new java.awt.event.ActionListener() {
@@ -485,25 +488,7 @@ public class Consulta_constancia_especifica extends javax.swing.JFrame {
                 bt_aceptarActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 566, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(218, 218, 218)
-                .addComponent(bt_aceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 634, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(bt_aceptar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        getContentPane().add(bt_aceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 650, 92, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

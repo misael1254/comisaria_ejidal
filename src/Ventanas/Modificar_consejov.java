@@ -5,6 +5,8 @@
  */
 package Ventanas;
 
+import java.awt.event.KeyEvent;
+
 /**
  *
  * @author hazel
@@ -28,13 +30,13 @@ public class Modificar_consejov extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel5 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
+        JP_ApMaterno = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        JP_CURP = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
+        JP_Nombre = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
+        JP_ApPaterno = new javax.swing.JPanel();
         jComboBox1 = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -44,87 +46,110 @@ public class Modificar_consejov extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setText("APELLIDO ");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 210, -1, -1));
 
-        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        JP_ApMaterno.setBackground(new java.awt.Color(255, 255, 255));
+        JP_ApMaterno.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        JP_ApMaterno.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JP_ApMaternoKeyTyped(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout JP_ApMaternoLayout = new javax.swing.GroupLayout(JP_ApMaterno);
+        JP_ApMaterno.setLayout(JP_ApMaternoLayout);
+        JP_ApMaternoLayout.setHorizontalGroup(
+            JP_ApMaternoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 128, Short.MAX_VALUE)
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        JP_ApMaternoLayout.setVerticalGroup(
+            JP_ApMaternoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 210, -1, 36));
+        getContentPane().add(JP_ApMaterno, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 210, -1, 36));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setText("PATERNO ");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 230, -1, -1));
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        JP_CURP.setBackground(new java.awt.Color(255, 255, 255));
+        JP_CURP.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        JP_CURP.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        JP_CURP.setDoubleBuffered(false);
+        JP_CURP.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JP_CURPKeyTyped(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout JP_CURPLayout = new javax.swing.GroupLayout(JP_CURP);
+        JP_CURP.setLayout(JP_CURPLayout);
+        JP_CURPLayout.setHorizontalGroup(
+            JP_CURPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 226, Short.MAX_VALUE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        JP_CURPLayout.setVerticalGroup(
+            JP_CURPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 26, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 150, -1, -1));
+        getContentPane().add(JP_CURP, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 150, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel7.setText("MATERNO");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 230, 59, -1));
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        JP_Nombre.setBackground(new java.awt.Color(255, 255, 255));
+        JP_Nombre.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        JP_Nombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JP_NombreKeyTyped(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout JP_NombreLayout = new javax.swing.GroupLayout(JP_Nombre);
+        JP_Nombre.setLayout(JP_NombreLayout);
+        JP_NombreLayout.setHorizontalGroup(
+            JP_NombreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 148, Short.MAX_VALUE)
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        JP_NombreLayout.setVerticalGroup(
+            JP_NombreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, -1, 36));
+        getContentPane().add(JP_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, -1, 36));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel8.setText("OCUPACIÓN");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 290, -1, -1));
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        JP_ApPaterno.setBackground(new java.awt.Color(255, 255, 255));
+        JP_ApPaterno.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        JP_ApPaterno.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JP_ApPaternoKeyTyped(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout JP_ApPaternoLayout = new javax.swing.GroupLayout(JP_ApPaterno);
+        JP_ApPaterno.setLayout(JP_ApPaternoLayout);
+        JP_ApPaternoLayout.setHorizontalGroup(
+            JP_ApPaternoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 152, Short.MAX_VALUE)
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        JP_ApPaternoLayout.setVerticalGroup(
+            JP_ApPaternoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 210, -1, 36));
+        getContentPane().add(JP_ApPaterno, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 210, -1, 36));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 290, -1, -1));
@@ -151,11 +176,41 @@ public class Modificar_consejov extends javax.swing.JFrame {
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MCDV.jpg"))); // NOI18N
         jLabel4.setText("jLabel4");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 390));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 370));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void JP_CURPKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JP_CURPKeyTyped
+        // TODO add your handling code here:
+        //CHECAAAAR
+    }//GEN-LAST:event_JP_CURPKeyTyped
+
+    private void JP_NombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JP_NombreKeyTyped
+        // TODO add your handling code here:
+        ValidarLetras(evt);
+    }//GEN-LAST:event_JP_NombreKeyTyped
+
+    private void JP_ApPaternoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JP_ApPaternoKeyTyped
+        // TODO add your handling code here:
+        ValidarLetras(evt);
+    }//GEN-LAST:event_JP_ApPaternoKeyTyped
+
+    private void JP_ApMaternoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JP_ApMaternoKeyTyped
+        // TODO add your handling code here:
+        ValidarLetras(evt);
+    }//GEN-LAST:event_JP_ApMaternoKeyTyped
+
+    
+    
+    
+    public void ValidarLetras(KeyEvent evt){
+        char l=evt.getKeyChar();
+        if(!Character.isLetter(l) && l !=KeyEvent.VK_SPACE)
+            {
+                evt.consume();
+            }
+    }
     /**
      * @param args the command line arguments
      */
@@ -192,6 +247,10 @@ public class Modificar_consejov extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel JP_ApMaterno;
+    private javax.swing.JPanel JP_ApPaterno;
+    private javax.swing.JPanel JP_CURP;
+    private javax.swing.JPanel JP_Nombre;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
@@ -203,9 +262,5 @@ public class Modificar_consejov extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     // End of variables declaration//GEN-END:variables
 }

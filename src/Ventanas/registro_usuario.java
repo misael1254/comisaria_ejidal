@@ -3,6 +3,7 @@ package Ventanas;
 import javax.swing.JOptionPane;
 import comisaria_db.*;
 import Tablas.Usuario;
+import java.awt.event.KeyEvent;
 import java.net.UnknownHostException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -45,6 +46,12 @@ public class registro_usuario extends javax.swing.JFrame {
             }
         });
         getContentPane().setLayout(null);
+
+        tb_usuario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tb_usuarioKeyTyped(evt);
+            }
+        });
         getContentPane().add(tb_usuario);
         tb_usuario.setBounds(680, 240, 120, 30);
         getContentPane().add(tb_contraseña);
@@ -193,7 +200,13 @@ public class registro_usuario extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_bt_registrarActionPerformed
 
+    private void tb_usuarioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tb_usuarioKeyTyped
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_tb_usuarioKeyTyped
 
+
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
