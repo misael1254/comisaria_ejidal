@@ -8,6 +8,7 @@ package Ventanas;
 import Tablas.Miembro_comisariado_ejidal;
 import Tablas.Miembro_consejo_vigilancia;
 import comisaria_db.*;
+import java.awt.event.KeyEvent;
 import java.net.UnknownHostException;
 import java.util.*;
 import java.util.logging.Level;
@@ -68,8 +69,20 @@ public class reg_miembro extends javax.swing.JFrame {
         jLabel1.setText("NOMBRE");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(510, 300, 60, 20);
+
+        tb_nombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tb_nombreKeyTyped(evt);
+            }
+        });
         getContentPane().add(tb_nombre);
         tb_nombre.setBounds(610, 290, 210, 40);
+
+        tb_ap_pat.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tb_ap_patKeyTyped(evt);
+            }
+        });
         getContentPane().add(tb_ap_pat);
         tb_ap_pat.setBounds(610, 360, 210, 40);
 
@@ -86,6 +99,11 @@ public class reg_miembro extends javax.swing.JFrame {
         tb_ap_mat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tb_ap_matActionPerformed(evt);
+            }
+        });
+        tb_ap_mat.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tb_ap_matKeyTyped(evt);
             }
         });
         getContentPane().add(tb_ap_mat);
@@ -211,6 +229,21 @@ public class reg_miembro extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_bt_registrarActionPerformed
 
+    private void tb_nombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tb_nombreKeyTyped
+        // TODO add your handling code here:
+        ValidarLetras(evt);
+    }//GEN-LAST:event_tb_nombreKeyTyped
+
+    private void tb_ap_patKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tb_ap_patKeyTyped
+        // TODO add your handling code here:
+        ValidarLetras(evt);
+    }//GEN-LAST:event_tb_ap_patKeyTyped
+
+    private void tb_ap_matKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tb_ap_matKeyTyped
+        // TODO add your handling code here:
+        ValidarLetras(evt);
+    }//GEN-LAST:event_tb_ap_matKeyTyped
+
     public void rellenar(){
      menu_registro obj = new menu_registro();
      opcion=obj.opcion;
@@ -238,6 +271,16 @@ public class reg_miembro extends javax.swing.JFrame {
         
         label1.setText(Integer.toString(opcion));
     }
+    
+    public void ValidarLetras(KeyEvent evt){
+        char l=evt.getKeyChar();
+        if(!Character.isLetter(l) && l !=KeyEvent.VK_SPACE)
+            {
+                evt.consume();
+            }
+    }
+
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
