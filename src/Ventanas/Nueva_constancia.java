@@ -1427,7 +1427,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
             evt.consume();
         }  
      }*/
-    
+    //hola sharon 
     
                     
  
