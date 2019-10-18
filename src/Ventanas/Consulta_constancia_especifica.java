@@ -146,10 +146,9 @@ public class Consulta_constancia_especifica extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setAlwaysOnTop(true);
         setLocation(new java.awt.Point(400, 25));
-<<<<<<< HEAD
+
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-=======
->>>>>>> origin/master
+
 
         jPanel2.setMaximumSize(new java.awt.Dimension(520, 2372));
         jPanel2.setMinimumSize(new java.awt.Dimension(520, 2372));

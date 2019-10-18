@@ -170,7 +170,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
             }
         });
         getContentPane().add(bt_cancelar);
-        bt_cancelar.setBounds(960, 640, 100, 30);
+        bt_cancelar.setBounds(960, 640, 100, 23);
 
         bt_generar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         bt_generar.setText("GENERAR");
@@ -180,7 +180,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
             }
         });
         getContentPane().add(bt_generar);
-        bt_generar.setBounds(1070, 640, 100, 30);
+        bt_generar.setBounds(1070, 640, 100, 23);
 
         Pane_principal.setBackground(new java.awt.Color(255, 255, 255));
         Pane_principal.setForeground(new java.awt.Color(255, 153, 153));
@@ -244,7 +244,11 @@ public class Nueva_constancia extends javax.swing.JFrame {
         jPane2.add(tb_med_s);
         tb_med_s.setBounds(290, 180, 50, 30);
 
-        tb_med_n.setText("0");
+        tb_med_n.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                tb_med_nFocusLost(evt);
+            }
+        });
         tb_med_n.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 tb_med_nKeyTyped(evt);
@@ -463,7 +467,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
 
         jLabel47.setText("jLabel47");
         jPane2.add(jLabel47);
-        jLabel47.setBounds(20, 10, 48, 16);
+        jLabel47.setBounds(20, 10, 40, 14);
 
         getContentPane().add(jPane2);
         jPane2.setBounds(20, 460, 90, 40);
@@ -653,7 +657,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
 
         jLabel48.setText("jLabel48");
         jPanel3.add(jLabel48);
-        jLabel48.setBounds(20, 10, 48, 16);
+        jLabel48.setBounds(20, 10, 40, 14);
 
         getContentPane().add(jPanel3);
         jPanel3.setBounds(20, 520, 90, 40);
@@ -666,7 +670,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
             }
         });
         getContentPane().add(bt_siguiente);
-        bt_siguiente.setBounds(650, 640, 100, 30);
+        bt_siguiente.setBounds(650, 640, 100, 23);
 
         bt_anterior.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         bt_anterior.setText("ANTERIOR");
@@ -676,7 +680,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
             }
         });
         getContentPane().add(bt_anterior);
-        bt_anterior.setBounds(490, 640, 100, 30);
+        bt_anterior.setBounds(490, 640, 100, 23);
 
         jPane1.setBackground(new java.awt.Color(255, 255, 255));
         jPane1.setLayout(null);
@@ -784,7 +788,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
 
         jLabel29.setText("jLabel29");
         jPane1.add(jLabel29);
-        jLabel29.setBounds(20, 10, 48, 16);
+        jLabel29.setBounds(20, 10, 40, 14);
 
         et_error.setForeground(new java.awt.Color(204, 0, 0));
         jPane1.add(et_error);
@@ -849,7 +853,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
         cb_tipo_terreno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "LOTE", "LOTE CON CASA HAB.", "PARCELA", "FRACCIÓN DE PARC." }));
         cb_tipo_terreno.setOpaque(false);
         getContentPane().add(cb_tipo_terreno);
-        cb_tipo_terreno.setBounds(20, 280, 150, 26);
+        cb_tipo_terreno.setBounds(20, 280, 150, 20);
 
         fecha_label.setText("jLabel4");
         getContentPane().add(fecha_label);
@@ -1099,6 +1103,10 @@ public class Nueva_constancia extends javax.swing.JFrame {
        {
            evt.consume();
        }
+       
+       /*if(tb_med_n.getText().isEmpty()){
+           tb_med_n.setText("0");
+       }*/
     }//GEN-LAST:event_tb_med_nKeyTyped
 
     private void tb_col_nKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tb_col_nKeyTyped
@@ -1283,6 +1291,13 @@ public class Nueva_constancia extends javax.swing.JFrame {
         // TODO add your handling code here:
         ValidarLetras(evt);
     }//GEN-LAST:event_tb_testigo_tres_apmatKeyTyped
+
+    private void tb_med_nFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tb_med_nFocusLost
+        // TODO add your handling code here:
+        if(tb_med_n.getText().isEmpty()){
+            tb_med_n.setText("0");
+        }
+    }//GEN-LAST:event_tb_med_nFocusLost
 
        
     public static void main(String args[]) {
