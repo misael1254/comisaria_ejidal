@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="612" pageHeight="1008" whenNoDataType="AllSectionsNoDetail" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryNewPage="true" uuid="09063610-e136-4d94-87c0-d2f7366b5abf">
 	<property name="ireport.zoom" value="1.5"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="354"/>
+	<property name="ireport.y" value="369"/>
 	<parameter name="no_folio" class="java.lang.String"/>
 	<parameter name="propietario" class="java.lang.String">
 		<parameterDescription><![CDATA[]]></parameterDescription>
@@ -242,14 +242,14 @@
 				<textFieldExpression><![CDATA[$P{propietario}.toString()]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="397" y="50" width="166" height="19" uuid="d70f8c2c-b3bb-4b19-86d7-95850a94d1f2"/>
+				<reportElement x="320" y="50" width="166" height="19" uuid="d70f8c2c-b3bb-4b19-86d7-95850a94d1f2"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Consolas" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{tipo_terreno}.toString()]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="351" y="69" width="186" height="20" uuid="418f8689-4a5a-4c2b-a19f-a61c87d5cbf6"/>
+				<reportElement x="331" y="69" width="186" height="20" uuid="418f8689-4a5a-4c2b-a19f-a61c87d5cbf6"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="Consolas" size="12"/>
 				</textElement>

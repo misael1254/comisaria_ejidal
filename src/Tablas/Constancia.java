@@ -121,7 +121,7 @@ public class Constancia {
         }
         else{
             String sql="insert into constancias (no_folio,fecha_expedicion,id_terreno,id_cediente,nota,croquis,motivo) "
-                     + "values (?,?,?,?,?,?)";
+                     + "values (?,?,?,?,?,?,?)";
             try {
                 FileInputStream fi=null;
                 File fichero = new File(this.ruta_imagen);
