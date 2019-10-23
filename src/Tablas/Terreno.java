@@ -36,6 +36,7 @@ public class Terreno {
     private String col_NO;
     private String col_SE;
     private String col_SO;
+    private String nucle_agrario;
 
     
     private Conexion c = new Conexion();
@@ -196,6 +197,15 @@ public class Terreno {
         this.col_SO = col_SO;
     }
 
+    public String getNucle_agrario() {
+        return nucle_agrario;
+    }
+
+    public void setNucle_agrario(String nucle_agrario) {
+        this.nucle_agrario = nucle_agrario;
+    }
+    
+
     public Terreno() {
         this.id_terreno = 0;
         this.ubicacion = "";
@@ -221,7 +231,7 @@ public class Terreno {
     public boolean Registar(){
         try {
             String sql = "insert into terrenos (id_terreno,ubicacion,tipo_terreno,med_N,med_S,med_E,med_O,med_NE,med_NO,"
-                    + "med_SE,med_SO,col_N,col_S,col_E,col_O,col_NE,col_NO,col_SE,col_SO) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                    + "med_SE,med_SO,col_N,col_S,col_E,col_O,col_NE,col_NO,col_SE,col_SO,nucle_agrario) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             c.conectar();
             PreparedStatement ps = c.conex.prepareStatement(sql);
             ps.setInt(1,this.id_terreno);
@@ -243,6 +253,7 @@ public class Terreno {
             ps.setString(17,this.col_NO);
             ps.setString(18,this.col_SE);
             ps.setString(19,this.col_SO);
+            ps.setString(20,this.nucle_agrario);
             ps.execute();
             ps.close();
             return true;
@@ -256,7 +267,7 @@ public class Terreno {
     public boolean Modificar(){
         try {
             String sql = "update terrenos set ubicacion=?,tipo_terreno=?,med_N=?,med_S=?,med_E=?,med_O=?,med_NE=?,med_NO=?,med_SE=?,med_SO=?,"
-                    + "col_N=?,col_S=?,col_E=?,col_O=?,col_NE=?,col_NO=?,col_SE=?,col_SO=? where(id_terreno=?)";
+                    + "col_N=?,col_S=?,col_E=?,col_O=?,col_NE=?,col_NO=?,col_SE=?,col_SO=?,nucle_agrario=? where(id_terreno=?)";
             c.conectar();
             PreparedStatement ps = c.conex.prepareStatement(sql);
             ps.setString(1, this.ubicacion);
@@ -277,7 +288,8 @@ public class Terreno {
             ps.setString(16, this.col_NO);
             ps.setString(17, this.col_SE);
             ps.setString(18, this.col_SO);
-            ps.setInt(19,this.id_terreno);
+            ps.setString(19,this.nucle_agrario);
+            ps.setInt(20,this.id_terreno);
             ps.execute();
             ps.close();
             return true;

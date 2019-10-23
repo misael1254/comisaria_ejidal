@@ -63,14 +63,14 @@ public class Cedente {
     
     public boolean Registar(){
         try {
-            String sql = "insert into cedientes (nombre_cede,ap_pat_cede,ap_mat_cede) "
-                    + "values (?,?,?)";
+            String sql = "insert into cedientes (id_cediente,nombre_cede,ap_pat_cede,ap_mat_cede) "
+                    + "values (?,?,?,?)";
             c.conectar();
             PreparedStatement ps = c.conex.prepareStatement(sql);
-            //ps.setInt(1, this.id); ES AUTOINCREMENTABLE
-            ps.setString(1, this.nombre);
-            ps.setString(2, this.apellido_paterno);
-            ps.setString(3, this.apellido_materno);
+            ps.setInt(1, this.id); //ES AUTOINCREMENTABLE
+            ps.setString(2, this.nombre);
+            ps.setString(3, this.apellido_paterno);
+            ps.setString(4, this.apellido_materno);
             ps.execute();
             ps.close();
             return true;

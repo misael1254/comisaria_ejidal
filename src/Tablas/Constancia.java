@@ -26,6 +26,7 @@ public class Constancia {
     private int id_cediente;
     private String ruta_imagen;
     private Blob imagen = null;
+    private String motivo;
     
 
     private Conexion c = new Conexion();
@@ -79,6 +80,13 @@ public class Constancia {
     public void setRuta_imagen(String ruta_imagen) {
         this.ruta_imagen = ruta_imagen;
     }
+     public String getMotivo() {
+        return motivo;
+    }
+
+    public void setMotivo(String motivo) {
+        this.motivo = motivo;
+    }
     
     
    
@@ -86,14 +94,14 @@ public class Constancia {
         this.folio = 0;
         this.fecha_exp = "";
         this.nota = "";
-        this.id_cediente=0;
+        this.id_cediente=1;
         this.id_terreno=0;
     }
     
     public boolean Agregar(){
         if(this.ruta_imagen==null){
-            String sql="insert into constancias (no_folio,fecha_expedicion,id_terreno,id_cediente,nota) "
-                     + "values (?,?,?,?,?)";
+            String sql="insert into constancias (no_folio,fecha_expedicion,id_terreno,id_cediente,nota,motivo) "
+                     + "values (?,?,?,?,?,?)";
             try {
                 c.conectar();
                 PreparedStatement ps = c.conectar().prepareStatement(sql);
@@ -102,6 +110,7 @@ public class Constancia {
                 ps.setInt(3, this.id_terreno);
                 ps.setInt(4, this.id_cediente);
                 ps.setString(5, this.nota);
+                ps.setString(6,this.motivo);
                 ps.execute();
                 ps.close();
                 return true;
@@ -111,7 +120,7 @@ public class Constancia {
             }
         }
         else{
-            String sql="insert into constancias (no_folio,fecha_expedicion,id_terreno,id_cediente,nota,croquis) "
+            String sql="insert into constancias (no_folio,fecha_expedicion,id_terreno,id_cediente,nota,croquis,motivo) "
                      + "values (?,?,?,?,?,?)";
             try {
                 FileInputStream fi=null;
@@ -125,6 +134,7 @@ public class Constancia {
                 ps.setInt(4, this.id_cediente);
                 ps.setString(5, this.nota);
                 ps.setBinaryStream(6,fi,(int)fichero.length());
+                ps.setString(7,this.motivo);
                 ps.execute();
                 ps.close();
                 return true;
@@ -138,17 +148,20 @@ public class Constancia {
         }
           
      }
+    
      
      public boolean Modificar(int no_folio){
         if(this.ruta_imagen == null){
             try {
-                String sql="update constancias set no_folio=?,fecha_expedicion=?,nota=?"
+                String sql="update constancias set no_folio=?,fecha_expedicion=?,nota=?,motivo=?,id_cediente=? "
                     + "where(no_folio=?)";
                 PreparedStatement ps = c.conectar().prepareStatement(sql);
                 ps.setInt(1, this.folio);
                 ps.setString(2, this.fecha_exp);
                 ps.setString(3, this.nota);
-                ps.setInt(4, folio);
+                ps.setString(4, this.motivo);
+                ps.setInt(5, this.id_cediente);
+                ps.setInt(6, folio);
                 ps.execute();
                 ps.close();
                 return true;
@@ -161,14 +174,16 @@ public class Constancia {
                  FileInputStream fi=null;
                  File fichero = new File(this.ruta_imagen);
                  fi = new FileInputStream(fichero);
-                 String sql="update constancias set no_folio=?,fecha_expedicion=?,nota=?,croquis=? "
+                 String sql="update constancias set no_folio=?,fecha_expedicion=?,nota=?,croquis=?,motivo=?,id_cediente=? "
                     + "where(no_folio=?)";
                  PreparedStatement ps = c.conectar().prepareStatement(sql);
                  ps.setInt(1, this.folio);
                  ps.setString(2, this.fecha_exp);
                  ps.setString(3, this.nota);
                  ps.setBinaryStream(4,fi,(int)fichero.length());
-                 ps.setInt(5, folio);
+                 ps.setString(5, this.motivo);
+                 ps.setInt(6, this.id_cediente);
+                 ps.setInt(7, folio);
                  ps.execute();
                  ps.close(); 
                  return true;
@@ -210,12 +225,12 @@ public class Constancia {
                 rs = stm.executeQuery(sql);
 
                 while(rs.next()){ //RECORRO TODAS LAS FILAS DE CONSTANCIAS EXISTENTES
-                    String[] columnas = new String[30];
+                    String[] columnas = new String[32];
                     sql = "select constancias.no_folio,constancias.fecha_expedicion,cedientes.id_cediente,cedientes.nombre_cede,"
                             + "cedientes.ap_pat_cede,cedientes.ap_mat_cede,constancias_propietario.id_propietario,propietarios.nombre_prop,"
                             + "propietarios.ape_pat_prop,propietarios.ape_mat_prop,terrenos.id_terreno,terrenos.ubicacion,terrenos.tipo_terreno,terrenos.med_N,terrenos.col_N,"
                             + "terrenos.med_S,terrenos.col_S,terrenos.med_E,terrenos.col_E,terrenos.med_O,terrenos.col_O,"
-                            + "terrenos.med_NE,terrenos.col_NE,terrenos.med_NO,terrenos.col_NO,terrenos.med_SE,terrenos.col_SE,terrenos.med_SO,terrenos.col_SO,constancias.nota from constancias \n"
+                            + "terrenos.med_NE,terrenos.col_NE,terrenos.med_NO,terrenos.col_NO,terrenos.med_SE,terrenos.col_SE,terrenos.med_SO,terrenos.col_SO,constancias.nota,constancias.motivo,terrenos.nucle_agrario from constancias \n"
                             + "INNER JOIN terrenos on (terrenos.id_terreno = constancias.id_terreno and constancias.id_terreno='"+rs.getString(3)+"')\n"
                             + "INNER JOIN cedientes on (cedientes.id_cediente = constancias.id_cediente and constancias.id_cediente='"+rs.getString(4)+"')\n"
                             + "INNER JOIN constancias_propietario on (constancias_propietario.no_folio = constancias.no_folio and constancias.no_folio='"+rs.getString(1)+"')\n"
@@ -253,6 +268,8 @@ public class Constancia {
                         columnas[27] = rsaux.getString(28);
                         columnas[28] = rsaux.getString(29);
                         columnas[29] = rsaux.getString(30);
+                        columnas[30] = rsaux.getString(31);
+                        columnas[31] = rsaux.getString(32);
 
                         //falta agregar a los participantes del consejo de vigilancia y comité ejidal
                         Lista_constancias.add(columnas);
@@ -275,12 +292,12 @@ public class Constancia {
                 rs = stm.executeQuery(sql);
 
                 while(rs.next()){ //RECORRO TODAS LAS FILAS DE CONSTANCIAS EXISTENTES
-                    String[] columnas = new String[30];
+                    String[] columnas = new String[32];
                     sql = "select constancias.no_folio,constancias.fecha_expedicion,cedientes.id_cediente,cedientes.nombre_cede,"
                             + "cedientes.ap_pat_cede,cedientes.ap_mat_cede,constancias_propietario.id_propietario,propietarios.nombre_prop,"
                             + "propietarios.ape_pat_prop,propietarios.ape_mat_prop,terrenos.id_terreno,terrenos.ubicacion,terrenos.tipo_terreno,terrenos.med_N,terrenos.col_N,"
                             + "terrenos.med_S,terrenos.col_S,terrenos.med_E,terrenos.col_E,terrenos.med_O,terrenos.col_O,"
-                            + "terrenos.med_NE,terrenos.col_NE,terrenos.med_NO,terrenos.col_NO,terrenos.med_SE,terrenos.col_SE,terrenos.med_SO,terrenos.col_SO,constancias.nota from constancias \n"
+                            + "terrenos.med_NE,terrenos.col_NE,terrenos.med_NO,terrenos.col_NO,terrenos.med_SE,terrenos.col_SE,terrenos.med_SO,terrenos.col_SO,constancias.nota,constancias.motivo,terrenos.nucle_agrario from constancias \n"
                             + "INNER JOIN terrenos on (terrenos.id_terreno = constancias.id_terreno and constancias.id_terreno='"+rs.getString(3)+"')\n"
                             + "INNER JOIN cedientes on (cedientes.id_cediente = constancias.id_cediente and constancias.id_cediente='"+rs.getString(4)+"')\n"
                             + "INNER JOIN constancias_propietario on (constancias_propietario.no_folio = constancias.no_folio and constancias.no_folio='"+rs.getString(1)+"')\n"
@@ -318,6 +335,8 @@ public class Constancia {
                         columnas[27] = rsaux.getString(28);
                         columnas[28] = rsaux.getString(29);
                         columnas[29] = rsaux.getString(30);
+                        columnas[30] = rsaux.getString(31);
+                        columnas[31] = rsaux.getString(32);
                         //falta agregar a los participantes del consejo de vigilancia y comité ejidal
                         Lista_constancias.add(columnas);
                     }

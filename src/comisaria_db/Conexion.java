@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 
 public class Conexion {
     public Connection conex;
-    String bd="comisaria1";
+    String bd="comisaria";
     String url="jdbc:mariadb://localhost:3306/"+bd;
     String user="root";
     String password = "";

@@ -32,9 +32,7 @@ public class Consultas_constancias_existentes extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         bt_consulta_constancias = new javax.swing.JButton();
         bt_modificar = new javax.swing.JButton();
-
         bt_Eliminar = new javax.swing.JButton();
-
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -93,7 +91,6 @@ public class Consultas_constancias_existentes extends javax.swing.JFrame {
         });
         getContentPane().add(bt_consulta_constancias, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 660, 110, -1));
 
-        bt_modificar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         bt_modificar.setText("MODIFICAR");
         bt_modificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,18 +99,8 @@ public class Consultas_constancias_existentes extends javax.swing.JFrame {
         });
         getContentPane().add(bt_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 660, 120, 40));
 
-        bt_Eliminar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        bt_Eliminar.setText("ELIMINAR");
-        getContentPane().add(bt_Eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 660, -1, -1));
-
-        bt_modificar.setText("MODIFICAR");
-        bt_modificar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bt_modificarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(bt_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 660, 120, 40));
-
+        bt_Eliminar.setText("jButton3");
+        getContentPane().add(bt_Eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 670, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/C.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
@@ -265,6 +252,7 @@ public class Consultas_constancias_existentes extends javax.swing.JFrame {
               modificar_constancia.setNo_constancia(no_constancia);
               modificar_constancia.Establecer_info();
               modificar_constancia.setVisible(true);
+              dispose();
           }
     }//GEN-LAST:event_bt_modificarActionPerformed
 

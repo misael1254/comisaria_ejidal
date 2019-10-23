@@ -156,14 +156,22 @@ public class Modificar_constancia extends javax.swing.JFrame {
         jLabel46 = new javax.swing.JLabel();
         btn_subir_img = new javax.swing.JButton();
         jLabel49 = new javax.swing.JLabel();
+        jd_nucle_agrario = new com.toedter.calendar.JDateChooser();
+        jLabel50 = new javax.swing.JLabel();
         cb_tipo_terreno = new javax.swing.JComboBox<>();
         fecha_label = new javax.swing.JLabel();
         jd_fecha = new com.toedter.calendar.JDateChooser();
+        cb_motivo = new javax.swing.JComboBox<>();
         label_imagen = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("COMISARIA EJIDAL");
         setMinimumSize(new java.awt.Dimension(1366, 725));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
         getContentPane().setLayout(null);
 
         bt_cancelar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -174,7 +182,7 @@ public class Modificar_constancia extends javax.swing.JFrame {
             }
         });
         getContentPane().add(bt_cancelar);
-        bt_cancelar.setBounds(960, 640, 100, 23);
+        bt_cancelar.setBounds(960, 640, 100, 30);
 
         bt_actualizar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         bt_actualizar.setText("ACTUALIZAR");
@@ -184,7 +192,7 @@ public class Modificar_constancia extends javax.swing.JFrame {
             }
         });
         getContentPane().add(bt_actualizar);
-        bt_actualizar.setBounds(1070, 640, 110, 23);
+        bt_actualizar.setBounds(1070, 640, 110, 30);
 
         Pane_principal.setBackground(new java.awt.Color(255, 255, 255));
         Pane_principal.setForeground(new java.awt.Color(255, 153, 153));
@@ -192,7 +200,7 @@ public class Modificar_constancia extends javax.swing.JFrame {
         getContentPane().add(Pane_principal);
         Pane_principal.setBounds(190, 120, 980, 520);
         getContentPane().add(tb_folio);
-        tb_folio.setBounds(70, 160, 73, 20);
+        tb_folio.setBounds(70, 154, 73, 30);
 
         label_folio.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         label_folio.setText("FOLIO");
@@ -466,7 +474,7 @@ public class Modificar_constancia extends javax.swing.JFrame {
 
         jLabel47.setText("jLabel47");
         jPane2.add(jLabel47);
-        jLabel47.setBounds(20, 10, 40, 14);
+        jLabel47.setBounds(20, 10, 48, 16);
 
         getContentPane().add(jPane2);
         jPane2.setBounds(20, 460, 90, 40);
@@ -656,7 +664,7 @@ public class Modificar_constancia extends javax.swing.JFrame {
 
         jLabel48.setText("jLabel48");
         jPanel3.add(jLabel48);
-        jLabel48.setBounds(20, 10, 40, 14);
+        jLabel48.setBounds(20, 10, 48, 16);
 
         getContentPane().add(jPanel3);
         jPanel3.setBounds(20, 520, 90, 40);
@@ -669,7 +677,7 @@ public class Modificar_constancia extends javax.swing.JFrame {
             }
         });
         getContentPane().add(bt_siguiente);
-        bt_siguiente.setBounds(650, 640, 100, 23);
+        bt_siguiente.setBounds(650, 640, 100, 30);
 
         bt_anterior.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         bt_anterior.setText("ANTERIOR");
@@ -679,7 +687,7 @@ public class Modificar_constancia extends javax.swing.JFrame {
             }
         });
         getContentPane().add(bt_anterior);
-        bt_anterior.setBounds(490, 640, 100, 23);
+        bt_anterior.setBounds(490, 640, 100, 30);
 
         jPane1.setBackground(new java.awt.Color(255, 255, 255));
         jPane1.setLayout(null);
@@ -787,7 +795,7 @@ public class Modificar_constancia extends javax.swing.JFrame {
 
         jLabel29.setText("jLabel29");
         jPane1.add(jLabel29);
-        jLabel29.setBounds(20, 10, 40, 14);
+        jLabel29.setBounds(20, 10, 48, 16);
 
         getContentPane().add(jPane1);
         jPane1.setBounds(20, 400, 90, 40);
@@ -821,6 +829,11 @@ public class Modificar_constancia extends javax.swing.JFrame {
 
         jLabel49.setText("jLabel49");
         jPanel4.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+        jPanel4.add(jd_nucle_agrario, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 380, 160, 40));
+
+        jLabel50.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel50.setText("<html><div style=\"text-align: center\"><p>FECHA DE</p>POSESIÓN:<p></p></div></html>");
+        jPanel4.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 380, -1, -1));
 
         getContentPane().add(jPanel4);
         jPanel4.setBounds(20, 580, 90, 40);
@@ -828,13 +841,22 @@ public class Modificar_constancia extends javax.swing.JFrame {
         cb_tipo_terreno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "LOTE", "LOTE CON CASA HAB", "PARCELA", "FRACCIÓN DE PARC" }));
         cb_tipo_terreno.setOpaque(false);
         getContentPane().add(cb_tipo_terreno);
-        cb_tipo_terreno.setBounds(20, 280, 150, 20);
+        cb_tipo_terreno.setBounds(20, 280, 150, 26);
 
         fecha_label.setText("jLabel4");
         getContentPane().add(fecha_label);
         fecha_label.setBounds(60, 130, 110, 20);
         getContentPane().add(jd_fecha);
-        jd_fecha.setBounds(63, 200, 130, 20);
+        jd_fecha.setBounds(63, 200, 130, 40);
+
+        cb_motivo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SESIÓN", "ACTUALIZACIÓN" }));
+        cb_motivo.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cb_motivoItemStateChanged(evt);
+            }
+        });
+        getContentPane().add(cb_motivo);
+        cb_motivo.setBounds(20, 320, 150, 26);
 
         label_imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/NC.jpg"))); // NOI18N
         label_imagen.setText("j");
@@ -890,7 +912,12 @@ public class Modificar_constancia extends javax.swing.JFrame {
         terreno.setCol_E(tb_col_e.getText().toUpperCase());terreno.setCol_O(tb_col_o.getText().toUpperCase());
         terreno.setCol_NE(tb_col_ne.getText().toUpperCase());terreno.setCol_NO(tb_col_no.getText().toUpperCase());
         terreno.setCol_SE(tb_col_se.getText().toUpperCase());terreno.setCol_SO(tb_col_so.getText().toUpperCase());
-        
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            terreno.setNucle_agrario(formatter.format(jd_nucle_agrario.getDate()));
+        } catch (Exception e) {
+             JOptionPane.showMessageDialog(null, e);
+        }
         if(terreno.Modificar())
             System.out.println("TERRENO");
         
@@ -906,17 +933,18 @@ public class Modificar_constancia extends javax.swing.JFrame {
        
        Cedente cedente = new Cedente();
        int id_cediente = Integer.parseInt(Lista_constancias.get(0)[2]);
-       cedente.setId(id_cediente);
-       cedente.setNombre(tb_cedente_nombre.getText().toUpperCase());
-       cedente.setApellido_paterno(tb_cedente_appat.getText().toUpperCase());
-       cedente.setApellido_materno(tb_cedente_apmat.getText().toUpperCase());
-       if(cedente.Modificar())
-            System.out.println("CEDENTE");
+       if(cb_motivo.getSelectedItem().toString().toUpperCase().equals("SESIÓN") && Lista_constancias.get(0)[30].equals("SESIÓN")){
+            cedente.setId(id_cediente);
+            cedente.setNombre(tb_cedente_nombre.getText().toUpperCase());
+            cedente.setApellido_paterno(tb_cedente_appat.getText().toUpperCase());
+            cedente.setApellido_materno(tb_cedente_apmat.getText().toUpperCase());
+            if(cedente.Modificar())
+                System.out.println("CEDENTE");
+       }
        
        Constancia constancia = new Constancia();
        int id_constancia = Integer.parseInt(Lista_constancias.get(0)[0]);
        constancia.setFolio(id_constancia);
-       SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         try {
             constancia.setFecha_exp(formatter.format(jd_fecha.getDate()));
         } catch (Exception e) {
@@ -926,8 +954,42 @@ public class Modificar_constancia extends javax.swing.JFrame {
        constancia.setId_cediente(id_cediente);
        constancia.setNota(ta_nota.getText().toUpperCase());
        constancia.setRuta_imagen(this.ruta);
-       if(constancia.Modificar(Integer.parseInt(tb_folio.getText().toString())))
+       int id_cedente_anterior=0;
+       if(Lista_constancias.get(0)[30].equals("ACTUALIZACIÓN")){
+           if(cb_motivo.getSelectedItem().toString().toUpperCase().equals("ACTUALIZACIÓN")){
+                constancia.setMotivo(cb_motivo.getSelectedItem().toString().toUpperCase());
+           }
+           else{
+                constancia.setMotivo(cb_motivo.getSelectedItem().toString().toUpperCase());
+                id_cediente = cedente.ultimoID()+1;
+                cedente.setId(id_cediente);
+                cedente.setNombre(tb_cedente_nombre.getText().toUpperCase());
+                cedente.setApellido_paterno(tb_cedente_appat.getText().toUpperCase());
+                cedente.setApellido_materno(tb_cedente_apmat.getText().toUpperCase());
+                if(cedente.Registar()){
+                    System.out.println("REGISTRAR CEDENTE");
+                    constancia.setId_cediente(id_cediente);
+                }
+           }
+       }else{
+           if(cb_motivo.getSelectedItem().toString().toUpperCase().equals("ACTUALIZACIÓN")){
+               constancia.setMotivo(cb_motivo.getSelectedItem().toString().toUpperCase());
+               id_cedente_anterior = id_cediente;
+               constancia.setId_cediente(1);
+           }else{
+               constancia.setMotivo(cb_motivo.getSelectedItem().toString().toUpperCase());
+           }
+       }
+       if(constancia.Modificar(Integer.parseInt(tb_folio.getText()))){
             System.out.println("CONSTANCIA");
+            cedente.setId(id_cedente_anterior);
+            if(id_cedente_anterior!=0){
+                if(cedente.Eliminar())
+                        System.out.println("ELIMINADO CEDENTE ANTERIOR");
+            }
+            
+       }
+            
        
        Testigo testigo = new Testigo();
        int id_testigo1 = Integer.parseInt(Lista_testigos.get(0)[0]);
@@ -999,7 +1061,7 @@ public class Modificar_constancia extends javax.swing.JFrame {
        JOptionPane.showMessageDialog(null,"MODIFICADO CON ÉXITO");
        Consultas_constancias_existentes obj = new Consultas_constancias_existentes();
        obj.setVisible(true);
-       dispose();
+       this.dispose();
        
        
        
@@ -1253,6 +1315,32 @@ public class Modificar_constancia extends javax.swing.JFrame {
         ValidarLetras(evt);
     }//GEN-LAST:event_tb_testigo_tres_apmatKeyTyped
 
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+       Consultas_constancias_existentes obj = new Consultas_constancias_existentes();
+       obj.setVisible(true);
+       this.dispose();
+    }//GEN-LAST:event_formWindowClosing
+
+    private void cb_motivoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_motivoItemStateChanged
+        // TODO add your handling code here:
+        if(cb_motivo.getSelectedItem().equals("ACTUALIZACIÓN")){
+            tb_cedente_nombre.setText("");
+            tb_cedente_appat.setText("");
+            tb_cedente_apmat.setText("");
+            tb_cedente_nombre.setEditable(false);
+            tb_cedente_appat.setEditable(false);
+            tb_cedente_apmat.setEditable(false);
+        }
+        else{
+            tb_cedente_nombre.setText(Lista_constancias.get(0)[3]);
+            tb_cedente_appat.setText(Lista_constancias.get(0)[4]);
+            tb_cedente_apmat.setText(Lista_constancias.get(0)[5]);
+            tb_cedente_nombre.setEditable(true);
+            tb_cedente_appat.setEditable(true);
+            tb_cedente_apmat.setEditable(true);
+        }
+    }//GEN-LAST:event_cb_motivoItemStateChanged
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1347,6 +1435,7 @@ public class Modificar_constancia extends javax.swing.JFrame {
         try {
             jd_fecha.setDateFormatString("dd-MM-yyyy");
             jd_fecha.setDate(formatter.parse(Lista_constancias.get(0)[1]));
+            jd_nucle_agrario.setDate(formatter.parse(Lista_constancias.get(0)[31]));
         } catch (ParseException e) {
              JOptionPane.showMessageDialog(null, e);
         }
@@ -1360,6 +1449,11 @@ public class Modificar_constancia extends javax.swing.JFrame {
         for (int i = 0; i < cb_tipo_terreno.getItemCount(); i++) {
             if(Lista_constancias.get(0)[12].equals(cb_tipo_terreno.getItemAt(i))){
                 cb_tipo_terreno.setSelectedIndex(i);
+            }
+        }
+        for(int i = 0; i<cb_motivo.getItemCount();i++){
+            if(Lista_constancias.get(0)[30].equals(cb_motivo.getItemAt(i))){
+                cb_motivo.setSelectedIndex(i);
             }
         }
         
@@ -1497,6 +1591,7 @@ public class Modificar_constancia extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_cv_presidente;
     private javax.swing.JComboBox<String> cb_cv_secretario;
     private javax.swing.JComboBox<String> cb_cv_secretario_dos;
+    private javax.swing.JComboBox<String> cb_motivo;
     private javax.swing.JComboBox<String> cb_tipo_terreno;
     private javax.swing.JLabel fecha_label;
     private javax.swing.JLabel jLabel1;
@@ -1542,6 +1637,7 @@ public class Modificar_constancia extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -1553,6 +1649,7 @@ public class Modificar_constancia extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private com.toedter.calendar.JDateChooser jd_fecha;
+    private com.toedter.calendar.JDateChooser jd_nucle_agrario;
     private javax.swing.JLabel label_fecha;
     private javax.swing.JLabel label_folio;
     private javax.swing.JLabel label_imagen;
