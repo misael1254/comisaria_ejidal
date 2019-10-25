@@ -14,31 +14,21 @@
      propietarios.`nombre_prop`,
      propietarios.`ape_pat_prop`,
      propietarios.`ape_mat_prop`,
-     terrenos.`ubicacion`
+     terrenos.`ubicacion`,
+     constancias.`motivo`
 FROM
      `terrenos` terrenos INNER JOIN `constancias` constancias ON terrenos.`id_terreno` = constancias.`id_terreno`
      INNER JOIN `constancias_propietario` constancias_propietario ON constancias.`no_folio` = constancias_propietario.`no_folio`
      AND constancias_propietario.`no_folio` = constancias.`no_folio`
      INNER JOIN `propietarios` propietarios ON constancias_propietario.`id_propietario` = propietarios.`id_propietario`]]>
 	</queryString>
-	<field name="no_folio" class="java.lang.Integer">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="fecha_expedicion" class="java.sql.Date">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="nombre_prop" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="ape_pat_prop" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="ape_mat_prop" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="ubicacion" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
+	<field name="no_folio" class="java.lang.Integer"/>
+	<field name="fecha_expedicion" class="java.sql.Date"/>
+	<field name="nombre_prop" class="java.lang.String"/>
+	<field name="ape_pat_prop" class="java.lang.String"/>
+	<field name="ape_mat_prop" class="java.lang.String"/>
+	<field name="ubicacion" class="java.lang.String"/>
+	<field name="motivo" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -91,18 +81,25 @@ FROM
 				<text><![CDATA[Fecha De Expedición]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="c4ad09a9-e1d6-4dd8-9c1f-37d5b3be9220" x="167" y="35" width="286" height="20"/>
+				<reportElement uuid="c4ad09a9-e1d6-4dd8-9c1f-37d5b3be9220" x="167" y="35" width="186" height="20"/>
 				<textElement textAlignment="Center">
 					<font fontName="Tahoma" size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Nombre]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="ed1d54f3-1105-4086-8c92-2f982e036f87" x="453" y="35" width="100" height="20"/>
+				<reportElement uuid="ed1d54f3-1105-4086-8c92-2f982e036f87" x="353" y="35" width="100" height="20"/>
 				<textElement textAlignment="Center">
 					<font fontName="Tahoma" size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Ubicación]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6b329836-29cd-4da1-85ba-1d88439b8758" x="453" y="35" width="100" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Motivo]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
@@ -125,14 +122,19 @@ FROM
 				<textFieldExpression><![CDATA[$F{fecha_expedicion}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="0faf1f40-094c-43e5-85cb-b2289ac3f513" x="167" y="15" width="286" height="20"/>
+				<reportElement uuid="0faf1f40-094c-43e5-85cb-b2289ac3f513" x="167" y="15" width="186" height="20"/>
 				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{nombre_prop} + " " +$F{ape_pat_prop} + " " + $F{ape_mat_prop}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="5f76cf3c-de29-42ce-9da1-b5572e5a9676" x="455" y="16" width="100" height="20"/>
-				<textElement/>
+				<reportElement uuid="5f76cf3c-de29-42ce-9da1-b5572e5a9676" x="353" y="15" width="100" height="20"/>
+				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{ubicacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="bcd863a6-e3ac-4194-ac1b-8d9f54dfbadc" x="455" y="16" width="100" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{motivo}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

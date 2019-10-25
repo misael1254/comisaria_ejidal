@@ -150,6 +150,10 @@ public class Consulta_constancia_especifica extends javax.swing.JFrame {
         bt_aceptar = new javax.swing.JButton();
         bt_pdf = new javax.swing.JButton();
         bt_guardar = new javax.swing.JButton();
+<<<<<<< HEAD
+=======
+        lb_motivo = new javax.swing.JLabel();
+>>>>>>> 0dbfb8eb1131c998dfb5e7f074b55ef99aa093fe
 
         jInternalFrame1.setVisible(true);
 
@@ -169,6 +173,10 @@ public class Consulta_constancia_especifica extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setAlwaysOnTop(true);
         setLocation(new java.awt.Point(400, 25));
+<<<<<<< HEAD
+=======
+        setMaximumSize(new java.awt.Dimension(566, 684));
+>>>>>>> 0dbfb8eb1131c998dfb5e7f074b55ef99aa093fe
         setMinimumSize(new java.awt.Dimension(566, 684));
 
         jPanel2.setMaximumSize(new java.awt.Dimension(520, 2372));
@@ -531,13 +539,24 @@ public class Consulta_constancia_especifica extends javax.swing.JFrame {
             }
         });
 
+<<<<<<< HEAD
+=======
+        lb_motivo.setText("jLabel28");
+
+>>>>>>> 0dbfb8eb1131c998dfb5e7f074b55ef99aa093fe
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 566, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
+<<<<<<< HEAD
                 .addGap(86, 86, 86)
+=======
+                .addGap(26, 26, 26)
+                .addComponent(lb_motivo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+>>>>>>> 0dbfb8eb1131c998dfb5e7f074b55ef99aa093fe
                 .addComponent(bt_aceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(55, 55, 55)
                 .addComponent(bt_pdf, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -549,6 +568,7 @@ public class Consulta_constancia_especifica extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 634, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 13, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(bt_guardar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -556,6 +576,21 @@ public class Consulta_constancia_especifica extends javax.swing.JFrame {
                         .addComponent(bt_pdf, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(bt_aceptar)))
                 .addContainerGap())
+=======
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 13, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(bt_guardar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(bt_pdf, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(bt_aceptar)))
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lb_motivo)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+>>>>>>> 0dbfb8eb1131c998dfb5e7f074b55ef99aa093fe
         );
 
         pack();
@@ -571,7 +606,19 @@ public class Consulta_constancia_especifica extends javax.swing.JFrame {
         Conexion conexion = new Conexion(); 
         JasperReport jr = null;
         Map parametro = new HashMap();
+<<<<<<< HEAD
         parametro = Llenar_parametros();
+=======
+        
+        if(Lista_constancias.get(0)[30].toUpperCase().equals("ACTUALIZACIÓN"))
+            parametro = Llenar_parametros_actualizacion();
+        else{
+            parametro = Llenar_parametros();
+        }
+        
+        
+        //parametro = Llenar_parametros();
+>>>>>>> 0dbfb8eb1131c998dfb5e7f074b55ef99aa093fe
         
         try {
             jr = (JasperReport) JRLoader.loadObjectFromFile(ruta_jasper);
@@ -603,7 +650,15 @@ public class Consulta_constancia_especifica extends javax.swing.JFrame {
             }
             JasperReport jr = null;
             Map parametro = new HashMap();
+<<<<<<< HEAD
             parametro = Llenar_parametros();
+=======
+            if(Lista_constancias.get(0)[30].toUpperCase().equals("ACTUALIZACIÓN"))
+                parametro = Llenar_parametros_actualizacion();
+            else{
+                parametro = Llenar_parametros();
+            }
+>>>>>>> 0dbfb8eb1131c998dfb5e7f074b55ef99aa093fe
             try {
                 jr = (JasperReport) JRLoader.loadObjectFromFile(ruta_jasper);
                 JasperPrint jp = JasperFillManager.fillReport(jr, parametro);
@@ -689,6 +744,7 @@ public class Consulta_constancia_especifica extends javax.swing.JFrame {
             lb_secol_ter.setText(Lista_constancias.get(0)[26]);
             lb_so_ter.setText(Lista_constancias.get(0)[27]);
             lb_socol_ter.setText(Lista_constancias.get(0)[28]);
+            lb_motivo.setText(Lista_constancias.get(0)[30]);
             try{
                  if(croquis != null){
                      byte[] data = croquis.getBytes(1,(int)croquis.length());
@@ -830,15 +886,28 @@ public class Consulta_constancia_especifica extends javax.swing.JFrame {
         parametro.put("nom_cv_ss",lb_sec2_cv.getText());
         
         String[] fecha_partes = lb_fecha_exp.getText().split("-");
+<<<<<<< HEAD
+=======
+        JOptionPane.showMessageDialog(null,Lista_constancias.get(0)[31]);
+        String[] fecha_partes_na = Lista_constancias.get(0)[31].split("-");
+>>>>>>> 0dbfb8eb1131c998dfb5e7f074b55ef99aa093fe
         char[] anio_partes = fecha_partes[0].toCharArray();
         String aux_anio = String.valueOf(anio_partes[2])+String.valueOf(anio_partes[3]);
         aux_anio= Dia_letra(aux_anio);
         parametro.put("anio_letra",aux_anio);
         String aux_mes= Mes_letra(fecha_partes[1]);
+<<<<<<< HEAD
         parametro.put("mes_letra",aux_mes);
         String aux_dia = Dia_letra(fecha_partes[2]);
         parametro.put("dia_letra",aux_dia);
         parametro.put("fecha",fecha_partes[2]+" de "+aux_mes+" del "+fecha_partes[0]);
+=======
+        String aux_mes_na = Mes_letra(fecha_partes_na[1]);
+        parametro.put("mes_letra",aux_mes);
+        String aux_dia = Dia_letra(fecha_partes[2]);
+        parametro.put("dia_letra",aux_dia);
+        parametro.put("fecha",fecha_partes_na[2]+" de "+aux_mes_na+" del "+fecha_partes_na[0]);
+>>>>>>> 0dbfb8eb1131c998dfb5e7f074b55ef99aa093fe
         
         try{
                  if(croquis != null){
@@ -858,7 +927,180 @@ public class Consulta_constancia_especifica extends javax.swing.JFrame {
         return parametro;
     }
     
+<<<<<<< HEAD
+=======
+    private Map Llenar_parametros_actualizacion(){
+        Map parametro = new HashMap();
+        parametro.put("no_folio",lb_no_folio.getText());
+        parametro.put("propietario",lb_nombre_prop.getText()+" "+lb_appat_prop.getText()+" "+lb_apmat_prop.getText());
+        parametro.put("tipo_terreno",lb_tipo_ter.getText());
+        parametro.put("ubicacion",lb_ubicacion_ter.getText());
+        parametro.put("med_n",lb_n_ter.getText());
+        parametro.put("col_n",lb_ncol_ter.getText());
+        parametro.put("med_s",lb_s_ter.getText());
+        parametro.put("col_s",lb_scol_ter.getText());
+        parametro.put("med_e",lb_e_ter.getText());
+        parametro.put("col_e",lb_ecol_ter.getText());
+        parametro.put("med_o",lb_o_ter.getText());
+        parametro.put("col_o",lb_ocol_ter.getText());
+        if(!lb_ne_ter.getText().equals("0.000") || !lb_no_ter.getText().equals("0.000") || !lb_se_ter.getText().equals("0.000") || !lb_so_ter.getText().equals("0.000")){
+            ruta_jasper = System.getProperty("user.dir") + "/src/Constancia_reporte/Plantilla_cons_act1.jasper";
+            parametro.put("med_ne",lb_ne_ter.getText());
+            parametro.put("col_ne",lb_necol_ter.getText());
+            parametro.put("med_no",lb_no_ter.getText());
+            parametro.put("col_no",lb_nocol_ter.getText());
+            parametro.put("med_se",lb_se_ter.getText());
+            parametro.put("col_se",lb_secol_ter.getText());
+            parametro.put("med_so",lb_so_ter.getText());
+            parametro.put("col_so",lb_socol_ter.getText());
+        }
+        else{
+            ruta_jasper = System.getProperty("user.dir") + "/src/Constancia_reporte/Plantilla_cons_act.jasper";
+        }
+        parametro.put("titulo_ce_pre",lb_tit_ce_pre.getText());
+        parametro.put("nom_ce_pre",lb_pre_ce.getText());
+        parametro.put("titulo_ce_sec",lb_tit_ce_sec.getText());
+        parametro.put("nom_ce_sec",lb_sec_ce.getText());
+        parametro.put("titulo_ce_tes",lb_tit_ce_tes.getText());
+        parametro.put("nom_ce_tes",lb_tes_ce.getText());
+        parametro.put("nota",lb_nota.getText());
+        parametro.put("testigo1",lb_tes1.getText());
+        parametro.put("testigo2",lb_tes2.getText());
+        parametro.put("titulo_cv_pre",lb_tit_cv_pre.getText());
+        parametro.put("nom_cv_pre",lb_pre_cv.getText());
+        parametro.put("titulo_cv_ps",lb_tit_cv_ps.getText());
+        parametro.put("nom_cv_ps",lb_sec1_cv.getText());
+        parametro.put("titulo_cv_ss",lb_tit_cv_ss.getText());
+        parametro.put("nom_cv_ss",lb_sec2_cv.getText());
+        
+        String[] fecha_partes = lb_fecha_exp.getText().split("-");
+        JOptionPane.showMessageDialog(null,Lista_constancias.get(0)[31]);
+        String[] fecha_partes_na = Lista_constancias.get(0)[31].split("-");
+        char[] anio_partes = fecha_partes[0].toCharArray();
+        String aux_anio = String.valueOf(anio_partes[2])+String.valueOf(anio_partes[3]);
+        aux_anio= Dia_anio(aux_anio);
+        parametro.put("anio_letra",aux_anio);
+        String aux_mes= Mes_letra(fecha_partes[1]);
+        String aux_mes_na = Mes_letra(fecha_partes_na[1]);
+        parametro.put("mes_letra",aux_mes);
+        String aux_dia = Dia_letra(fecha_partes[2]);
+        parametro.put("dia_letra",aux_dia);
+        parametro.put("fecha",fecha_partes_na[2]+" de "+aux_mes_na+" del "+fecha_partes_na[0]);
+        
+        try{
+                 if(croquis != null){
+                     byte[] data = croquis.getBytes(1,(int)croquis.length());
+                     Image imga=javax.imageio.ImageIO.read(croquis.getBinaryStream());
+                     parametro.put("imagen",imga);
+                     
+                 }
+                 else{
+                    lb_croquis.setText("SIN IMAGEN");
+                 }
+                 
+                }catch(Exception ex){
+                    lb_croquis.setText("SIN IMAGEN");
+                    JOptionPane.showMessageDialog(null, ex);
+            }
+        return parametro;
+        
+    }
+    
+>>>>>>> 0dbfb8eb1131c998dfb5e7f074b55ef99aa093fe
     private String Dia_letra(String dia){
+        char[] numero = dia.toCharArray();
+        String dia_cadena="";
+        int numero_int = Integer.parseInt(dia);
+        if(numero_int >=0 && numero_int <=9){
+            switch(numero_int){
+                case 1: dia_cadena = "uno"; break;
+                case 2: dia_cadena = "dos"; break;
+                case 3: dia_cadena = "tres";break;
+                case 4: dia_cadena = "cuatro";break;
+                case 5: dia_cadena = "cinco";break;
+                case 6: dia_cadena = "seis";break;
+                case 7: dia_cadena = "siete";break;
+                case 8: dia_cadena = "ocho";break;
+                case 9: dia_cadena = "nueve";break;
+                default: dia_cadena = "uno";break;
+            }
+        }else{
+            if(numero_int >=10 && numero_int <=15){
+                switch(numero_int){
+                    case 10: dia_cadena = "diez"; break;
+                    case 11: dia_cadena = "once"; break;
+                    case 12: dia_cadena = "doce"; break;
+                    case 13: dia_cadena = "trece"; break;
+                    case 14: dia_cadena = "catorce"; break;
+                    case 15: dia_cadena = "quince"; break;
+                    default: dia_cadena = "diez";break;
+                }
+            }
+            else{
+                if(numero_int >=16 && numero_int <=19){
+                    dia_cadena = "dieci"+Dia_letra(String.valueOf(numero[1]));
+                }
+                else{
+                    if(numero_int >=20 && numero_int <=29){
+                        if(numero_int==20){
+                            dia_cadena = "veinte";
+                        }
+                        else{
+<<<<<<< HEAD
+                            dia_cadena = "veinti"+Dia_letra(String.valueOf(numero[1]));
+=======
+                            if(numero_int == 21){
+                                dia_cadena = "veintiún";
+                            }
+                            else{
+                                dia_cadena = "veinti"+Dia_letra(String.valueOf(numero[1]));
+                            }
+>>>>>>> 0dbfb8eb1131c998dfb5e7f074b55ef99aa093fe
+                        }
+                    }
+                    if(numero_int >=30 && numero_int <=39){
+                        if(numero_int==30){
+                            dia_cadena = "treinta";
+                        }
+                        else{
+<<<<<<< HEAD
+                            dia_cadena = "treinta y "+Dia_letra(String.valueOf(numero[1]));
+=======
+                            dia_cadena = "treintaiún";
+>>>>>>> 0dbfb8eb1131c998dfb5e7f074b55ef99aa093fe
+                        }
+                    }
+                }
+            }
+        }
+        return dia_cadena;
+    }
+    
+    private String Mes_letra(String mes){
+        int mes_int = Integer.parseInt(mes);
+        switch(mes_int){
+            case 1: return "enero";
+            case 2: return "febrero";
+            case 3: return "marzo";
+            case 4: return "abril";
+            case 5: return "mayo";
+            case 6: return "junio";
+            case 7: return "julio";
+            case 8: return "agosto";
+            case 9: return "septiembre";
+            case 10: return "octubre";
+            case 11: return "noviembre";
+            case 12: return "diciembre";
+            default: return "enero";
+        }
+    }
+<<<<<<< HEAD
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bt_aceptar;
+    private javax.swing.JButton bt_guardar;
+=======
+    private String Dia_anio(String dia){
         char[] numero = dia.toCharArray();
         String dia_cadena="";
         int numero_int = Integer.parseInt(dia);
@@ -914,28 +1156,12 @@ public class Consulta_constancia_especifica extends javax.swing.JFrame {
         return dia_cadena;
     }
     
-    private String Mes_letra(String mes){
-        int mes_int = Integer.parseInt(mes);
-        switch(mes_int){
-            case 1: return "enero";
-            case 2: return "febrero";
-            case 3: return "marzo";
-            case 4: return "abril";
-            case 5: return "mayo";
-            case 6: return "junio";
-            case 7: return "julio";
-            case 8: return "agosto";
-            case 9: return "septiembre";
-            case 10: return "octubre";
-            case 11: return "noviembre";
-            case 12: return "diciembre";
-            default: return "enero";
-        }
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_aceptar;
-    private javax.swing.JButton bt_guardar;
+    public javax.swing.JButton bt_guardar;
+>>>>>>> 0dbfb8eb1131c998dfb5e7f074b55ef99aa093fe
     private javax.swing.JButton bt_pdf;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
@@ -999,6 +1225,7 @@ public class Consulta_constancia_especifica extends javax.swing.JFrame {
     private javax.swing.JLabel lb_e_ter;
     private javax.swing.JLabel lb_ecol_ter;
     private javax.swing.JLabel lb_fecha_exp;
+    private javax.swing.JLabel lb_motivo;
     private javax.swing.JLabel lb_n_ter;
     private javax.swing.JLabel lb_ncol_ter;
     private javax.swing.JLabel lb_ne_ter;

@@ -1511,6 +1511,12 @@
           </StringArray>
         </Property>
       </Properties>
+<<<<<<< HEAD
+=======
+      <Events>
+        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="cb_motivoItemStateChanged"/>
+      </Events>
+>>>>>>> 0dbfb8eb1131c998dfb5e7f074b55ef99aa093fe
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>

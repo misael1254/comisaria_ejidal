@@ -34,6 +34,12 @@
     <Property name="location" type="java.awt.Point" editor="org.netbeans.beaninfo.editors.PointEditor">
       <Point value="[400, 25]"/>
     </Property>
+<<<<<<< HEAD
+=======
+    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[566, 684]"/>
+    </Property>
+>>>>>>> 0dbfb8eb1131c998dfb5e7f074b55ef99aa093fe
     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[566, 684]"/>
     </Property>
@@ -59,7 +65,13 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="jScrollPane1" alignment="0" pref="566" max="32767" attributes="0"/>
           <Group type="102" alignment="0" attributes="0">
+<<<<<<< HEAD
               <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
+=======
+              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+              <Component id="lb_motivo" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+>>>>>>> 0dbfb8eb1131c998dfb5e7f074b55ef99aa093fe
               <Component id="bt_aceptar" min="-2" pref="92" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
               <Component id="bt_pdf" min="-2" pref="96" max="-2" attributes="0"/>
@@ -73,6 +85,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Component id="jScrollPane1" min="-2" pref="634" max="-2" attributes="0"/>
+<<<<<<< HEAD
               <EmptySpace type="unrelated" pref="13" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="bt_guardar" alignment="1" min="-2" pref="31" max="-2" attributes="0"/>
@@ -82,6 +95,26 @@
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
+=======
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace type="unrelated" pref="13" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="bt_guardar" alignment="1" min="-2" pref="31" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="bt_pdf" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="bt_aceptar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="lb_motivo" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+>>>>>>> 0dbfb8eb1131c998dfb5e7f074b55ef99aa093fe
           </Group>
       </Group>
     </DimensionLayout>
@@ -1261,6 +1294,17 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_guardarActionPerformed"/>
       </Events>
+<<<<<<< HEAD
+=======
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lb_motivo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel28"/>
+      </Properties>
+>>>>>>> 0dbfb8eb1131c998dfb5e7f074b55ef99aa093fe
     </Component>
   </SubComponents>
 </Form>

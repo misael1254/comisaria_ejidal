@@ -850,6 +850,14 @@ public class Modificar_constancia extends javax.swing.JFrame {
         jd_fecha.setBounds(63, 200, 130, 40);
 
         cb_motivo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SESIÓN", "ACTUALIZACIÓN" }));
+<<<<<<< HEAD
+=======
+        cb_motivo.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cb_motivoItemStateChanged(evt);
+            }
+        });
+>>>>>>> 0dbfb8eb1131c998dfb5e7f074b55ef99aa093fe
         getContentPane().add(cb_motivo);
         cb_motivo.setBounds(20, 320, 150, 26);
 
@@ -1316,6 +1324,29 @@ public class Modificar_constancia extends javax.swing.JFrame {
        this.dispose();
     }//GEN-LAST:event_formWindowClosing
 
+<<<<<<< HEAD
+=======
+    private void cb_motivoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_motivoItemStateChanged
+        // TODO add your handling code here:
+        if(cb_motivo.getSelectedItem().equals("ACTUALIZACIÓN")){
+            tb_cedente_nombre.setText("");
+            tb_cedente_appat.setText("");
+            tb_cedente_apmat.setText("");
+            tb_cedente_nombre.setEditable(false);
+            tb_cedente_appat.setEditable(false);
+            tb_cedente_apmat.setEditable(false);
+        }
+        else{
+            tb_cedente_nombre.setText(Lista_constancias.get(0)[3]);
+            tb_cedente_appat.setText(Lista_constancias.get(0)[4]);
+            tb_cedente_apmat.setText(Lista_constancias.get(0)[5]);
+            tb_cedente_nombre.setEditable(true);
+            tb_cedente_appat.setEditable(true);
+            tb_cedente_apmat.setEditable(true);
+        }
+    }//GEN-LAST:event_cb_motivoItemStateChanged
+
+>>>>>>> 0dbfb8eb1131c998dfb5e7f074b55ef99aa093fe
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

@@ -2,7 +2,11 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="612" pageHeight="1008" whenNoDataType="AllSectionsNoDetail" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryNewPage="true" uuid="09063610-e136-4d94-87c0-d2f7366b5abf">
 	<property name="ireport.zoom" value="1.5"/>
 	<property name="ireport.x" value="0"/>
+<<<<<<< HEAD
 	<property name="ireport.y" value="2407"/>
+=======
+	<property name="ireport.y" value="711"/>
+>>>>>>> 0dbfb8eb1131c998dfb5e7f074b55ef99aa093fe
 	<parameter name="no_folio" class="java.lang.String"/>
 	<parameter name="propietario" class="java.lang.String">
 		<parameterDescription><![CDATA[]]></parameterDescription>
@@ -234,14 +238,22 @@
 				<textFieldExpression><![CDATA[$P{propietario}.toString()]]></textFieldExpression>
 			</textField>
 			<textField>
+<<<<<<< HEAD
 				<reportElement x="397" y="50" width="168" height="19" uuid="d70f8c2c-b3bb-4b19-86d7-95850a94d1f2"/>
+=======
+				<reportElement x="320" y="50" width="168" height="19" uuid="d70f8c2c-b3bb-4b19-86d7-95850a94d1f2"/>
+>>>>>>> 0dbfb8eb1131c998dfb5e7f074b55ef99aa093fe
 				<textElement verticalAlignment="Middle">
 					<font fontName="Consolas" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{tipo_terreno}.toString()]]></textFieldExpression>
 			</textField>
 			<textField>
+<<<<<<< HEAD
 				<reportElement x="353" y="69" width="178" height="20" uuid="418f8689-4a5a-4c2b-a19f-a61c87d5cbf6"/>
+=======
+				<reportElement x="331" y="69" width="178" height="20" uuid="418f8689-4a5a-4c2b-a19f-a61c87d5cbf6"/>
+>>>>>>> 0dbfb8eb1131c998dfb5e7f074b55ef99aa093fe
 				<textElement verticalAlignment="Middle">
 					<font fontName="Consolas" size="12"/>
 				</textElement>
@@ -316,9 +328,12 @@
 			<rectangle>
 				<reportElement mode="Transparent" x="25" y="312" width="78" height="20" forecolor="#006666" uuid="b191086b-96d5-4c54-94d3-e58b452b7dd9"/>
 			</rectangle>
+<<<<<<< HEAD
 			<rectangle>
 				<reportElement mode="Transparent" x="203" y="292" width="345" height="20" forecolor="#006666" uuid="eb403429-12e9-4e9d-9890-04f1ebf4ddbf"/>
 			</rectangle>
+=======
+>>>>>>> 0dbfb8eb1131c998dfb5e7f074b55ef99aa093fe
 			<textField>
 				<reportElement mode="Opaque" x="203" y="292" width="345" height="20" uuid="ad814652-a683-4ad2-8172-c900f28fc41d"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -432,6 +447,12 @@ los ____________días del mes de ______________ del dos mil_______________.]]></
 				</textElement>
 				<textFieldExpression><![CDATA[$P{anio_letra}.toString()]]></textFieldExpression>
 			</textField>
+<<<<<<< HEAD
+=======
+			<rectangle>
+				<reportElement mode="Transparent" x="203" y="292" width="345" height="20" forecolor="#006666" uuid="eb403429-12e9-4e9d-9890-04f1ebf4ddbf"/>
+			</rectangle>
+>>>>>>> 0dbfb8eb1131c998dfb5e7f074b55ef99aa093fe
 		</band>
 	</columnHeader>
 	<detail>

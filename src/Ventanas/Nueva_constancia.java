@@ -5,12 +5,18 @@
  */
 package Ventanas;
 import Tablas.*;
+<<<<<<< HEAD
+=======
+import java.awt.Image;
+>>>>>>> 0dbfb8eb1131c998dfb5e7f074b55ef99aa093fe
 import java.awt.event.KeyEvent;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -171,7 +177,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
             }
         });
         getContentPane().add(bt_cancelar);
-        bt_cancelar.setBounds(960, 640, 100, 23);
+        bt_cancelar.setBounds(960, 640, 100, 30);
 
         bt_generar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         bt_generar.setText("GENERAR");
@@ -181,7 +187,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
             }
         });
         getContentPane().add(bt_generar);
-        bt_generar.setBounds(1070, 640, 100, 23);
+        bt_generar.setBounds(1070, 640, 100, 30);
 
         Pane_principal.setBackground(new java.awt.Color(255, 255, 255));
         Pane_principal.setForeground(new java.awt.Color(255, 153, 153));
@@ -265,6 +271,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
         jPane2.add(tb_med_s);
         tb_med_s.setBounds(290, 180, 50, 30);
 
+        tb_med_n.setText("0");
         tb_med_n.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 tb_med_nFocusLost(evt);
@@ -503,7 +510,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
 
         jLabel47.setText("jLabel47");
         jPane2.add(jLabel47);
-        jLabel47.setBounds(20, 10, 40, 14);
+        jLabel47.setBounds(20, 10, 48, 16);
 
         getContentPane().add(jPane2);
         jPane2.setBounds(20, 460, 90, 40);
@@ -693,7 +700,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
 
         jLabel48.setText("jLabel48");
         jPanel3.add(jLabel48);
-        jLabel48.setBounds(20, 10, 40, 14);
+        jLabel48.setBounds(20, 10, 48, 16);
 
         getContentPane().add(jPanel3);
         jPanel3.setBounds(20, 520, 90, 40);
@@ -706,7 +713,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
             }
         });
         getContentPane().add(bt_siguiente);
-        bt_siguiente.setBounds(650, 640, 100, 23);
+        bt_siguiente.setBounds(650, 640, 100, 30);
 
         bt_anterior.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         bt_anterior.setText("ANTERIOR");
@@ -716,7 +723,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
             }
         });
         getContentPane().add(bt_anterior);
-        bt_anterior.setBounds(490, 640, 100, 23);
+        bt_anterior.setBounds(490, 640, 100, 30);
 
         jPane1.setBackground(new java.awt.Color(255, 255, 255));
         jPane1.setLayout(null);
@@ -824,7 +831,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
 
         jLabel29.setText("jLabel29");
         jPane1.add(jLabel29);
-        jLabel29.setBounds(20, 10, 40, 14);
+        jLabel29.setBounds(20, 10, 48, 16);
 
         et_error.setForeground(new java.awt.Color(204, 0, 0));
         jPane1.add(et_error);
@@ -894,15 +901,25 @@ public class Nueva_constancia extends javax.swing.JFrame {
         cb_tipo_terreno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "LOTE", "LOTE CON CASA HAB.", "PARCELA", "FRACCIÓN DE PARC." }));
         cb_tipo_terreno.setOpaque(false);
         getContentPane().add(cb_tipo_terreno);
-        cb_tipo_terreno.setBounds(20, 280, 150, 20);
+        cb_tipo_terreno.setBounds(20, 280, 150, 26);
 
         fecha_label.setText("jLabel4");
         getContentPane().add(fecha_label);
         fecha_label.setBounds(90, 130, 110, 20);
 
         cb_motivo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SESIÓN", "ACTUALIZACIÓN" }));
+<<<<<<< HEAD
         getContentPane().add(cb_motivo);
         cb_motivo.setBounds(20, 320, 150, 20);
+=======
+        cb_motivo.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cb_motivoItemStateChanged(evt);
+            }
+        });
+        getContentPane().add(cb_motivo);
+        cb_motivo.setBounds(20, 320, 150, 26);
+>>>>>>> 0dbfb8eb1131c998dfb5e7f074b55ef99aa093fe
         getContentPane().add(jd_fecha);
         jd_fecha.setBounds(63, 200, 130, 40);
 
@@ -944,6 +961,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
     }//GEN-LAST:event_bt_anteriorActionPerformed
 
     private void bt_generarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_generarActionPerformed
+        
         /*String text = ta_nota.getText().toString();
         System.out.println(text);*/
         Terreno terreno = new Terreno();
@@ -965,7 +983,11 @@ public class Nueva_constancia extends javax.swing.JFrame {
         
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         try {
+<<<<<<< HEAD
             terreno.setNucle_agrario(formatter.format(jd_fecha.getDate()));
+=======
+            terreno.setNucle_agrario(formatter.format(jd_nucle_agrario.getDate()));
+>>>>>>> 0dbfb8eb1131c998dfb5e7f074b55ef99aa093fe
         } catch (Exception e) {
              JOptionPane.showMessageDialog(null, e);
         }
@@ -1094,6 +1116,15 @@ public class Nueva_constancia extends javax.swing.JFrame {
             System.out.println("SECRETARIO2 CV");
        
        JOptionPane.showMessageDialog(null,"REGISTRADO CON ÉXITO");
+       
+       Consulta_constancia_especifica consulta_especifica = new Consulta_constancia_especifica();
+       consulta_especifica.setNo_constancia(Integer.parseInt(tb_folio.getText()));
+       consulta_especifica.Rellenar_campos();
+       consulta_especifica.bt_guardar.doClick();
+       consulta_especifica.dispose();
+       menu_registro obj = new menu_registro();
+       obj.setVisible(true);
+       dispose();
        
        
     }//GEN-LAST:event_bt_generarActionPerformed
@@ -1360,6 +1391,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_tb_med_nFocusLost
 
+<<<<<<< HEAD
     private void tb_med_sFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tb_med_sFocusLost
         // TODO add your handling code here:
         if(tb_med_n.getText().isEmpty()){
@@ -1401,6 +1433,27 @@ public class Nueva_constancia extends javax.swing.JFrame {
         if(tb_med_n.getText().isEmpty()){
             tb_med_n.setText("0");}
     }//GEN-LAST:event_tb_med_soFocusLost
+=======
+    private void cb_motivoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_motivoItemStateChanged
+        // TODO add your handling code here:
+        if(cb_motivo.getSelectedItem().equals("ACTUALIZACIÓN")){
+            tb_cedente_nombre.setText("");
+            tb_cedente_appat.setText("");
+            tb_cedente_apmat.setText("");
+            tb_cedente_nombre.setEditable(false);
+            tb_cedente_appat.setEditable(false);
+            tb_cedente_apmat.setEditable(false);
+        }
+        else{
+            tb_cedente_nombre.setText("");
+            tb_cedente_appat.setText("");
+            tb_cedente_apmat.setText("");
+            tb_cedente_nombre.setEditable(true);
+            tb_cedente_appat.setEditable(true);
+            tb_cedente_apmat.setEditable(true);
+        }
+    }//GEN-LAST:event_cb_motivoItemStateChanged
+>>>>>>> 0dbfb8eb1131c998dfb5e7f074b55ef99aa093fe
 
        
     public static void main(String args[]) {
@@ -1553,8 +1606,227 @@ public class Nueva_constancia extends javax.swing.JFrame {
         }  
      }*/
     //hola sharon 
+    private Map Llenar_parametros(){
+        Map parametro = new HashMap();
+        /*parametro.put("no_folio",tb_folio.getText());
+        parametro.put("propietario",tb_propietario_nombre.getText().toUpperCase().trim()+" "+tb_propietario_appat.getText().toUpperCase().trim()+" "+tb_propietario_apmat.getText().toUpperCase().trim());
+        parametro.put("tipo_terreno",cb_tipo_terreno.getSelectedItem().toString().toUpperCase());
+        parametro.put("ubicacion",tb_ubicacion_terreno.getText().toUpperCase());
+        parametro.put("med_n",tb_med_e.getText());
+        parametro.put("col_n",tb_col_n.getText().toUpperCase().trim());
+        parametro.put("med_s",lb_s_ter.getText());
+        parametro.put("col_s",tb_col_s.getText().toUpperCase().trim());
+        parametro.put("med_e",lb_e_ter.getText());
+        parametro.put("col_e",tb_col_e.getText().toUpperCase().trim());
+        parametro.put("med_o",lb_o_ter.getText());
+        parametro.put("col_o",tb_col_o.getText().toUpperCase().trim());
+        if(!lb_ne_ter.getText().equals("0.000") || !lb_no_ter.getText().equals("0.000") || !lb_se_ter.getText().equals("0.000") || !lb_so_ter.getText().equals("0.000")){
+            ruta_jasper = System.getProperty("user.dir") + "/src/Constancia_reporte/Plantilla_cons.jasper";
+            parametro.put("med_ne",lb_ne_ter.getText());
+            parametro.put("col_ne",lb_necol_ter.getText());
+            parametro.put("med_no",lb_no_ter.getText());
+            parametro.put("col_no",lb_nocol_ter.getText());
+            parametro.put("med_se",lb_se_ter.getText());
+            parametro.put("col_se",lb_secol_ter.getText());
+            parametro.put("med_so",lb_so_ter.getText());
+            parametro.put("col_so",lb_socol_ter.getText());
+        }
+        else{
+            ruta_jasper = System.getProperty("user.dir") + "/src/Constancia_reporte/Plantilla_cons1.jasper";
+        }
+        parametro.put("titulo_ce_pre",lb_tit_ce_pre.getText());
+        parametro.put("nom_ce_pre",lb_pre_ce.getText());
+        parametro.put("titulo_ce_sec",lb_tit_ce_sec.getText());
+        parametro.put("nom_ce_sec",lb_sec_ce.getText());
+        parametro.put("titulo_ce_tes",lb_tit_ce_tes.getText());
+        parametro.put("nom_ce_tes",lb_tes_ce.getText());
+        parametro.put("nota",lb_nota.getText());
+        parametro.put("cedente",lb_nombre_ced.getText()+" "+lb_appat_ced.getText()+" "+lb_apmat_ced.getText());
+        parametro.put("testigo1",lb_tes1.getText());
+        parametro.put("testigo2",lb_tes2.getText());
+        parametro.put("titulo_cv_pre",lb_tit_cv_pre.getText());
+        parametro.put("nom_cv_pre",lb_pre_cv.getText());
+        parametro.put("titulo_cv_ps",lb_tit_cv_ps.getText());
+        parametro.put("nom_cv_ps",lb_sec1_cv.getText());
+        parametro.put("titulo_cv_ss",lb_tit_cv_ss.getText());
+        parametro.put("nom_cv_ss",lb_sec2_cv.getText());
+        
+        String[] fecha_partes = lb_fecha_exp.getText().split("-");
+        char[] anio_partes = fecha_partes[0].toCharArray();
+        String aux_anio = String.valueOf(anio_partes[2])+String.valueOf(anio_partes[3]);
+        aux_anio= Dia_letra(aux_anio);
+        parametro.put("anio_letra",aux_anio);
+        String aux_mes= Mes_letra(fecha_partes[1]);
+        parametro.put("mes_letra",aux_mes);
+        String aux_dia = Dia_letra(fecha_partes[2]);
+        parametro.put("dia_letra",aux_dia);
+        parametro.put("fecha",fecha_partes[2]+" de "+aux_mes+" del "+fecha_partes[0]);
+        
+        try{
+                 if(croquis != null){
+                     byte[] data = croquis.getBytes(1,(int)croquis.length());
+                     Image imga=javax.imageio.ImageIO.read(croquis.getBinaryStream());
+                     parametro.put("imagen",imga);
+                     
+                 }
+                 else{
+                    lb_croquis.setText("SIN IMAGEN");
+                 }
+                 
+                }catch(Exception ex){
+                    lb_croquis.setText("SIN IMAGEN");
+                    JOptionPane.showMessageDialog(null, ex);
+            }*/
+        return parametro;
+    }
     
-                    
+    private Map Llenar_parametros_actualizacion(){
+        Map parametro = new HashMap();
+        /*parametro.put("no_folio",lb_no_folio.getText());
+        parametro.put("propietario",lb_nombre_prop.getText()+" "+lb_appat_prop.getText()+" "+lb_apmat_prop.getText());
+        parametro.put("tipo_terreno",lb_tipo_ter.getText());
+        parametro.put("ubicacion",lb_ubicacion_ter.getText());
+        parametro.put("med_n",lb_n_ter.getText());
+        parametro.put("col_n",lb_ncol_ter.getText());
+        parametro.put("med_s",lb_s_ter.getText());
+        parametro.put("col_s",lb_scol_ter.getText());
+        parametro.put("med_e",lb_e_ter.getText());
+        parametro.put("col_e",lb_ecol_ter.getText());
+        parametro.put("med_o",lb_o_ter.getText());
+        parametro.put("col_o",lb_ocol_ter.getText());
+        if(!lb_ne_ter.getText().equals("0.000") || !lb_no_ter.getText().equals("0.000") || !lb_se_ter.getText().equals("0.000") || !lb_so_ter.getText().equals("0.000")){
+            ruta_jasper = System.getProperty("user.dir") + "/src/Constancia_reporte/Plantilla_cons_act1.jasper";
+            parametro.put("med_ne",lb_ne_ter.getText());
+            parametro.put("col_ne",lb_necol_ter.getText());
+            parametro.put("med_no",lb_no_ter.getText());
+            parametro.put("col_no",lb_nocol_ter.getText());
+            parametro.put("med_se",lb_se_ter.getText());
+            parametro.put("col_se",lb_secol_ter.getText());
+            parametro.put("med_so",lb_so_ter.getText());
+            parametro.put("col_so",lb_socol_ter.getText());
+        }
+        else{
+            ruta_jasper = System.getProperty("user.dir") + "/src/Constancia_reporte/Plantilla_cons_act.jasper";
+        }
+        parametro.put("titulo_ce_pre",lb_tit_ce_pre.getText());
+        parametro.put("nom_ce_pre",lb_pre_ce.getText());
+        parametro.put("titulo_ce_sec",lb_tit_ce_sec.getText());
+        parametro.put("nom_ce_sec",lb_sec_ce.getText());
+        parametro.put("titulo_ce_tes",lb_tit_ce_tes.getText());
+        parametro.put("nom_ce_tes",lb_tes_ce.getText());
+        parametro.put("nota",lb_nota.getText());
+        parametro.put("testigo1",lb_tes1.getText());
+        parametro.put("testigo2",lb_tes2.getText());
+        parametro.put("titulo_cv_pre",lb_tit_cv_pre.getText());
+        parametro.put("nom_cv_pre",lb_pre_cv.getText());
+        parametro.put("titulo_cv_ps",lb_tit_cv_ps.getText());
+        parametro.put("nom_cv_ps",lb_sec1_cv.getText());
+        parametro.put("titulo_cv_ss",lb_tit_cv_ss.getText());
+        parametro.put("nom_cv_ss",lb_sec2_cv.getText());
+        
+        String[] fecha_partes = lb_fecha_exp.getText().split("-");
+        char[] anio_partes = fecha_partes[0].toCharArray();
+        String aux_anio = String.valueOf(anio_partes[2])+String.valueOf(anio_partes[3]);
+        aux_anio= Dia_letra(aux_anio);
+        parametro.put("anio_letra",aux_anio);
+        String aux_mes= Mes_letra(fecha_partes[1]);
+        parametro.put("mes_letra",aux_mes);
+        String aux_dia = Dia_letra(fecha_partes[2]);
+        parametro.put("dia_letra",aux_dia);
+        parametro.put("fecha",fecha_partes[2]+" de "+aux_mes+" del "+fecha_partes[0]);
+        
+        try{
+                 if(croquis != null){
+                     byte[] data = croquis.getBytes(1,(int)croquis.length());
+                     Image imga=javax.imageio.ImageIO.read(croquis.getBinaryStream());
+                     parametro.put("imagen",imga);
+                     
+                 }
+                 else{
+                    lb_croquis.setText("SIN IMAGEN");
+                 }
+                 
+                }catch(Exception ex){
+                    JOptionPane.showMessageDialog(null, ex);
+            }*/
+        return parametro;
+        
+    }
+    
+    private String Dia_letra(String dia){
+        char[] numero = dia.toCharArray();
+        String dia_cadena="";
+        int numero_int = Integer.parseInt(dia);
+        if(numero_int >=0 && numero_int <=9){
+            switch(numero_int){
+                case 1: dia_cadena = "uno"; break;
+                case 2: dia_cadena = "dos"; break;
+                case 3: dia_cadena = "tres";break;
+                case 4: dia_cadena = "cuatro";break;
+                case 5: dia_cadena = "cinco";break;
+                case 6: dia_cadena = "seis";break;
+                case 7: dia_cadena = "siete";break;
+                case 8: dia_cadena = "ocho";break;
+                case 9: dia_cadena = "nueve";break;
+                default: dia_cadena = "uno";break;
+            }
+        }else{
+            if(numero_int >=10 && numero_int <=15){
+                switch(numero_int){
+                    case 10: dia_cadena = "diez"; break;
+                    case 11: dia_cadena = "once"; break;
+                    case 12: dia_cadena = "doce"; break;
+                    case 13: dia_cadena = "trece"; break;
+                    case 14: dia_cadena = "catorce"; break;
+                    case 15: dia_cadena = "quince"; break;
+                    default: dia_cadena = "diez";break;
+                }
+            }
+            else{
+                if(numero_int >=16 && numero_int <=19){
+                    dia_cadena = "dieci"+Dia_letra(String.valueOf(numero[1]));
+                }
+                else{
+                    if(numero_int >=20 && numero_int <=29){
+                        if(numero_int==20){
+                            dia_cadena = "veinte";
+                        }
+                        else{
+                            dia_cadena = "veinti"+Dia_letra(String.valueOf(numero[1]));
+                        }
+                    }
+                    if(numero_int >=30 && numero_int <=39){
+                        if(numero_int==30){
+                            dia_cadena = "treinta";
+                        }
+                        else{
+                            dia_cadena = "treinta y "+Dia_letra(String.valueOf(numero[1]));
+                        }
+                    }
+                }
+            }
+        }
+        return dia_cadena;
+    }
+    
+    private String Mes_letra(String mes){
+        int mes_int = Integer.parseInt(mes);
+        switch(mes_int){
+            case 1: return "enero";
+            case 2: return "febrero";
+            case 3: return "marzo";
+            case 4: return "abril";
+            case 5: return "mayo";
+            case 6: return "junio";
+            case 7: return "julio";
+            case 8: return "agosto";
+            case 9: return "septiembre";
+            case 10: return "octubre";
+            case 11: return "noviembre";
+            case 12: return "diciembre";
+            default: return "enero";
+        }
+    }               
  
     
 
