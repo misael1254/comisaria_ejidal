@@ -16,10 +16,45 @@ import Tablas.Constancia;
  */
 public class Consultas_constancias_existentes extends javax.swing.JFrame {
 
+    private static String fecha_ini,fecha_fin,nombre,appat,apmat;
+    private static int opcion_busqueda=0;
+
+    public static void setFecha_ini(String fecha_ini) {
+        Consultas_constancias_existentes.fecha_ini = fecha_ini;
+    }
+
+    public static void setFecha_fin(String fecha_fin) {
+        Consultas_constancias_existentes.fecha_fin = fecha_fin;
+    }
+
+    public static void setNombre(String nombre) {
+        Consultas_constancias_existentes.nombre = nombre;
+    }
+
+    public static void setAppat(String appat) {
+        Consultas_constancias_existentes.appat = appat;
+    }
+
+    public static void setApmat(String apmat) {
+        Consultas_constancias_existentes.apmat = apmat;
+    }
+
+    public static void setOpcion_busqueda(int opcion_busqueda) {
+        Consultas_constancias_existentes.opcion_busqueda = opcion_busqueda;
+    }
+    
+    
+    
     public Consultas_constancias_existentes() {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
         Tabla_prueba.setVisible(false);
+        bt_consutar_info.setVisible(false);
+        bt_modificar.setVisible(false);
+        bt_buscar.setVisible(false);
+        bt_sel_modo.setVisible(false);
+        bt_buscar_aceptar.setVisible(false);
+        bt_cancelar.setVisible(false);
     }
 
     @SuppressWarnings("unchecked")
@@ -28,11 +63,14 @@ public class Consultas_constancias_existentes extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         Tabla_prueba = new rojerusan.RSTableMetro();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        bt_regresar = new javax.swing.JButton();
+        bt_consutar_info = new javax.swing.JButton();
         bt_consulta_constancias = new javax.swing.JButton();
         bt_modificar = new javax.swing.JButton();
-        bt_Eliminar = new javax.swing.JButton();
+        bt_buscar = new javax.swing.JButton();
+        bt_cancelar = new javax.swing.JButton();
+        bt_sel_modo = new javax.swing.JButton();
+        bt_buscar_aceptar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -63,24 +101,24 @@ public class Consultas_constancias_existentes extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 1307, 531));
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButton1.setText("REGRESAR");
-        jButton1.setPreferredSize(new java.awt.Dimension(110, 48));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        bt_regresar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        bt_regresar.setText("REGRESAR");
+        bt_regresar.setPreferredSize(new java.awt.Dimension(110, 48));
+        bt_regresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                bt_regresarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 660, -1, 37));
+        getContentPane().add(bt_regresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 660, -1, 40));
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButton2.setText("<html> <head> </head> <body> <div align=\"center\"><p>CONSULTAR</p><p> INFORMACIÓN</p></div> </body> </html>  ");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        bt_consutar_info.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        bt_consutar_info.setText("<html> <head> </head> <body> <div align=\"center\"><p>CONSULTAR</p><p> INFORMACIÓN</p></div> </body> </html>  ");
+        bt_consutar_info.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                bt_consutar_infoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 660, -1, -1));
+        getContentPane().add(bt_consutar_info, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 660, -1, -1));
 
         bt_consulta_constancias.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         bt_consulta_constancias.setText("<html> <head> </head> <body> <div align=\"center\"><p>MOSTRAR</p><p>CONSTANCIAS</p></div> </body> </html>  ");
@@ -89,18 +127,55 @@ public class Consultas_constancias_existentes extends javax.swing.JFrame {
                 bt_consulta_constanciasActionPerformed(evt);
             }
         });
-        getContentPane().add(bt_consulta_constancias, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 660, 110, -1));
+        getContentPane().add(bt_consulta_constancias, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 660, 110, -1));
 
+        bt_modificar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         bt_modificar.setText("MODIFICAR");
         bt_modificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt_modificarActionPerformed(evt);
             }
         });
-        getContentPane().add(bt_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 660, 120, 40));
+        getContentPane().add(bt_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 660, 110, 44));
 
-        bt_Eliminar.setText("jButton3");
-        getContentPane().add(bt_Eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 670, -1, -1));
+        bt_buscar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        bt_buscar.setText("BUSCAR");
+        bt_buscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_buscarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bt_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 660, 110, 44));
+
+        bt_cancelar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        bt_cancelar.setText("CANCELAR");
+        bt_cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_cancelarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bt_cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 660, 110, 40));
+
+        bt_sel_modo.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        bt_sel_modo.setText("<html><body><div align=\"center\"><p>SELECCIONAR</p><p>MODO</p></div></body></html>");
+        bt_sel_modo.setPreferredSize(new java.awt.Dimension(109, 44));
+        bt_sel_modo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_sel_modoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bt_sel_modo, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 660, -1, -1));
+
+        bt_buscar_aceptar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        bt_buscar_aceptar.setText("BUSCAR");
+        bt_buscar_aceptar.setEnabled(false);
+        bt_buscar_aceptar.setPreferredSize(new java.awt.Dimension(109, 44));
+        bt_buscar_aceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_buscar_aceptarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bt_buscar_aceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 660, -1, 40));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/C.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
@@ -109,38 +184,17 @@ public class Consultas_constancias_existentes extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void bt_regresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_regresarActionPerformed
         // TODO add your handling code here:
             Menu_principal obj = new Menu_principal();
             obj.setVisible(true);
             this.dispose();
         
-        /*ResultSet rs;
-        Cedente cedente = new Cedente();
-        rs = cedente.Buscar(1);
-        try {
-            DefaultTableModel tabconsul = new DefaultTableModel(){
-                @Override
-                public boolean isCellEditable(int row, int column){
-                    return false;
-                }
-            };
-            tabconsul.setColumnIdentifiers(new Object[]{"id","Nombre","Apellido_pat","Apellido_mat"});
-            
-            while(rs.next()){
-                tabconsul.addRow(new Object[]{rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4)});
-            }
-            Tabla_prueba.setModel(tabconsul);
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null,"nafi papi");
-        }*/
         
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_bt_regresarActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-          /*Consulta_constancia_especifica consulta_especifica = new Consulta_constancia_especifica();
-          consulta_especifica.setVisible(true);*/
+    private void bt_consutar_infoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_consutar_infoActionPerformed
+         
           
           if(Tabla_prueba.getSelectedRow()==-1){
               JOptionPane.showMessageDialog(null,"NO SE HA SELECCIONADO NINGUN ELEMENTO");
@@ -155,27 +209,28 @@ public class Consultas_constancias_existentes extends javax.swing.JFrame {
               consulta_especifica.setVisible(true);
           }
           
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_bt_consutar_infoActionPerformed
 
     private void bt_consulta_constanciasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_consulta_constanciasActionPerformed
-        // TODO add your handling code here:
+        
         Tabla_prueba.setVisible(true);
         try {
+            bt_consulta_constancias.setVisible(false);
+            bt_consutar_info.setVisible(true);
+            bt_modificar.setVisible(true);
+            bt_buscar.setVisible(true);
             DefaultTableModel tabconsul = new DefaultTableModel(){
                 @Override
                 public boolean isCellEditable(int row, int column){
                     return false;
                 }
             };
-           /* tabconsul.setColumnIdentifiers(new Object[]{"No folio","Fecha expedicion","Id(ced)","Nombre(ced)",
-            "apellido pat(ced)","apellido mat(ced)","id(prop)","Nombre(prop)","apellido pat(prop)","apellido materno(prop)",
-            "Id(ter)","Ubicación","Tipo terreno","N","colN","S","colS","E","colE","O","colO","NE","colNE","NO","colNO","SE","colSE","colSO","Testigo 1"
-            ,"Testigo 2","Presidente(CE)","Secretario(CE)","Tesorero(CE)","Presidente(CV)","Secretario 1(CV)","Secretario 2(CV)"});*/
-            Object[] cabeceras = new Object[4];
+            Object[] cabeceras = new Object[5];
             cabeceras[0] ="NO. FOLIO";
-            cabeceras[1] ="FECHA CREACIÓN";
+            cabeceras[1] ="FECHA EXPEDICIÓN";
             cabeceras[2] ="PROPIETARIO";
             cabeceras[3] ="UBICACIÓN";
+            cabeceras[4] ="MOTIVO";
             tabconsul.setColumnIdentifiers(cabeceras);
             
             ArrayList<String[]> Lista_constancias;
@@ -189,44 +244,21 @@ public class Consultas_constancias_existentes extends javax.swing.JFrame {
             Lista_con_vig = constancia.Buscar_con_vig(1,0);
             Lista_com_eji = constancia.Buscar_com_ejidal(1,0);
             for (int i = 0; i < Lista_constancias.size(); i++) {
-                Object[] datos_constancia = new Object[4];
+                Object[] datos_constancia = new Object[5];
                 datos_constancia[0] = Lista_constancias.get(i)[0];
                 datos_constancia[1] = Lista_constancias.get(i)[1];
                 datos_constancia[2] = Lista_constancias.get(i)[7]+" "+Lista_constancias.get(i)[8]+" "+Lista_constancias.get(i)[9];
                 datos_constancia[3] = Lista_constancias.get(i)[11];
+                datos_constancia[4] = Lista_constancias.get(i)[30];
                 tabconsul.addRow(datos_constancia);
-               /* Object[] datos = new Object[37];
-                datos[0] = Lista_constancias.get(i)[0];datos[1] = Lista_constancias.get(i)[1];datos[2] = Lista_constancias.get(i)[2];
-                datos[3] = Lista_constancias.get(i)[3];datos[4] = Lista_constancias.get(i)[4];datos[5] = Lista_constancias.get(i)[5];
-                datos[6] = Lista_constancias.get(i)[6];datos[7] = Lista_constancias.get(i)[7];datos[8] = Lista_constancias.get(i)[8];
-                datos[9] = Lista_constancias.get(i)[9];datos[10] = Lista_constancias.get(i)[10];datos[11] = Lista_constancias.get(i)[11];
-                datos[12] = Lista_constancias.get(i)[12];datos[13] = Lista_constancias.get(i)[13];datos[14] = Lista_constancias.get(i)[14];
-                datos[15] = Lista_constancias.get(i)[15];datos[16] = Lista_constancias.get(i)[16];datos[17] = Lista_constancias.get(i)[17];
-                datos[18] = Lista_constancias.get(i)[18];datos[19] = Lista_constancias.get(i)[19];datos[20] = Lista_constancias.get(i)[20];
-                datos[21] = Lista_constancias.get(i)[21];datos[22] = Lista_constancias.get(i)[22];datos[23] = Lista_constancias.get(i)[23];
-                datos[24] = Lista_constancias.get(i)[24];datos[25] = Lista_constancias.get(i)[25];datos[26] = Lista_constancias.get(i)[26];
-                datos[27] = Lista_constancias.get(i)[27];datos[28] = Lista_constancias.get(i)[28];
-                
-                datos[29] = Lista_testigos.get(i*2)[1]+" "+Lista_testigos.get(i*2)[2]+" "+Lista_testigos.get(i*2)[3];
-                datos[30] = Lista_testigos.get((i*2)+1)[1]+" "+Lista_testigos.get((i*2)+1)[2]+" "+Lista_testigos.get((i*2)+1)[3];
-                
-                datos[31] = Lista_com_eji.get(i*3)[1]+" "+Lista_com_eji.get(i*3)[2]+" "+Lista_com_eji.get(i*3)[1];
-                datos[32] = Lista_com_eji.get((i*3)+1)[1]+" "+Lista_com_eji.get((i*3)+1)[2]+" "+Lista_com_eji.get((i*3)+1)[1];
-                datos[33] = Lista_com_eji.get((i*3)+2)[1]+" "+Lista_com_eji.get((i*3)+2)[2]+" "+Lista_com_eji.get((i*3)+2)[1];
-                
-                datos[34] = Lista_con_vig.get(i*3)[1]+" "+Lista_con_vig.get(i*3)[2]+" "+Lista_con_vig.get(i*3)[1];
-                datos[35] = Lista_con_vig.get((i*3)+1)[1]+" "+Lista_con_vig.get((i*3)+1)[2]+" "+Lista_con_vig.get((i*3)+1)[1];
-                datos[36] = Lista_con_vig.get((i*3)+2)[1]+" "+Lista_con_vig.get((i*3)+2)[2]+" "+Lista_con_vig.get((i*3)+2)[1];
-                
-                tabconsul.addRow(datos);*/
+               
             }
-            /*while(rs.next()){
-                tabconsul.addRow(new Object[]{rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4)});
-            }*/
             Tabla_prueba.setModel(tabconsul);
             Tabla_prueba.setAutoResizeMode(Tabla_prueba.AUTO_RESIZE_ALL_COLUMNS);
             Tabla_prueba.getTableHeader().setReorderingAllowed(false);
             Tabla_prueba.doLayout();
+            //JOptionPane.showMessageDialog(null,"");
+            //Actualizar_tabla_fecha("2019-10-24", "2019-10-24");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,"ERROR AL MOSTRAR LOS DATOS");
         }
@@ -256,6 +288,130 @@ public class Consultas_constancias_existentes extends javax.swing.JFrame {
           }
     }//GEN-LAST:event_bt_modificarActionPerformed
 
+    private void bt_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_buscarActionPerformed
+        // TODO add your handling code here:
+        bt_buscar.setVisible(false);
+        bt_consutar_info.setVisible(false);
+        bt_modificar.setVisible(false);
+        bt_sel_modo.setVisible(true);
+        bt_cancelar.setVisible(true);
+        bt_buscar_aceptar.setVisible(true);
+        
+    }//GEN-LAST:event_bt_buscarActionPerformed
+
+    private void bt_sel_modoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_sel_modoActionPerformed
+        // TODO add your handling code here:
+        Modo_busqueda ventana = new Modo_busqueda();
+        ventana.setAlwaysOnTop(true);
+        ventana.setVisible(true);
+        bt_buscar_aceptar.setEnabled(true);
+    }//GEN-LAST:event_bt_sel_modoActionPerformed
+
+    private void bt_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_cancelarActionPerformed
+        // TODO add your handling code here:
+        bt_consulta_constancias.setVisible(true);
+        bt_consutar_info.setVisible(false);
+        bt_modificar.setVisible(false);
+        bt_buscar.setVisible(false);
+        bt_sel_modo.setVisible(false);
+        bt_buscar_aceptar.setVisible(false);
+        bt_buscar_aceptar.setEnabled(false);
+        bt_cancelar.setVisible(false);
+    }//GEN-LAST:event_bt_cancelarActionPerformed
+
+    private void bt_buscar_aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_buscar_aceptarActionPerformed
+        // TODO add your handling code here:
+        if(opcion_busqueda == 1){
+            Actualizar_tabla_fecha();
+        }
+        else{
+            if(opcion_busqueda == 2){
+                Actualizar_tabla_nombre();
+            }
+        }
+    }//GEN-LAST:event_bt_buscar_aceptarActionPerformed
+
+    public void Actualizar_tabla_fecha(){
+    
+        try {
+            DefaultTableModel tabconsul = new DefaultTableModel(){
+                @Override
+                public boolean isCellEditable(int row, int column){
+                    return false;
+                }
+            };
+            Object[] cabeceras = new Object[5];
+            cabeceras[0] ="NO. FOLIO";
+            cabeceras[1] ="FECHA EXPEDICIÓN";
+            cabeceras[2] ="PROPIETARIO";
+            cabeceras[3] ="UBICACIÓN";
+            cabeceras[4] ="MOTIVO";
+            tabconsul.setColumnIdentifiers(cabeceras);
+            
+            ArrayList<String[]> Lista_constancias;
+            
+            Constancia constancia = new Constancia();
+            Lista_constancias = constancia.Buscar_por_fecha(this.fecha_ini, this.fecha_fin);
+            for (int i = 0; i < Lista_constancias.size(); i++) {
+                Object[] datos_constancia = new Object[5];
+                datos_constancia[0] = Lista_constancias.get(i)[0];
+                datos_constancia[1] = Lista_constancias.get(i)[1];
+                datos_constancia[2] = Lista_constancias.get(i)[2]+" "+Lista_constancias.get(i)[3]+" "+Lista_constancias.get(i)[4];
+                datos_constancia[3] = Lista_constancias.get(i)[5];
+                datos_constancia[4] = Lista_constancias.get(i)[6];
+                tabconsul.addRow(datos_constancia);
+            }
+            Tabla_prueba.setModel(tabconsul);
+            Tabla_prueba.setAutoResizeMode(Tabla_prueba.AUTO_RESIZE_ALL_COLUMNS);
+            Tabla_prueba.getTableHeader().setReorderingAllowed(false);
+            Tabla_prueba.doLayout();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"ERROR AL MOSTRAR LOS DATOS" + e);
+        }
+    
+    }
+    
+    public void Actualizar_tabla_nombre(){
+    
+        try {
+            DefaultTableModel tabconsul = new DefaultTableModel(){
+                @Override
+                public boolean isCellEditable(int row, int column){
+                    return false;
+                }
+            };
+            Object[] cabeceras = new Object[5];
+            cabeceras[0] ="NO. FOLIO";
+            cabeceras[1] ="FECHA EXPEDICIÓN";
+            cabeceras[2] ="PROPIETARIO";
+            cabeceras[3] ="UBICACIÓN";
+            cabeceras[4] ="MOTIVO";
+            tabconsul.setColumnIdentifiers(cabeceras);
+            
+            ArrayList<String[]> Lista_constancias;
+            
+            Constancia constancia = new Constancia();
+            Lista_constancias = constancia.Buscar_por_nombre(this.nombre, this.appat, this.apmat);
+            for (int i = 0; i < Lista_constancias.size(); i++) {
+                Object[] datos_constancia = new Object[5];
+                datos_constancia[0] = Lista_constancias.get(i)[0];
+                datos_constancia[1] = Lista_constancias.get(i)[1];
+                datos_constancia[2] = Lista_constancias.get(i)[2]+" "+Lista_constancias.get(i)[3]+" "+Lista_constancias.get(i)[4];
+                datos_constancia[3] = Lista_constancias.get(i)[5];
+                datos_constancia[4] = Lista_constancias.get(i)[6];
+                tabconsul.addRow(datos_constancia);
+            }
+            Tabla_prueba.setModel(tabconsul);
+            Tabla_prueba.setAutoResizeMode(Tabla_prueba.AUTO_RESIZE_ALL_COLUMNS);
+            Tabla_prueba.getTableHeader().setReorderingAllowed(false);
+            Tabla_prueba.doLayout();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"ERROR AL MOSTRAR LOS DATOS");
+        }
+    
+    }
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -294,12 +450,15 @@ public class Consultas_constancias_existentes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private rojerusan.RSTableMetro Tabla_prueba;
-    private javax.swing.JButton bt_Eliminar;
+    public rojerusan.RSTableMetro Tabla_prueba;
+    private javax.swing.JButton bt_buscar;
+    private javax.swing.JButton bt_buscar_aceptar;
+    private javax.swing.JButton bt_cancelar;
     private javax.swing.JButton bt_consulta_constancias;
+    private javax.swing.JButton bt_consutar_info;
     private javax.swing.JButton bt_modificar;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton bt_regresar;
+    private javax.swing.JButton bt_sel_modo;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables

@@ -248,6 +248,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
         jPane2.add(tb_med_s);
         tb_med_s.setBounds(290, 180, 50, 30);
 
+        tb_med_n.setText("0");
         tb_med_n.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 tb_med_nFocusLost(evt);
@@ -1074,6 +1075,9 @@ public class Nueva_constancia extends javax.swing.JFrame {
        consulta_especifica.Rellenar_campos();
        consulta_especifica.bt_guardar.doClick();
        consulta_especifica.dispose();
+       menu_registro obj = new menu_registro();
+       obj.setVisible(true);
+       dispose();
        
        
     }//GEN-LAST:event_bt_generarActionPerformed

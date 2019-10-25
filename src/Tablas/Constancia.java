@@ -585,5 +585,72 @@ public class Constancia {
         }
     }
     
+    public ArrayList Buscar_por_fecha(String fecha_ini,String fecha_fin){
+        ArrayList<String[]> Lista_constancias = new ArrayList();
+        try {
+            String sql="SELECT constancias.no_folio,constancias.fecha_expedicion, propietarios.nombre_prop,propietarios.ape_pat_prop,propietarios.ape_mat_prop,\n" +
+                    "terrenos.ubicacion,constancias.motivo\n" +
+                    "FROM constancias \n" +
+                    "INNER JOIN constancias_propietario on (constancias.no_folio = constancias_propietario.no_folio)\n" +
+                    "INNER JOIN propietarios on (constancias_propietario.id_propietario = propietarios.id_propietario)\n" +
+                    "INNER JOIN terrenos on (constancias.id_terreno = terrenos.id_terreno)\n" +
+                    "WHERE (constancias.fecha_expedicion BETWEEN '"+fecha_ini+"' AND '"+fecha_fin+"')";
+            c.conectar();
+            stm = c.conex.createStatement();
+            rs = stm.executeQuery(sql);
+            while(rs.next()){
+                String[] columnas = new String[7];
+                columnas[0]=rs.getString(1);
+                columnas[1]=rs.getString(2);
+                columnas[2]=rs.getString(3);
+                columnas[3]=rs.getString(4);
+                columnas[4]=rs.getString(5);
+                columnas[5]=rs.getString(6);
+                columnas[6]=rs.getString(7);
+                
+                Lista_constancias.add(columnas);
+            }
+            c.desconectar();
+            return Lista_constancias;
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "ERROR BUSQUEDA POR FECHA "+e);
+            Lista_constancias = null;
+            return Lista_constancias;
+        }
+    }
+    
+    public ArrayList Buscar_por_nombre(String nombre,String app_pat,String app_mat){
+        ArrayList<String[]> Lista_constancias = new ArrayList();
+        try {
+            String sql="select constancias.no_folio,constancias.fecha_expedicion,propietarios.nombre_prop,propietarios.ape_pat_prop,propietarios.ape_mat_prop,\n" +
+                    "terrenos.ubicacion,constancias.motivo\n" +
+                    "from constancias \n" +
+                    "INNER JOIN constancias_propietario on (constancias.no_folio = constancias_propietario.no_folio)\n" +
+                    "INNER JOIN propietarios on (constancias_propietario.id_propietario = propietarios.id_propietario)\n" +
+                    "INNER JOIN terrenos on (constancias.id_terreno = terrenos.id_terreno)\n" +
+                    "WHERE (propietarios.nombre_prop like '%"+nombre+"%' or propietarios.ape_pat_prop like '%"+app_pat+"%' or propietarios.ape_mat_prop like '%"+app_mat+"%')";
+            c.conectar();
+            stm = c.conex.createStatement();
+            rs = stm.executeQuery(sql);
+            while(rs.next()){
+                String[] columnas = new String[7];
+                columnas[0]=rs.getString(1);
+                columnas[1]=rs.getString(2);
+                columnas[2]=rs.getString(3);
+                columnas[3]=rs.getString(4);
+                columnas[4]=rs.getString(5);
+                columnas[5]=rs.getString(6);
+                columnas[6]=rs.getString(7);
+                
+                Lista_constancias.add(columnas);
+            }
+            c.desconectar();
+            return Lista_constancias;
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "ERROR BUSQUEDA POR FECHA "+e);
+            Lista_constancias = null;
+            return Lista_constancias;
+        }
+    }
 }
 
