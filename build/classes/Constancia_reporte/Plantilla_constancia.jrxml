@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="constancia_reporte" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3b266ede-dac1-4b73-85a0-0e8ed03edcea">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="no_folio" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="316" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="11" y="37" width="146" height="200" uuid="cd668f80-46ad-4d7b-976c-279172d1a7a3"/>
+				<imageExpression><![CDATA["C:\\Users\\MISAEL\\Documents\\NetBeansProjects\\Comisaria_ejidal\\src\\Imagenes\\Constancia_pdf\\escudo_1.JPG"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement mode="Opaque" x="11" y="225" width="146" height="26" forecolor="#FFFFFF" backcolor="#4BACC6" uuid="9b8d08c0-e5ed-4c10-9585-f75e78b526db"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="Calibri" size="10" isBold="true" isItalic="false" isUnderline="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[JUSTICIA PARA EL PUEBLO]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Transparent" x="11" y="225" width="146" height="26" forecolor="#357D91" backcolor="#357D91" uuid="32ddde2a-563b-4f1a-b228-c3980dc3df66"/>
+				<graphicElement>
+					<pen lineWidth="3.0"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Transparent" x="29" y="17" width="116" height="20" uuid="0c3e7c7c-d9bb-4983-9357-3fdf8d6e2cfc"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TIERRA Y LIBERTAD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="213" y="37" width="53" height="20" uuid="ab2f6f4e-59e1-4f7f-8bcd-32a41dc28cab"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FOLIO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="266" y="37" width="100" height="20" forecolor="#7030A0" uuid="a2efe662-a500-4867-a47d-e3b02ec6fc17"/>
+				<textElement>
+					<font fontName="Arial" size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><$F{no_folio}></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

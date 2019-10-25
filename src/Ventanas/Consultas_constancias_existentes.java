@@ -10,6 +10,19 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import Tablas.Constancia;
+import comisaria_db.Conexion;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import com.mysql.jdbc.Connection;
+import java.util.HashMap;
+import java.util.Map;
+import net.sf.jasperreports.view.JasperViewer;
+
 /**
  *
  * @author MISAEL
@@ -32,9 +45,8 @@ public class Consultas_constancias_existentes extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         bt_consulta_constancias = new javax.swing.JButton();
         bt_modificar = new javax.swing.JButton();
-
-        bt_Eliminar = new javax.swing.JButton();
-
+        bt_eliminar = new javax.swing.JButton();
+        bt_pdfConstanciasExistentes = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -73,7 +85,7 @@ public class Consultas_constancias_existentes extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 660, -1, 37));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 660, -1, 37));
 
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton2.setText("<html> <head> </head> <body> <div align=\"center\"><p>CONSULTAR</p><p> INFORMACIÓN</p></div> </body> </html>  ");
@@ -82,7 +94,7 @@ public class Consultas_constancias_existentes extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 660, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 660, -1, -1));
 
         bt_consulta_constancias.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         bt_consulta_constancias.setText("<html> <head> </head> <body> <div align=\"center\"><p>MOSTRAR</p><p>CONSTANCIAS</p></div> </body> </html>  ");
@@ -91,7 +103,7 @@ public class Consultas_constancias_existentes extends javax.swing.JFrame {
                 bt_consulta_constanciasActionPerformed(evt);
             }
         });
-        getContentPane().add(bt_consulta_constancias, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 660, 110, -1));
+        getContentPane().add(bt_consulta_constancias, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 660, 110, -1));
 
         bt_modificar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         bt_modificar.setText("MODIFICAR");
@@ -100,20 +112,25 @@ public class Consultas_constancias_existentes extends javax.swing.JFrame {
                 bt_modificarActionPerformed(evt);
             }
         });
-        getContentPane().add(bt_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 660, 120, 40));
+        getContentPane().add(bt_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 660, 120, 40));
 
-        bt_Eliminar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        bt_Eliminar.setText("ELIMINAR");
-        getContentPane().add(bt_Eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 660, -1, -1));
-
-        bt_modificar.setText("MODIFICAR");
-        bt_modificar.addActionListener(new java.awt.event.ActionListener() {
+        bt_eliminar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        bt_eliminar.setText("ELIMINAR");
+        bt_eliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bt_modificarActionPerformed(evt);
+                bt_eliminarActionPerformed(evt);
             }
         });
-        getContentPane().add(bt_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 660, 120, 40));
+        getContentPane().add(bt_eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 660, 120, 40));
 
+        bt_pdfConstanciasExistentes.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        bt_pdfConstanciasExistentes.setText("GENERAR PDF");
+        bt_pdfConstanciasExistentes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_pdfConstanciasExistentesActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bt_pdfConstanciasExistentes, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 660, -1, 40));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/C.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
@@ -265,8 +282,62 @@ public class Consultas_constancias_existentes extends javax.swing.JFrame {
               modificar_constancia.setNo_constancia(no_constancia);
               modificar_constancia.Establecer_info();
               modificar_constancia.setVisible(true);
+              dispose();
           }
     }//GEN-LAST:event_bt_modificarActionPerformed
+
+    private void bt_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_eliminarActionPerformed
+        // TODO add your handling code here:
+        if(Tabla_prueba.getSelectedRow()==-1){
+            JOptionPane.showMessageDialog(null,"NO SE HA SELECCIONADO NINGUN ELEMENTO");
+        }else
+        {
+            int op = JOptionPane.showConfirmDialog(null,"¿DESEA ELIMINAR LA CONSTACIA?", "Alerta!",JOptionPane.YES_NO_OPTION);
+            if(op==JOptionPane.YES_OPTION)
+            {
+                DefaultTableModel tabconsul;
+                tabconsul = (DefaultTableModel)Tabla_prueba.getModel();
+                String aux = (String) tabconsul.getValueAt(Tabla_prueba.getSelectedRow(), 0);
+                int no_folio=Integer.parseInt(aux);
+                Constancia folio= new Constancia();
+            }
+        }
+    }//GEN-LAST:event_bt_eliminarActionPerformed
+
+    private void bt_pdfConstanciasExistentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_pdfConstanciasExistentesActionPerformed
+        // TODO add your handling code here:
+        Conexion con = new Conexion();
+        con.conectar();
+        
+        JasperReport reporte =null;
+        
+        try {
+            /*
+            //String path="src\\ConstanciasExistentes_reporte\\ConstanciasExistentes_Reporte.jasper"; //se va a encontar el archivo del reporte 
+            String ruta_jasper = System.getProperty("user.dir") + "/src/ConstanciasExistentes_reporte/ConstanciasExistentes_Reporte.jasper";
+            reporte=(JasperReport) JRLoader.loadObjectFromFile(ruta_jasper);
+            //Map<String, Object> Conexion = null;
+            JasperPrint jprint= JasperFillManager.fillReport(reporte,null,con.conectar());
+            */
+             
+            reporte =null;
+            String ruta_jasper = System.getProperty("user.dir") + "/src/ConstanciasExistentes_reporte/ConstanciasExistentes_Reporte.jasper";
+            reporte=(JasperReport) JRLoader.loadObjectFromFile(ruta_jasper);
+            Map parametro = new HashMap();
+            JasperPrint jprint= JasperFillManager.fillReport(reporte,parametro,con.conectar());
+            JasperViewer  view = new JasperViewer(jprint, false);
+            
+            
+            //view.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            view.setVisible(true);
+            
+            
+            
+            
+        } catch (JRException ex) {
+            Logger.getLogger(Consultas_constancias_existentes.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_bt_pdfConstanciasExistentesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -305,11 +376,15 @@ public class Consultas_constancias_existentes extends javax.swing.JFrame {
         });
     }
 
+    
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private rojerusan.RSTableMetro Tabla_prueba;
-    private javax.swing.JButton bt_Eliminar;
     private javax.swing.JButton bt_consulta_constancias;
+    private javax.swing.JButton bt_eliminar;
     private javax.swing.JButton bt_modificar;
+    private javax.swing.JButton bt_pdfConstanciasExistentes;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel2;

@@ -7,10 +7,19 @@ import javax.swing.JOptionPane;
 import comisaria_db.*;
 import Tablas.Usuario;
 import java.net.UnknownHostException;
-import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import Tablas.Constancia;
+import java.util.HashMap;
+import java.util.Map;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
+
+
 
 
 public class inicio_sesion extends javax.swing.JFrame {
@@ -66,7 +75,7 @@ public class inicio_sesion extends javax.swing.JFrame {
             }
         });
         getContentPane().add(bt_acceder);
-        bt_acceder.setBounds(660, 570, 110, 23);
+        bt_acceder.setBounds(660, 570, 110, 30);
 
         tb_usuario.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         tb_usuario.setText("misael");
@@ -105,7 +114,7 @@ public class inicio_sesion extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(70, 510, 73, 23);
+        jButton1.setBounds(70, 510, 77, 32);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondocm2.111.jpg"))); // NOI18N
         jLabel4.setText("jLabel4");
@@ -152,9 +161,31 @@ public class inicio_sesion extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        Consulta_constancia_especifica obj = new Consulta_constancia_especifica();
-        obj.setNo_constancia(1);
-        obj.setVisible(true);
+        Conexion conexion = new Conexion(); 
+        JasperReport jr = null;
+       //String ruta_reporte = "C:\\Users\\MISAEL\\Documents\\NetBeansProjects\\Comisaria_ejidal\\src\\Constancia_reporte\\Plantilla_cons.jasper";
+        String ruta = System.getProperty("user.dir") + "/src/Constancia_reporte/Plantilla_cons.jasper";
+        try {
+            conexion.conectar();
+            Map parametro = new HashMap<String,Object>();
+            parametro.put("parametro", "epale");
+            parametro.put("parameter1", "epale");
+            //JasperReport report = JasperCompileManager.compileReport(ruta_reporte);
+            //JasperPrint print = JasperFillManager.fillReport(report, parametro, conexion.conex);
+            //JasperExportManager.exportReportToPdfFile(print, "C:\\Users\\MISAEL\\Documents\\NetBeansProjects\\Comisaria_ejidal\\src\\Constancia_reporte\\InformePaisesMySQL.pdf");
+            
+            jr = (JasperReport) JRLoader.loadObjectFromFile(ruta);
+            JasperPrint jp = JasperFillManager.fillReport(jr, parametro,conexion.conectar());
+            
+            JasperViewer jv = new JasperViewer(jp,false);
+            jv.setVisible(true);
+            jv.setTitle("Reporte practica con parametros");
+            /* Consulta_constancia_especifica obj = new Consulta_constancia_especifica();
+            obj.setNo_constancia(1);
+            obj.setVisible(true);*/
+        } catch (JRException ex) {
+            Logger.getLogger(inicio_sesion.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
        public static void main(String args[]) {

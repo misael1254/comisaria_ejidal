@@ -1,0 +1,723 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="612" pageHeight="1008" whenNoDataType="AllSectionsNoDetail" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryNewPage="true" uuid="09063610-e136-4d94-87c0-d2f7366b5abf">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="2407"/>
+	<parameter name="no_folio" class="java.lang.String"/>
+	<parameter name="propietario" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<parameter name="tipo_terreno" class="java.lang.String"/>
+	<parameter name="fecha" class="java.lang.String"/>
+	<parameter name="ubicacion" class="java.lang.String"/>
+	<parameter name="med_n" class="java.lang.String"/>
+	<parameter name="col_n" class="java.lang.String"/>
+	<parameter name="med_s" class="java.lang.String"/>
+	<parameter name="col_s" class="java.lang.String"/>
+	<parameter name="med_e" class="java.lang.String"/>
+	<parameter name="col_e" class="java.lang.String"/>
+	<parameter name="med_o" class="java.lang.String"/>
+	<parameter name="col_o" class="java.lang.String"/>
+	<parameter name="dia_letra" class="java.lang.String"/>
+	<parameter name="mes_letra" class="java.lang.String"/>
+	<parameter name="titulo_ce_pre" class="java.lang.String"/>
+	<parameter name="nom_ce_pre" class="java.lang.String"/>
+	<parameter name="titulo_ce_sec" class="java.lang.String"/>
+	<parameter name="nom_ce_sec" class="java.lang.String"/>
+	<parameter name="titulo_ce_tes" class="java.lang.String"/>
+	<parameter name="nom_ce_tes" class="java.lang.String"/>
+	<parameter name="nota" class="java.lang.String"/>
+	<parameter name="cedente" class="java.lang.String"/>
+	<parameter name="testigo1" class="java.lang.String"/>
+	<parameter name="testigo2" class="java.lang.String"/>
+	<parameter name="titulo_cv_pre" class="java.lang.String"/>
+	<parameter name="nom_cv_pre" class="java.lang.String"/>
+	<parameter name="titulo_cv_ps" class="java.lang.String"/>
+	<parameter name="nom_cv_ps" class="java.lang.String"/>
+	<parameter name="titulo_cv_ss" class="java.lang.String"/>
+	<parameter name="nom_cv_ss" class="java.lang.String"/>
+	<parameter name="anio_letra" class="java.lang.String"/>
+	<parameter name="imagen" class="java.awt.Image"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="187" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="185" y="40" width="192" height="80" uuid="ef1e75b2-01c1-43c3-bfa6-1ffe997f4d64"/>
+				<imageExpression><![CDATA["C:\\Users\\MISAEL\\Documents\\NetBeansProjects\\Comisaria_ejidal\\src\\Imagenes\\Constancia_pdf\\mapa_gro.JPG"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement positionType="Float" mode="Transparent" x="11" y="0" width="109" height="20" uuid="2a3fb872-b639-4502-b288-9ad53a214613"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TIERRA Y LIBERTAD]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="295" y="20" width="44" height="20" forecolor="#000000" uuid="39eefb90-e584-40ae-be35-8e4752b36a95"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="16" isBold="false" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{no_folio}.toString()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="239" y="20" width="56" height="20" uuid="a464ce38-0f8e-455d-b1c1-18171a2e014e"/>
+				<textElement>
+					<font fontName="Arial" size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[FOLIO:]]></text>
+			</staticText>
+			<image scaleImage="FillFrame">
+				<reportElement x="16" y="15" width="109" height="152" uuid="018fb473-f7df-4434-b0e3-6852601bc208"/>
+				<imageExpression><![CDATA["C:\\Users\\MISAEL\\Documents\\NetBeansProjects\\Comisaria_ejidal\\src\\Imagenes\\Constancia_pdf\\escudo_1.JPG"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement mode="Opaque" x="16" y="167" width="109" height="17" forecolor="#FFFFFF" backcolor="#4BACC6" uuid="57fa2030-5c7b-4b73-acd9-7f05a808ed45"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JUSTICIA PARA EL PUEBLO]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Transparent" x="16" y="167" width="109" height="17" forecolor="#357D91" uuid="319206a4-5cd6-424c-956f-3c4f57f8b664"/>
+				<graphicElement>
+					<pen lineWidth="3.0"/>
+				</graphicElement>
+			</rectangle>
+			<image scaleImage="FillFrame">
+				<reportElement positionType="Float" x="447" y="15" width="90" height="158" uuid="f0b89737-e57e-4779-b85c-7136fedf304e"/>
+				<imageExpression><![CDATA["C:\\Users\\MISAEL\\Documents\\NetBeansProjects\\Comisaria_ejidal\\src\\Imagenes\\Constancia_pdf\\escudo_2.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="185" y="70" width="190" height="20" uuid="38b6acf3-f637-455d-8b5d-d50afeaf221b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COMISARIA EJIDAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="175" y="97" width="217" height="19" uuid="a8115a92-4dc7-4d78-8321-ef87ad43e529"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Broadway" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA["EJIDO VIEJO Y EL CONCHERO"]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="193" y="120" width="180" height="20" uuid="da98bec1-8834-4d43-94d5-c6daad12b71b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<text><![CDATA[MUNICIPIO DE COYUCA DE BENÍTEZ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="248" y="143" width="55" height="20" uuid="1c1aeb0e-0603-4068-a952-657f8f581879"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<text><![CDATA[GUERRERO]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="92" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="373" y="11" width="192" height="80" uuid="94596106-d9ee-40f7-9e0e-70a416375e6f"/>
+				<imageExpression><![CDATA["C:\\Users\\MISAEL\\Documents\\NetBeansProjects\\Comisaria_ejidal\\src\\Imagenes\\Constancia_pdf\\mapa_gro.JPG"]]></imageExpression>
+			</image>
+			<image scaleImage="FillFrame">
+				<reportElement x="11" y="11" width="192" height="80" uuid="f94b1de6-3e4c-4bbc-941c-849d381054a2"/>
+				<imageExpression><![CDATA["C:\\Users\\MISAEL\\Documents\\NetBeansProjects\\Comisaria_ejidal\\src\\Imagenes\\Constancia_pdf\\mapa_gro.JPG"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="132" y="14" width="313" height="28" uuid="0aa2e8d2-6311-48ef-ac1f-26b89ce55ccf"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Black" size="18" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[CONSTANCIA DE POSESIÓN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="49" width="554" height="29" uuid="efffe409-f089-487c-920e-d4a533dd4518"/>
+				<textElement>
+					<font fontName="Consolas" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[ Los que suscriben, miembros del Comisariado Ejidal de “EJIDO VIEJO Y EL CONCHERO”,
+ Municipio de Coyuca de Benítez, Estado de Guerrero.
+]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="555" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="125" y="23" width="335" height="291" uuid="8744954b-19fe-447c-83db-6c8d489e3402"/>
+				<imageExpression><![CDATA["C:\\Users\\MISAEL\\Documents\\NetBeansProjects\\Comisaria_ejidal\\src\\Imagenes\\Constancia_pdf\\escudo_3.jpg"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement mode="Opaque" x="203" y="252" width="345" height="20" uuid="150ddf2d-9d40-4774-9804-7297301e60b7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{col_n}.toString()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="185" y="3" width="201" height="20" uuid="371e7534-68ff-43c0-bc25-660aa49559a6"/>
+				<textElement textAlignment="Center">
+					<font fontName="Lucida Calligraphy" size="14"/>
+				</textElement>
+				<text><![CDATA[HACEN CONSTAR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="31" width="545" height="19" uuid="17a92a0a-8ddf-47ba-9419-3779a98059fd"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Consolas" size="14"/>
+				</textElement>
+				<text><![CDATA[Que los CC. _____________________________________________________ se 
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="50" width="545" height="19" uuid="25ca9d8f-1d08-4682-9a75-e6f404e5519d"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Consolas" size="14"/>
+				</textElement>
+				<text><![CDATA[encuentran en posesión quieta y pacífica de un _____________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="69" width="545" height="20" uuid="81dd6f74-d0b8-423a-aaca-a2051c84a778"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Consolas" size="14"/>
+				</textElement>
+				<text><![CDATA[perteneciente a este Núcleo Agrario desde el ______________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="89" width="545" height="19" uuid="1b0cf67f-0475-4e95-998e-20e6d7a69afa"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Consolas" size="14"/>
+				</textElement>
+				<text><![CDATA[ubicado en la localidad de ____________________________________ cuyo   
+ 
+ Miembros del Consejo de Vigilancia. ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="108" width="545" height="20" uuid="2adc17e4-0e8a-47a9-a3c0-256089faff72"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Consolas" size="14"/>
+				</textElement>
+				<text><![CDATA[croquis aparece al reverso del presente documento, certificado por]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="128" width="545" height="20" uuid="44fd4b9c-491d-43b3-a668-ab9f904837a9"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Consolas" size="14"/>
+				</textElement>
+				<text><![CDATA[los Miembros del Consejo de Vigilancia. ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="148" width="545" height="20" uuid="86169e33-5b66-4f09-8246-9ba265301f1c"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="168" width="545" height="20" uuid="e3fd3178-e893-4dc6-95ff-144b10d15eef"/>
+				<textElement>
+					<font fontName="Consolas" size="14"/>
+				</textElement>
+				<text><![CDATA[De referencia tiene las siguientes medidas y colindancias: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="120" y="31" width="416" height="19" uuid="c433bbfb-0916-4979-af68-7cda2927199c"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Algerian" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{propietario}.toString()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="397" y="50" width="168" height="19" uuid="d70f8c2c-b3bb-4b19-86d7-95850a94d1f2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Consolas" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{tipo_terreno}.toString()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="353" y="69" width="178" height="20" uuid="418f8689-4a5a-4c2b-a19f-a61c87d5cbf6"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Consolas" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fecha}.toString()]]></textFieldExpression>
+			</textField>
+			<elementGroup/>
+			<textField>
+				<reportElement x="239" y="89" width="284" height="20" uuid="fe0a76b6-e2f7-4c1f-b7e6-4a2e9605a11a"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Consolas" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ubicacion}.toString()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="103" y="215" width="100" height="37" backcolor="#FFFFFF" uuid="53213c05-f17b-460c-b41c-2e20b0ee85da"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MEDIDAS
+(mts)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="203" y="215" width="345" height="37" uuid="6013dedf-e469-481a-81a1-28d0b7604ae7"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COLINDANCIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="25" y="252" width="78" height="20" uuid="ee19b64d-5b33-4473-9f08-57e2b28da12f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NORTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="25" y="272" width="78" height="20" uuid="4e1f0220-17c9-4ef0-969e-b3a02e0f60cf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="25" y="292" width="78" height="20" uuid="a140eb6a-9fb4-44a1-bb24-919d384d5244"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ESTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="25" y="312" width="78" height="20" uuid="a46320fd-5977-4c27-87db-5f6d7682aa07"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[OESTE]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Transparent" x="103" y="215" width="100" height="37" forecolor="#006666" uuid="b5ae22d1-7412-4052-b5a6-69eb8490762b"/>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="203" y="215" width="345" height="37" forecolor="#006666" uuid="a19fa729-68c3-4b0b-b0fd-3df6667b9334"/>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="25" y="252" width="78" height="20" forecolor="#006666" uuid="3d65db68-2d93-4a60-9867-11090d6e3f36"/>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="25" y="272" width="78" height="20" forecolor="#006666" uuid="44d00caa-45a5-4eda-8acf-c773873fc54a"/>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="25" y="292" width="78" height="20" forecolor="#006666" uuid="7ec0e9de-a18b-408a-98c0-61e2ff7aca1c"/>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="25" y="312" width="78" height="20" forecolor="#006666" uuid="b191086b-96d5-4c54-94d3-e58b452b7dd9"/>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="203" y="292" width="345" height="20" forecolor="#006666" uuid="eb403429-12e9-4e9d-9890-04f1ebf4ddbf"/>
+			</rectangle>
+			<textField>
+				<reportElement mode="Opaque" x="203" y="292" width="345" height="20" uuid="ad814652-a683-4ad2-8172-c900f28fc41d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{col_e}.toString()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="202" y="272" width="345" height="20" uuid="09fb7c32-4672-48b3-9a95-1026033dbfc4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{col_s}.toString()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="203" y="312" width="345" height="20" uuid="93f71d2a-7699-42cc-92c9-a595d2f4b021"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{col_o}.toString()]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement mode="Transparent" x="203" y="252" width="345" height="20" forecolor="#006666" uuid="ca1bbeb4-280f-49f2-b499-6492f492d600"/>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="202" y="272" width="346" height="20" forecolor="#006666" uuid="9db6875f-be56-42a3-8c81-7724c643bf8e"/>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="203" y="312" width="345" height="20" forecolor="#006666" uuid="e8c7df3c-5726-4f00-b240-492e78ffae5b"/>
+			</rectangle>
+			<textField>
+				<reportElement mode="Opaque" x="103" y="312" width="100" height="20" uuid="bbbd539a-bac9-469b-b97f-93fff9ffa5e4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{med_o}.toString()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="103" y="292" width="100" height="20" uuid="7b4169ec-8035-40b0-8077-b77a57d26ea8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{med_e}.toString()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="103" y="272" width="100" height="20" uuid="2c8323ed-eb89-4e96-aed7-9e34495f0a75"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{med_s}.toString()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="103" y="252" width="100" height="20" uuid="1b92901f-3f7b-41be-9032-c5b712937eac"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{med_n}.toString()]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement mode="Transparent" x="103" y="272" width="100" height="20" forecolor="#006666" uuid="a63c3835-0751-42b8-bc35-89b11b20274b"/>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="103" y="252" width="100" height="20" forecolor="#006666" uuid="1ac5e153-cc43-4548-a7ba-3e34718929fe"/>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="103" y="292" width="100" height="20" forecolor="#006666" uuid="d75ee2e8-eb11-48a9-a425-98060568c1e5"/>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="103" y="312" width="100" height="20" forecolor="#006666" uuid="4d5156bf-d9d7-490f-9be8-2138cc137bba"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="25" y="345" width="523" height="85" uuid="45e72715-2f4e-46b4-abf6-c1dc3c87c9a0"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Consolas" size="14"/>
+				</textElement>
+				<text><![CDATA[Para los fines legales que a los interesados convengan se extiende la presente en “Ejido Viejo y El Conchero”, Municipio de Coyuca de Benítez, Estado de Guerrero a 
+los ____________días del mes de ______________ del dos mil_______________.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="55" y="378" width="130" height="20" uuid="f8bb2967-43ea-4ae1-b788-e39fa62dede4"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Consolas" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{dia_letra}.toString()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="261" y="378" width="131" height="18" uuid="531b76b0-1dc3-430e-b034-083c834ca3d6"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Consolas" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{mes_letra}.toString()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="156" y="468" width="241" height="22" uuid="30bb2184-4411-4d82-a0d5-3e9b1aed64b3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="18"/>
+				</textElement>
+				<text><![CDATA[COMISARIADO EJIDAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="211" y="443" width="133" height="20" uuid="e3f8049f-f718-4371-af6a-ff343f9d6539"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="16"/>
+				</textElement>
+				<text><![CDATA[ATENTAMENTE]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="434" y="378" width="121" height="18" uuid="7068f4d9-76ad-4d68-ac35-93a45fe513ba"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Consolas" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{anio_letra}.toString()]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="108" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="11" y="-37" width="192" height="80" uuid="3214636e-3f96-47bc-b00a-4f86e25ddf0d"/>
+				<imageExpression><![CDATA["C:\\Users\\MISAEL\\Documents\\NetBeansProjects\\Comisaria_ejidal\\src\\Imagenes\\Constancia_pdf\\mapa_gro.JPG"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement mode="Transparent" x="11" y="25" width="145" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="c4a52f78-328c-47f7-a9d1-f49eab20e4e5"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[_______________________]]></text>
+			</staticText>
+			<image scaleImage="FillFrame">
+				<reportElement x="362" y="-34" width="192" height="80" uuid="468fe06d-f2de-4b03-88c8-d55e4d024286"/>
+				<imageExpression><![CDATA["C:\\Users\\MISAEL\\Documents\\NetBeansProjects\\Comisaria_ejidal\\src\\Imagenes\\Constancia_pdf\\mapa_gro.JPG"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="25" y="-15" width="115" height="36" forecolor="#000000" backcolor="#FFFFFF" uuid="88d7138a-af14-4bee-a253-6235dc886938"/>
+				<textElement textAlignment="Center" markup="html">
+					<font fontName="Consolas" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{titulo_ce_pre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement stretchType="RelativeToTallestObject" mode="Transparent" x="214" y="-15" width="115" height="32" forecolor="#000000" backcolor="#FFFFFF" uuid="df43073d-61c0-4686-af5f-a2334cb32d36"/>
+				<textElement textAlignment="Center" markup="html">
+					<font fontName="Consolas" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{titulo_ce_sec}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Transparent" x="202" y="25" width="145" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="4a5caa03-d87b-4177-9526-8ce26fd8bcff"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[_______________________]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Transparent" x="202" y="47" width="145" height="30" forecolor="#000000" backcolor="#FFFFFF" uuid="c79fbb7c-346b-415a-97a6-a62a8c0427ac"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="html">
+					<font fontName="Consolas" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nom_ce_sec}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="397" y="47" width="145" height="30" forecolor="#000000" backcolor="#FFFFFF" uuid="86718f0a-927a-4d36-ac9a-19e3698216f2"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="html">
+					<font fontName="Consolas" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nom_ce_tes}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Transparent" x="397" y="25" width="145" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="abfc66cc-3c86-4f75-b64e-86c7f8ffcee4"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[_______________________]]></text>
+			</staticText>
+			<textField>
+				<reportElement stretchType="RelativeToTallestObject" mode="Transparent" x="412" y="-15" width="115" height="36" forecolor="#000000" backcolor="#FFFFFF" uuid="57482c53-df78-43c0-a864-20da8e295d6c"/>
+				<textElement textAlignment="Center" markup="html">
+					<font fontName="Consolas" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{titulo_ce_tes}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="11" y="47" width="145" height="30" forecolor="#000000" backcolor="#FFFFFF" uuid="d98f9392-5aec-472c-bde0-3733742b01a8"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="html">
+					<font fontName="Consolas" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nom_ce_pre}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<summary>
+		<band height="968" splitType="Immediate">
+			<image scaleImage="FillFrame">
+				<reportElement x="518" y="366" width="47" height="50" uuid="28e7d266-022a-4988-bf19-24fbf998d756"/>
+				<imageExpression><![CDATA["C:\\Users\\MISAEL\\Documents\\NetBeansProjects\\Comisaria_ejidal\\src\\Imagenes\\Constancia_pdf\\brujula.jpg"]]></imageExpression>
+			</image>
+			<image scaleImage="FillFrame">
+				<reportElement x="347" y="167" width="192" height="80" uuid="bd80b4db-291f-45b3-8233-6c150de8dd0a"/>
+				<imageExpression><![CDATA["C:\\Users\\MISAEL\\Documents\\NetBeansProjects\\Comisaria_ejidal\\src\\Imagenes\\Constancia_pdf\\mapa_gro.JPG"]]></imageExpression>
+			</image>
+			<image scaleImage="FillFrame">
+				<reportElement x="33" y="167" width="192" height="80" uuid="28a5a55b-9f7b-4a34-8d79-b1e868dda7e1"/>
+				<imageExpression><![CDATA["C:\\Users\\MISAEL\\Documents\\NetBeansProjects\\Comisaria_ejidal\\src\\Imagenes\\Constancia_pdf\\mapa_gro.JPG"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="16" y="11" width="538" height="104" uuid="71635a18-5661-4a71-8fc6-761ea89743ea"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="Calibri" size="12" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nota}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="64" y="115" width="100" height="20" uuid="1245c8f3-efb6-4bd8-b759-81e37ed9a937"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[QUIEN CEDE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="381" y="115" width="100" height="20" uuid="16d8ab10-9c0b-4f1c-a86a-f0b4af900955"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[QUIEN RECIBE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="33" y="151" width="168" height="20" uuid="53c9df91-317e-4880-b30e-d73dc681bc0d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[__________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="350" y="151" width="168" height="20" uuid="47d82ecd-4fa2-49bb-978f-152d1f485e86"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[__________________________]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="33" y="171" width="168" height="30" uuid="ebb6ca7d-a01a-4e83-838c-45bc1e7f2d1d"/>
+				<textElement textAlignment="Center" markup="html">
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cedente}.toString()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="350" y="171" width="168" height="30" uuid="13b7417e-4659-4231-a489-ad096f67b815"/>
+				<textElement textAlignment="Center" markup="html">
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{propietario}.toString()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="226" y="231" width="100" height="20" uuid="9b8e523b-b66d-444d-a3f6-2a24c1753aa2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[TESTIGOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="33" y="296" width="168" height="20" uuid="50eca5a9-c985-4100-8482-4c73c1f7b01d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[__________________________]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="35" y="316" width="166" height="30" uuid="a0bb0b50-0e5a-4a1b-b0c0-ced02f4aa2ea"/>
+				<textElement textAlignment="Center" markup="html">
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{testigo1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="350" y="296" width="173" height="20" uuid="4991450d-3ef8-4b78-9945-f4e00e289784"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[__________________________]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="350" y="316" width="173" height="30" uuid="1c479cf8-9b2b-49d3-a819-6598d2c5b71a"/>
+				<textElement textAlignment="Center" markup="html">
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{testigo2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="346" width="572" height="20" uuid="7ae79345-a837-4831-a642-003328a958b3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[////////////////////////////////////////////////////////CROQUIS////////////////////////////////////////////////////]]></text>
+			</staticText>
+			<image scaleImage="FillFrame">
+				<reportElement x="16" y="868" width="195" height="80" uuid="13157336-7537-48c5-a433-cf64d60dd20b"/>
+				<imageExpression><![CDATA["C:\\Users\\MISAEL\\Documents\\NetBeansProjects\\Comisaria_ejidal\\src\\Imagenes\\Constancia_pdf\\mapa_gro.JPG"]]></imageExpression>
+			</image>
+			<image scaleImage="FillFrame">
+				<reportElement x="342" y="868" width="197" height="80" uuid="1deb98a7-f35c-41e4-aee0-3134caeea4e5"/>
+				<imageExpression><![CDATA["C:\\Users\\MISAEL\\Documents\\NetBeansProjects\\Comisaria_ejidal\\src\\Imagenes\\Constancia_pdf\\mapa_gro.JPG"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="33" y="811" width="115" height="42" forecolor="#000000" backcolor="#FFFFFF" uuid="95a7b03f-1930-417a-b09c-0db6155d50dc"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="html">
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{titulo_cv_pre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="229" y="824" width="115" height="42" forecolor="#000000" backcolor="#FFFFFF" uuid="505cde7b-9a8f-485c-95fe-d344d9fa12b7"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="html">
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{titulo_cv_ps}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="412" y="824" width="115" height="42" forecolor="#000000" backcolor="#FFFFFF" uuid="1deaa5b8-b3d1-4b39-b2d9-47fb1ec38daa"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="html">
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{titulo_cv_ss}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Transparent" x="25" y="880" width="145" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="1e9b3a56-57cb-4527-a868-03cdb8087de4"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[_______________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="213" y="880" width="145" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="88df6978-186a-4b88-9c04-cc5540b88141"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[_______________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="397" y="880" width="145" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="9da49db8-d524-4922-9d52-8a5c35c97290"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[_______________________]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="25" y="900" width="145" height="42" forecolor="#000000" backcolor="#FFFFFF" uuid="55d18b60-4c27-47fe-bbf6-c47343083115"/>
+				<textElement textAlignment="Center" markup="html">
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nom_cv_pre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="213" y="900" width="145" height="42" forecolor="#000000" backcolor="#FFFFFF" uuid="4d3b28ba-697e-41c8-8ba7-afa4410fa05a"/>
+				<textElement textAlignment="Center" markup="html">
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nom_cv_ps}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="397" y="900" width="145" height="42" forecolor="#000000" backcolor="#FFFFFF" uuid="f5b69ef9-cea3-4f59-8fc7-a34a358cdea4"/>
+				<textElement textAlignment="Center" markup="html">
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nom_cv_ss}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="156" y="794" width="256" height="29" uuid="413fbf16-9ee1-4b40-9c4a-2aae8fc8daa3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EL CONSEJO DE VIGILANCIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="35" y="761" width="504" height="20" uuid="c18e4775-cd1d-46ea-8f7c-813ffa631a71"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14"/>
+				</textElement>
+				<text><![CDATA[Que las medidas y colindancias que aparecen en este documento son correctas.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="164" y="719" width="228" height="29" backcolor="#CCCCCC" uuid="f2a23c46-b547-487c-b358-a275f919afc1"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[C  E  R  T  I  F  I  C  A  N]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="81" y="661" width="400" height="25" uuid="d65f83f9-de93-48d0-ba38-f5eff476f512"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="14"/>
+				</textElement>
+				<text><![CDATA[Los que suscriben Miembros del Consejo de Vigilancia.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="641" width="572" height="20" uuid="211986e0-fb8b-40a6-8306-2d41f5429b11"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[////////////////////////////////////////////////////////CROQUIS////////////////////////////////////////////////////]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Transparent" x="15" y="11" width="538" height="104" uuid="57cec14c-29c1-48c6-b660-a61320205ed8"/>
+			</rectangle>
+			<image scaleImage="FillFrame">
+				<reportElement x="35" y="386" width="478" height="242" uuid="2766622a-a607-445e-aacc-a3b504eaf160"/>
+				<imageExpression><![CDATA[$P{imagen}]]></imageExpression>
+			</image>
+		</band>
+	</summary>
+</jasperReport>

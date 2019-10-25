@@ -5,10 +5,7 @@
  */
 package Ventanas;
 import Tablas.*;
-import java.awt.Color;
 import java.awt.event.KeyEvent;
-import java.io.FileInputStream;
-import java.io.InputStream;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,7 +13,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
@@ -35,6 +31,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
         establecer_panel(num_panel);
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         Date date = new Date();
+        
         fecha_label.setText(formatter.format(date));
         
     }
@@ -153,8 +150,12 @@ public class Nueva_constancia extends javax.swing.JFrame {
         jLabel46 = new javax.swing.JLabel();
         btn_subir_img = new javax.swing.JButton();
         jLabel49 = new javax.swing.JLabel();
+        jd_nucle_agrario = new com.toedter.calendar.JDateChooser();
+        jLabel50 = new javax.swing.JLabel();
         cb_tipo_terreno = new javax.swing.JComboBox<>();
         fecha_label = new javax.swing.JLabel();
+        cb_motivo = new javax.swing.JComboBox<>();
+        jd_fecha = new com.toedter.calendar.JDateChooser();
         label_imagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -209,6 +210,11 @@ public class Nueva_constancia extends javax.swing.JFrame {
         jPane2.setLayout(null);
 
         tb_med_so.setText("0");
+        tb_med_so.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                tb_med_soFocusLost(evt);
+            }
+        });
         tb_med_so.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 tb_med_soKeyTyped(evt);
@@ -218,6 +224,11 @@ public class Nueva_constancia extends javax.swing.JFrame {
         tb_med_so.setBounds(290, 420, 50, 30);
 
         tb_med_o.setText("90.2");
+        tb_med_o.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                tb_med_oFocusLost(evt);
+            }
+        });
         tb_med_o.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 tb_med_oKeyTyped(evt);
@@ -227,6 +238,11 @@ public class Nueva_constancia extends javax.swing.JFrame {
         tb_med_o.setBounds(290, 260, 50, 30);
 
         tb_med_e.setText("30.2");
+        tb_med_e.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                tb_med_eFocusLost(evt);
+            }
+        });
         tb_med_e.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 tb_med_eKeyTyped(evt);
@@ -236,6 +252,11 @@ public class Nueva_constancia extends javax.swing.JFrame {
         tb_med_e.setBounds(290, 220, 50, 30);
 
         tb_med_s.setText("32.3");
+        tb_med_s.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                tb_med_sFocusLost(evt);
+            }
+        });
         tb_med_s.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 tb_med_sKeyTyped(evt);
@@ -258,6 +279,11 @@ public class Nueva_constancia extends javax.swing.JFrame {
         tb_med_n.setBounds(290, 140, 50, 30);
 
         tb_med_ne.setText("0");
+        tb_med_ne.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                tb_med_neFocusLost(evt);
+            }
+        });
         tb_med_ne.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 tb_med_neKeyTyped(evt);
@@ -267,6 +293,11 @@ public class Nueva_constancia extends javax.swing.JFrame {
         tb_med_ne.setBounds(290, 300, 50, 30);
 
         tb_med_no.setText("0");
+        tb_med_no.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                tb_med_noFocusLost(evt);
+            }
+        });
         tb_med_no.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 tb_med_noKeyTyped(evt);
@@ -276,6 +307,11 @@ public class Nueva_constancia extends javax.swing.JFrame {
         tb_med_no.setBounds(290, 340, 50, 30);
 
         tb_med_se.setText("0");
+        tb_med_se.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                tb_med_seFocusLost(evt);
+            }
+        });
         tb_med_se.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 tb_med_seKeyTyped(evt);
@@ -832,8 +868,8 @@ public class Nueva_constancia extends javax.swing.JFrame {
         jPanel4.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, -1, -1));
 
         jLabel46.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel46.setText("<html><div style=\"text-align: center\"><p>SELECCIONE</p>CROQUIS:<p></p></div></html>");
-        jPanel4.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 290, -1, -1));
+        jLabel46.setText("<html><div style=\"text-align: center\"><p>FECHA DE</p>POSESIÓN:<p></p></div></html>");
+        jPanel4.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 380, -1, -1));
 
         btn_subir_img.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btn_subir_img.setText("SUBIR IMAGEN");
@@ -846,6 +882,11 @@ public class Nueva_constancia extends javax.swing.JFrame {
 
         jLabel49.setText("jLabel49");
         jPanel4.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+        jPanel4.add(jd_nucle_agrario, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 380, 160, 40));
+
+        jLabel50.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel50.setText("<html><div style=\"text-align: center\"><p>SELECCIONE</p>CROQUIS:<p></p></div></html>");
+        jPanel4.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 290, -1, -1));
 
         getContentPane().add(jPanel4);
         jPanel4.setBounds(20, 580, 90, 40);
@@ -857,7 +898,13 @@ public class Nueva_constancia extends javax.swing.JFrame {
 
         fecha_label.setText("jLabel4");
         getContentPane().add(fecha_label);
-        fecha_label.setBounds(80, 206, 110, 20);
+        fecha_label.setBounds(90, 130, 110, 20);
+
+        cb_motivo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SESIÓN", "ACTUALIZACIÓN" }));
+        getContentPane().add(cb_motivo);
+        cb_motivo.setBounds(20, 320, 150, 20);
+        getContentPane().add(jd_fecha);
+        jd_fecha.setBounds(63, 200, 130, 40);
 
         label_imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/NC.jpg"))); // NOI18N
         label_imagen.setText("j");
@@ -916,6 +963,12 @@ public class Nueva_constancia extends javax.swing.JFrame {
         terreno.setCol_NE(tb_col_ne.getText().toUpperCase());terreno.setCol_NO(tb_col_no.getText().toUpperCase());
         terreno.setCol_SE(tb_col_se.getText().toUpperCase());terreno.setCol_SO(tb_col_so.getText().toUpperCase());
         
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            terreno.setNucle_agrario(formatter.format(jd_fecha.getDate()));
+        } catch (Exception e) {
+             JOptionPane.showMessageDialog(null, e);
+        }
         if(terreno.Registar())
             System.out.println("TERRENO");
         
@@ -934,23 +987,31 @@ public class Nueva_constancia extends javax.swing.JFrame {
        if(terreros_propietario.Registar())
             System.out.println("TERRENOS_PROPIETARIO");
        
-       Cedente cedente = new Cedente();
-       int id_cediente = cedente.ultimoID()+1;
-       cedente.setId(id_cediente);
-       cedente.setNombre(tb_cedente_nombre.getText().toUpperCase());
-       cedente.setApellido_paterno(tb_cedente_appat.getText().toUpperCase());
-       cedente.setApellido_materno(tb_cedente_apmat.getText().toUpperCase());
-       if(cedente.Registar())
-            System.out.println("CEDENTE");
-       
+       int id_cediente=1;
+       if(cb_motivo.getSelectedItem().toString().toUpperCase().equals("SESIÓN")){
+            Cedente cedente = new Cedente();
+            id_cediente = cedente.ultimoID()+1;
+            cedente.setId(id_cediente);
+            cedente.setNombre(tb_cedente_nombre.getText().toUpperCase());
+            cedente.setApellido_paterno(tb_cedente_appat.getText().toUpperCase());
+            cedente.setApellido_materno(tb_cedente_apmat.getText().toUpperCase());
+            if(cedente.Registar())
+                 System.out.println("CEDENTE");
+       }
        Constancia constancia = new Constancia();
        int id_constancia = Integer.parseInt(tb_folio.getText().toString());
        constancia.setFolio(id_constancia);
-       constancia.setFecha_exp(fecha_label.getText());
+        try {
+            constancia.setFecha_exp(formatter.format(jd_fecha.getDate()));
+        } catch (Exception e) {
+             JOptionPane.showMessageDialog(null, e);
+        }
+       //constancia.setFecha_exp(fecha_label.getText());
        constancia.setId_terreno(id_terreno);
        constancia.setId_cediente(id_cediente);
        constancia.setNota(ta_nota.getText().toUpperCase());
        constancia.setRuta_imagen(this.ruta);
+       constancia.setMotivo(cb_motivo.getSelectedItem().toString().toUpperCase());
        if(constancia.Agregar())
             System.out.println("CONSTANCIA");
        
@@ -1299,6 +1360,48 @@ public class Nueva_constancia extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_tb_med_nFocusLost
 
+    private void tb_med_sFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tb_med_sFocusLost
+        // TODO add your handling code here:
+        if(tb_med_n.getText().isEmpty()){
+            tb_med_n.setText("0");}
+    }//GEN-LAST:event_tb_med_sFocusLost
+
+    private void tb_med_eFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tb_med_eFocusLost
+        // TODO add your handling code here:
+        if(tb_med_n.getText().isEmpty()){
+            tb_med_n.setText("0");}
+    }//GEN-LAST:event_tb_med_eFocusLost
+
+    private void tb_med_oFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tb_med_oFocusLost
+        // TODO add your handling code here:
+        if(tb_med_n.getText().isEmpty()){
+            tb_med_n.setText("0");}
+    }//GEN-LAST:event_tb_med_oFocusLost
+
+    private void tb_med_neFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tb_med_neFocusLost
+        // TODO add your handling code here:
+        if(tb_med_n.getText().isEmpty()){
+            tb_med_n.setText("0");}
+    }//GEN-LAST:event_tb_med_neFocusLost
+
+    private void tb_med_noFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tb_med_noFocusLost
+        // TODO add your handling code here:
+        if(tb_med_n.getText().isEmpty()){
+            tb_med_n.setText("0");}
+    }//GEN-LAST:event_tb_med_noFocusLost
+
+    private void tb_med_seFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tb_med_seFocusLost
+        // TODO add your handling code here:
+        if(tb_med_n.getText().isEmpty()){
+            tb_med_n.setText("0");}
+    }//GEN-LAST:event_tb_med_seFocusLost
+
+    private void tb_med_soFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tb_med_soFocusLost
+        // TODO add your handling code here:
+        if(tb_med_n.getText().isEmpty()){
+            tb_med_n.setText("0");}
+    }//GEN-LAST:event_tb_med_soFocusLost
+
        
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -1376,7 +1479,14 @@ public class Nueva_constancia extends javax.swing.JFrame {
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null,"ERROR AL RELLENAR"+e);
         }
-        
+        Date date = new Date();
+        try {
+            jd_fecha.setDateFormatString("dd-MM-yyyy");
+            jd_fecha.setDate(date);
+            jd_nucle_agrario.setDate(date);
+        } catch (Exception e) {
+             JOptionPane.showMessageDialog(null, e);
+        }
     
     
     }
@@ -1463,6 +1573,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_cv_presidente;
     private javax.swing.JComboBox<String> cb_cv_secretario;
     private javax.swing.JComboBox<String> cb_cv_secretario_dos;
+    private javax.swing.JComboBox<String> cb_motivo;
     private javax.swing.JComboBox<String> cb_tipo_terreno;
     private javax.swing.JLabel et_error;
     private javax.swing.JLabel et_error1;
@@ -1514,6 +1625,7 @@ public class Nueva_constancia extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -1524,6 +1636,8 @@ public class Nueva_constancia extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
+    private com.toedter.calendar.JDateChooser jd_fecha;
+    private com.toedter.calendar.JDateChooser jd_nucle_agrario;
     private javax.swing.JLabel label_fecha;
     private javax.swing.JLabel label_folio;
     private javax.swing.JLabel label_imagen;
